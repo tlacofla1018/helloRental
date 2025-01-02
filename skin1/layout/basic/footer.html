@@ -1,0 +1,61 @@
+<div id="footer">
+    <div class="inner">
+        <!-- <span module="Layout_LogoBottom">
+            @css(/css/module/layout/logobottom.css)
+            <a href="/index.html">{$mall_name}</a>
+        </span> -->
+
+        <div module="Layout_footer">
+            <!--@css(/css/module/layout/footer.css)-->
+            <div class="footer-content">
+                <div class="footer-inner">
+                    <ul class="utilMenu">
+                        <!-- <li class="home"><a href="/index.html">홈</a></li> -->
+                        <li><a href="/shopinfo/company.html">회사소개</a></li>
+                        <li><a href="/member/agreement.html">이용약관</a></li>
+                        <li><a href="/member/privacy.html"><strong>개인정보처리방침</strong></a></li>
+                        <li><a href="/shopinfo/guide.html">이용안내</a></li>
+                        <div module="Layout_ReferenceCurrencyList" class="list">
+                            <!--@css(/css/module/layout/multiCurrency.css)-->
+                            <button type="button" class="toggle" id="reference_currency_button">
+                                <span class="btn-global">Reference currency</span>
+                                <span class="currencyNow">{$current_reference_currency_code} {$current_reference_currency_symbol}</span>
+                            </button>
+                            <ul module="Layout_ReferenceCurrencyListitem" class="multicurrencylistitem" id="reference_currency_list">
+                                <li class="">
+                                    <a href="#">
+                                        <span class="name">{$reference_currency_code}</span>
+                                        <span class="unit">{$reference_currency_symbol}</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#">
+                                        <span class="name">{$reference_currency_code}</span>
+                                        <span class="unit">{$reference_currency_symbol}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-content">
+                <div class="footer-inner">
+                    <p class="address">
+                        <strong>본 사이트는 LG헬로렌탈을 리뉴얼한 비상업적 포트폴리오임을 알립니다</strong>
+                        <span>
+                            <span>{$company_name} 대표자(성명)<strong>{$president_name}</strong></span> <span>사업자 등록번호<strong>{$company_regno}</strong></span> <span class="after-none">통신판매업 신고<strong>{$network_regno}</strong></span> <span>{$biz_no_link}</span>
+                        </span>
+                        <span>
+                            <span>전화<strong>{$phone}</strong></span> <!-- <span>팩스 : {$fax}</span> --> <span>주소<strong><!--{$mall_zipcode}--> {$mall_addr1} {$mall_addr2}</strong></span><span class="{$cpo_email|display}">개인정보보호책임자 <a href="mailto:{$cpo_email}"><strong>{$cpo_name}<!--({$cpo_email})--></a></strong></span>
+                        </span>
+                        <!-- <span>Contact <strong><a href="mailto:{$email}">{$email}</a></strong> for more information.</span> -->
+                        <p class="copyright">Copyright &copy; <strong>{$mall_name}</strong>. All rights reserved.</p>
+                    </p>
+                </div>
+            </div>
+
+            <!-- <p class="hosting"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/logo_cafe24.png" alt="hosting by cafe24 카페24(주)" /></p> -->
+        </div>
+    </div>
+</div>

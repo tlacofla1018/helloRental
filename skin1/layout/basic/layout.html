@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- PG크로스브라우징필수내용 -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <!-- // PG크로스브라우징필수내용 -->
+
+    <title>기본 레이아웃</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!--@css(/layout/basic/css/common.css)-->
+    <!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
+    <!--@css(/layout/basic/css/layout.css)-->
+    <!--@css(/layout/basic/css/ec-base-ui.css)-->
+    <!--@css(/layout/basic/css/ec-base-tooltip.css)-->
+    <!--@css(/layout/basic/css/ec-base-help.css)-->
+    <!--@css(/layout/basic/css/ec-base-product.css)-->
+    <!--@css(/layout/basic/css/ec-base-paginate.css)-->
+    <!--@css(/layout/basic/css/ec-base-tab.css)-->
+    <!--@css(/layout/basic/css/ec-base-button.css)-->
+    <!--@css(/layout/basic/css/ec-base-box.css)-->
+    <!--@css(/layout/basic/css/ec-base-table.css)-->
+    <!--@css(/layout/basic/css/ec-base-desc.css)-->
+    <!--@css(/layout/basic/css/reset.css)-->
+    <!--@css(/layout/basic/css/slick.css)-->
+    <!--@css(/layout/basic/css/swiper-bundle.css)-->
+    <!--@css(/layout/basic/css/shim.css)-->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <!--@js(/layout/basic/jquery-3.6.0.js)-->
+    <!--@js(/layout/basic/slick.js)-->
+    <!--@js(/layout/basic/swiper-bundle.js)-->
+    <!--@js(/layout/basic/js/basic.js)-->
+    <!--@js(/js/common.js)-->
+    <!--@js(/js/module/layout/quick_view.js)-->
+    <!--@js(/js/login_redirect.js)-->
+    <!--@js(/layout/basic/shim.js)-->
+
+</head>
+<body>
+<div id="skipNavigation">
+    <p><a href="#category">전체상품목록 바로가기</a></p>
+    <p><a href="#contents">본문 바로가기</a></p>
+</div>
+
+<!--@import(/layout/basic/header.html)-->
+<hr class="layout" />
+
+<div id="wrap">
+    <div id="container">
+        <div id="contents">
+            <!--@contents-->
+        </div><hr class="layout" />
+
+        <!-- <div id="sidebar">
+
+            <div module="Layout_BoardInfo">
+                @css(/css/module/layout/boardInfo.css)
+                <h2>전체게시판</h2>
+                <ul>
+                    <li><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
+                    <li><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
+                </ul>
+            </div>
+
+            <div module="Layout_project">
+                @css(/css/module/layout/project.css)
+                @js(/js/rotate.js)
+                @js(/js/module/layout/project.js)
+                <h2>쇼핑기획전</h2>
+                <ul>
+                    <li><a href="{$link_product_project}"><img src="{$category_image}" alt="" /></a></li>
+                    <li><a href="{$link_product_project}"><img src="{$category_image}" alt="" /></a></li>
+                </ul>
+                <div class="control">
+                    <button type="button" class="prev" id="prevButton-project"><span>이전</span></button>
+                    <button type="button" class="stop" id="stopButton-project"><span>멈춤</span></button>
+                    <button type="button" class="play" id="playButton-project"><span>재생</span></button>
+                    <button type="button" class="next" id="nextButton-project"><span>다음</span></button>
+                </div>
+            </div>
+
+            <div module="Layout_login">
+                @css(/css/module/layout/login.css)
+                <h2>회원로그인</h2>
+                <fieldset>
+                    <legend>회원로그인</legend>
+                    <p class="check">
+                        <span><label for="member_id" class="ePlaceholder" title="{$login_id_type_text}">{$form.member_id}</label></span>
+                        <span><label for="member_passwd" class="ePlaceholder" title="비밀번호">{$form.member_passwd}</label></span>
+                    </p>
+                    <p class="security">
+                        {$form.check_save_id}
+                        {$form.check_secret_connect}
+                    </p>
+                    <div class="ec-base-button gColumn">
+                        <a href="#none" onclick="{$action_func_login}" class="btnSubmit sizeS">로그인</a>
+                        <a href="/member/join.html" class="btnNormal sizeS">회원가입</a>
+                    </div>
+                </fieldset>
+                <ul class="find">
+                    <li><a href="/member/id/find_id.html">아이디찾기</a></li>
+                    <li><a href="/member/passwd/find_passwd_info.html">비밀번호찾기</a></li>
+                </ul>
+            </div>
+
+            <div module="Layout_Info">
+                @css(/css/module/layout/info.css)
+                <h2>고객센터</h2>
+                <ul>
+                    <li class="tel"><strong>Telephone</strong><span>{$phone}</span></li>
+                    <li><strong>Fax</strong><span>{$fax}</span></li>
+                    <li><strong>Time</strong><span>{$runtime}</span></li>
+                </ul>
+            </div>
+
+
+            <div module="Layout_Poll">
+                @css(/css/module/layout/poll.css)
+                <h2>온라인 설문조사</h2>
+                <h3 title="질문">{$poll_title}</h3>
+                <fieldset>
+                    <legend>설문조사 항목</legend>
+                    <ul>
+                        <li>{$poll} {$poll_name}</li>
+                        <li>{$poll} {$poll_name}</li>
+                        <li>{$poll} {$poll_name}</li>
+                        <li>{$poll} {$poll_name}</li>
+                    </ul>
+                    <p class="button">
+                        <a href="#none" onclick="{$action_poll_result}"  class="btnLink">결과보기</a>
+                        <a href="#none" onclick="{$action_poll_submit}"  class="btnLink">투표하기</a>
+                    </p>
+                </fieldset>
+            </div>
+
+            <div class="banner">
+                <p module="Layout_giftBanner"><a href="/order/gift_list.html" class="giftBanner">고객사은품 안내</a></p>
+                <p module="Layout_opdiaryBanner"><a href="/board/opdiary/list.html" class="opdiaryBanner">운영일지</a></p>
+                <p module="Layout_sosBanner"><a href="/board/urgency/urgency.html" class="sosBanner">긴급 문의</a></p>
+                <p module="Layout_attendBanner">
+
+                        $stamp_type_url = /attend/stamp.html
+                        $comment_type_url = /attend/comment.html
+                        
+                    <a href="{$attend_url}" class="attendBanner">출석체크</a>
+                </p>
+                <p module="Layout_couponzoneBanner"><a href="/coupon/coupon_zone.html" class="couponzoneBanner">알뜰살뜰 쿠폰존</a></p>
+                <p module="Layout_calendarBanner"><a href="{$calendar_view_page}" class="calendarBanner">캘린더 게시판</a></p>
+            </div>
+        </div> -->
+    </div><hr class="layout" />
+
+    <div id="quick">
+        <div class="qTop">
+            <div class="qbtn" module="Layout_orderBasketcount">
+                <a href="/order/basket.html"><span class="qbtn-img"><img class="basketIcon" src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></span><span class="qbtn-name">장바구니</span></a>
+            </div>
+            <div class="qbtn tell">
+                <a href="/skin-skin1/category/고객센터/42/"><img class="tellIcon" src="/img/icon/tellIcon.svg" alt="빠른상담"><span class="qbtn-name">빠른상담</span></a>
+            </div>
+            <div module="Layout_productRecent">
+                <!--@css(/css/module/layout/productRecent.css)-->
+                <h2><a href="/product/recent_view_product.html" class="qbtn-name">최근 본 상품</a></h2>
+                <ul class="productrecent">
+                    <li class="{$disp_recent|display}">
+                        <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="" /><span>{$name}</span></a>
+                    </li>
+                    <li class="{$disp_recent|display}">
+                        <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="" /><span>{$name}</span></a>
+                    </li>
+                </ul>
+                <!-- <p class="player"><img src="//img.echosting.cafe24.com/skin/base/layout/btn_recent_prev.gif" alt="이전 제품" class="prev" /><img src="//img.echosting.cafe24.com/skin/base/layout/btn_recent_next.gif" alt="다음 제품" class="next" /></p> -->
+            </div>
+        </div>
+
+        <p class="pageTop"><a href="javascript:;" onclick="$('html,body').animate({scrollTop:0},'slow')"><img src="/img/icon/topBtn-icon.svg" alt="맨위로" /></a></p>
+    </div>
+</div><hr class="layout" />
+
+<!--@import(/layout/basic/footer.html)-->
+
+<!-- 결제를 위한 필수 영역 -->
+<div id="progressPaybar" style="display:none;">
+    <div id="progressPaybarBackground" class="layerProgress"></div>
+    <div id="progressPaybarView">
+        <div class="box">
+            <p class="graph">
+                <span><img src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/txt_progress.gif" alt="현재 결제가 진행중입니다." /></span>
+                <span><img src="//img.echosting.cafe24.com/skin/base/layout/img_loading.gif" alt="" /></span>
+            </p>
+            <p class="txt">
+                본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을 닫으시면<br />
+                주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
+            </p>
+        </div>
+    </div>
+</div>
+<!-- // 결제를 위한 필수 영역 -->
+
+<div module="Layout_multishopShipping">
+    <!--@css(/layout/basic/css/ec-base-layer.css)-->
+    <!--@css(/css/module/layout/multishopShipping.css)-->
+    <!--@js(/js/module/layout/multishopShipping.js)-->
+    <div class="dimmed"></div>
+    <div class="worldshipLayer ec-base-layer">
+        <div class="header">
+            <h3>WORLD SHIPPING</h3>
+        </div>
+        <div class="content">
+            <p class="desc">PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :</p>
+            <div class="select">
+                <select module="Layout_multishopShippingCountrylist">
+                    <option value="{$country_code}"{$country_default_selected}>SHIPPING TO : {$country_name}</option>
+                    <option value="{$country_code}"{$country_default_selected}>SHIPPING TO : {$country_name}</option>
+                </select>
+            </div>
+            <div class="select">
+                <select module="Layout_multishopShippingLanguagelist">
+                    <option value="{$shop_domain}"{$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+                    <option value="{$shop_domain}"{$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+                </select>
+            </div>
+        </div>
+        <div class="ec-base-button">
+            <a href="#none"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/link/btn_go.gif" alt="GO" /></a>
+        </div>
+        <a href="#none" class="close"><img src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif" width="13" height="13" alt="close" /></a>
+    </div>
+</div>
+
+<div module="Layout_conversionPc">
+    <!--@css(/css/module/layout/conversionpc.css)-->
+    <a href="{$mobile_url}">모바일 화면보기</a>
+</div>
+</body>
+</html>
