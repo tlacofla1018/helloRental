@@ -724,7 +724,6 @@ main,
     transition: all 0.3s ease;
     cursor: pointer;
     margin: 0 !important;
-    border-radius: 50%;
 }
 /* 활성화된 페이지네이션 */
 .swiper-pagination-bullet-active {
@@ -1038,12 +1037,12 @@ main,
 }
 
 /*---------- [메인] 인스타그램 ----------*/
-.sns-section{
-    background: url("/img/insta/insta-bg.jpg") no-repeat center/cover fixed;
+.sns-section {
+    background: url("/img/insta-bg.jpg") no-repeat center/cover fixed;
     position: relative;
     z-index: 1;
 }
-.sns-section::before{
+.sns-section::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -1053,38 +1052,52 @@ main,
     background-color: rgba(0,0,0,0.4);
     z-index: -1;
 }
-.sns-section .sns-wrap{
+.sns-section .sns-wrap {
     display: flex;
+    flex-direction: unset;
     justify-content: space-between;
     padding: 4rem 0;
+    margin: 0;
 }
-.sns-section .sns-wrap .left .content-title{
+.sns-section .sns-wrap .titleH.left {
     color: #fff;
     margin-bottom: 0.5rem;
 }
-.sns-section .sns-wrap .left a{
-    color: transparent;
+.sns-section .sns-wrap .left a {
+    color: #fff;
     font-size: 1.125rem;
     display: block;
 }
-.sns-section .sns-wrap .right{
+.sns-section .sns-wrap .right {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.sns-section .sns-wrap .right .sns-list{
+.sns-section .sns-wrap .right .sns-list {
     display: flex;
     gap: 0.5rem;
+    min-width: unset;
+    margin: 0;
 }
-.sns-section .sns-wrap .right .sns-list li{
+.sns-section .sns-wrap .right .sns-list li {
     max-width: 220px;
+    border-radius: 4px;
     overflow: hidden;
+    margin: 0;
 }
-.sns-section .sns-wrap .right .sns-list li a img{
+.sns-section .sns-wrap .right .sns-list .thumbnail {
+    margin: 0;
+}
+.sns-section .sns-wrap .right .sns-list li a {
+    display: block;
+    width: 100%;
+}
+.sns-section .sns-wrap .right .sns-list li a img {
+    display: block;
     width: 100%;
     transform: scale(1);
     transition: all 0.4s ease-in-out;
 }
-.sns-section .sns-wrap .right .sns-list li a img:hover{
+.sns-section .sns-wrap .right .sns-list li a img:hover {
     transform: scale(1.4);
 }

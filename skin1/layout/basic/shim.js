@@ -108,13 +108,16 @@ let mainSwiper = new Swiper('.mainB-swiper', {
     fadeEffect: {
         crossFade: true // 슬라이드 교차 시 부드럽게 페이드
     },
+    loop: true,
+    loopAdditionalSlides: 1,
+    initialSlide: 0, // 첫 번째 슬라이드부터 시작
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
         renderBullet: function (index, className) {
             return `<span class="${className}"></span>`;
         },
-    }
+    },
 });
 
 let fakeSwiper = new Swiper('.fake-swiper', {
@@ -126,7 +129,10 @@ let fakeSwiper = new Swiper('.fake-swiper', {
     speed: 1000,
     fadeEffect: {
         crossFade: true
-    }
+    },
+    loop: true,
+    loopAdditionalSlides: 1,
+    initialSlide: 0, // 첫 번째 슬라이드부터 시작
 });
 
 mainSwiper.controller.control = fakeSwiper;
@@ -146,7 +152,6 @@ var newTitleSwiper = new Swiper('.newProduct-title .swiper-container', {
         nextEl: '.swiper-nextBtn',
         prevEl: '.swiper-prevBtn',
     },
-    nested: true,
 });
 
 var newContentSwiper = new Swiper('.newProduct-content .swiper-container', {
@@ -190,6 +195,12 @@ function calculateSlideWidth(slideClass, scrollbarClass) {
             draggable: true,
         },
         mousewheel: true,
+        on: {
+            touchStart: function (event) {
+                event.stopPropagation(); // 부모 슬라이드로 이벤트 전파 중지
+            },
+        },
+        nested: true,
     });
 }
 
