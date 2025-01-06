@@ -1,8 +1,10 @@
 <!--@layout(/layout/basic/layout.html)-->
 
 <main>
-    <section class="main-sec1 container1680">
-        <article id="mainBanner">
+    <!-- m_sec01 -->
+    <section class="m_sec01">
+        <!-- 메인배너 -->
+        <article id="mainBanner" class="inner">
             <div class="mainB-swiper swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events">
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide banner">
@@ -122,8 +124,8 @@
                 </ul>
             </div>
         </article>
-    
-        <article id="brandCategory">
+        <!-- 브랜드존 -->
+        <article id="brandCategory" class="inner">
             <div class="brandCategory-left">
                 <div class="titleH">
                     <h2>Brand Zone</h2>
@@ -145,9 +147,11 @@
         </article>
     </section>
     
+    <!-- m_sec02 -->
     <!--@import(/product/shoppQ/searchContent.html)-->
-    <section class="main-sec2 container1680">
-        <article id="bestContainer">
+    <section class="main-sec2">
+        <!-- 베스트 아이템 -->
+        <article id="bestContainer" class="inner">
             <div module="product_listmain_1" class="ec-base-product bestItem">
                 <!--
                     $count = 7
@@ -208,8 +212,8 @@
                 </ul>
             </div>
         </article>
-    
-        <article id="newProduct">
+        <!-- 신상품 -->
+        <article id="newProduct" class="inner">
             <div module="product_listmain_5" class="ec-base-product">
                 <!--
                     $count = 5
@@ -452,413 +456,704 @@
         </article>
     </section>
 
-    <article id="smartGuide">
-        <div class="smartG-inner">
-            <div class="smartG-text">
-                <div class="titleH">
-                    <h2>SMART GUIDE</h2>
-                    <p>안마의자 구매의 가장 완벽한 가이드</p>
+    <!-- m_sec03 -->
+    <section>
+        <!-- 스마트 가이드 -->
+        <article id="smartGuide">
+            <div class="inner">
+                <div class="smartG-text">
+                    <div class="titleH">
+                        <h2>SMART GUIDE</h2>
+                        <p>안마의자 구매의 가장 완벽한 가이드</p>
+                    </div>
+                    <button class="direct-btn direct-btn-w"><a href="#none">바로가기</a></button>
                 </div>
-                <button class="direct-btn direct-btn-w"><a href="#none">바로가기</a></button>
+                <span class="smartG-item"><img src="/img/smartG-item.png" alt="스마트가이드 배너 제품이미지"></span>
             </div>
-            <span class="smartG-item"><img src="/img/smartG-item.png" alt="스마트가이드 배너 제품이미지"></span>
-        </div>
-    </article>
-    
-    <!-- 안마의자 탭 -->
-    <div module="product_listmain_2" class="ec-base-product">
-        <!--
-            $count = 8
-                ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-                ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-        -->
-        <div class="tabBTN BTN01 active">
-            <h2>
-                <span style="display: {$category_title_text_display};">{$category_title_text}</span>
-                <span style="display: {$category_title_img_display};"><img src="{$category_title_img}" alt="{$category_title_text}" /></span>
-            </h2>
-        </div>
-        <div id="tab-1" class="swiper mySwiper">
-            <ul class="prdList grid5 swiper-wrapper">
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <div class="option">{$option_preview_icon}</div> {$basket_icon} <!--{$zoom_icon}-->
+        </article>
+        <!-- 카테고리 탭 -->
+        <article id="category">
+            <div class="inner">
+                <div class="titleH">
+                    <h2>CATEGORY</h2>
+                    <p>카테고리별로 모아보세요</p>
+                </div>
+                <div class="flex-inner">
+                    <ul class="flex-left">
+                        <li data-tab="category-tab1" class="active">
+                            <h3>안마의자</h3>
+                        </li>
+                        <li data-tab="category-tab2">
+                            <h3>안마베드</h3>
+                        </li>
+                        <li data-tab="category-tab3">
+                            <h3>리클라이너</h3>
+                        </li>
+                    </ul>
+                    <ul class="flex-right">
+                        <li id="category-tab1" class="active">
+                            <div module="product_listmain_2" class="ec-base-product">
+                                <!--         
+                                    $count = 10
+                                        ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                                        ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+                                -->
+                                <div class="swiper mySwiper category-swiper01">
+                                    <ul class="prdList grid2 swiper-wrapper">
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="main_nav">
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <!-- <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon} -->
+                        </li>
+                        <li id="category-tab2">
+                            <div module="product_listmain_3" class="ec-base-product">
+                                <!--         
+                                    $count = 10
+                                        ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                                        ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+                                -->
+                                <div class="swiper mySwiper category-swiper02">
+                                    <ul class="prdList grid2 swiper-wrapper">
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="main_nav">
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <!-- <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon} -->
+                        </li>
+                        <li id="category-tab3">
+                            <div module="product_listmain_4" class="ec-base-product">
+                                <!--         
+                                    $count = 10
+                                        ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                                        ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+                                -->
+                                <div class="swiper mySwiper category-swiper03">
+                                    <ul class="prdList grid2 swiper-wrapper">
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <div class="prdImg">
+                                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                                    <ul class="iconList">
+                                                        <li class="wish">{$list_wish_icon}</li>
+                                                        <li class="button">{$basket_icon}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
+                                                <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+                                                <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                                                <ul module="product_ListItem" class="spec">
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                    <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="main_nav">
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <!-- <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon} -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <!-- <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon} -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <!-- <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon} -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <!-- <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon} -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <!-- <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon} -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <!-- <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon} -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <!-- <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon} -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-    
-    <div module="product_listmain_3" class="ec-base-product">
-        <!--
-            $count = 8
-                ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-                ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-        -->
-        <div class="tabBTN BTN02">
-            <h2>
-                <span style="display: {$category_title_text_display};">{$category_title_text}</span>
-                <span style="display: {$category_title_img_display};"><img src="{$category_title_img}" alt="{$category_title_text}" /></span>
-            </h2>
-        </div>
-        <div id="tab-2" class="swiper mySwiper">
-            <ul class="prdList grid2">
-                <li id="anchorBoxId_{$product_no}">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <div module="product_listmain_4" class="ec-base-product">
-        <!--
-            $count = 8
-                ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
-                ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-        -->
-        <div class="tabBTN BTN03">
-            <h2>
-                <span style="display: {$category_title_text_display};">{$category_title_text}</span>
-                <span style="display: {$category_title_img_display};"><img src="{$category_title_img}" alt="{$category_title_text}" /></span>
-            </h2>
-        </div>
-        <div id="tab-3" class="swiper mySwiper">
-            <ul class="prdList grid2">
-                <li id="anchorBoxId_{$product_no}">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="anchorBoxId_{$product_no}">
-                    <div class="thumbnail">
-                        <div class="prdImg">
-                            <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
-                            <span class="wish">{$list_wish_icon}</span>
-                        </div>
-                        <div class="icon">
-                            <div class="promotion">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$regular_delivery_icon}</div>
-                            <div class="button">
-                                <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
-                                <div class="option">{$option_preview_icon}</div> {$basket_icon} {$zoom_icon}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                        <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                        <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
-                        <ul module="product_ListItem" class="spec">
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                            <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </section>
 
+    <!-- m_sec04 -->
     <section class="sns-section">
-        <article class="container1680">
+        <article class="inner">
             <div module="product_listmain_6" class="ec-base-product sns-wrap">
                 <!--
                     $count = 9

@@ -210,3 +210,52 @@ calculateSlideWidth(".new-swiper2", ".new-scrollbar2");
 calculateSlideWidth(".new-swiper3", ".new-scrollbar3");
 calculateSlideWidth(".new-swiper4", ".new-scrollbar4");
 calculateSlideWidth(".new-swiper5", ".new-scrollbar5");
+
+
+
+
+// ---------- [메인] 카테고리 탭 + 스와이퍼 ----------
+// 탭 버튼과 콘텐츠 선택
+const categoryTabBtn = document.querySelectorAll('.flex-left li');
+const categoryTabContents = document.querySelectorAll('.flex-right li');
+
+// 탭 버튼 클릭 이벤트
+categoryTabBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        // 기존 활성화 클래스 제거
+        categoryTabBtn.forEach(btn => btn.classList.remove('active'));
+        categoryTabContents.forEach(content => content.classList.remove('active'));
+
+        // 클릭된 버튼과 관련 콘텐츠 활성화
+        button.classList.add('active');
+        const targetTab = button.getAttribute('data-tab');
+        document.getElementById(targetTab).classList.add('active');
+    });
+});
+
+function categorySwiper(slideClass) {
+    // Swiper 초기화
+    new Swiper(slideClass, {
+        spaceBetween: 20, // 슬라이드 사이 여백
+        slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
+        loop: true,
+        loopAdditionalSlides: 1,
+        initialSlide: 0, // 첫 번째 슬라이드부터 시작
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return `<span class="${className}"></span>`;
+            },
+        },
+    });
+}
+
+// 슬라이드 각각 호출
+categorySwiper(".category-swiper01");
+categorySwiper(".category-swiper02");
+categorySwiper(".category-swiper03");
