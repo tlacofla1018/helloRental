@@ -139,6 +139,32 @@ mainSwiper.controller.control = fakeSwiper;
 fakeSwiper.controller.control = mainSwiper;
 
 
+// ---------- [메인] 브랜드 ----------
+
+let brandSwiper = new Swiper('.brand-swiper', {
+    // autoplay: {
+    //     delay: 5000, // 자동 재생 시간 설정
+    //     disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
+    // },
+    spaceBetween: 40, // 슬라이드 사이 여백
+    slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
+    loop: true,
+    loopAdditionalSlides: 1,
+    initialSlide: 0, // 첫 번째 슬라이드부터 시작
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+            return `<span class="${className}"></span>`;
+        },
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+
 // ---------- [메인] 신제품 외부 슬라이드 ----------
 
 var newTitleSwiper = new Swiper('.newProduct-title .swiper-container', {
