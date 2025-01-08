@@ -8,6 +8,12 @@ body {
 }
 
 /* 컨테이너 */
+main,
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
 .inner {
     width: 87.5%;
     max-width: 1680px;
@@ -606,12 +612,6 @@ main {
 .slick-dots li.slick-active .custom-dot {
     content: url('/img/icon/dotOn.svg');
 }
-main,
-.main-sec2 {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-}
 .ec-base-product {
     display: flex;
     flex-direction: column;
@@ -738,13 +738,13 @@ main,
 }
 
 /*---------- [메인] 브랜드 카테고리 메뉴 ----------*/
-#brandCategory .inner{
+#brandCategory .inner {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 40px;
 }
-#brandCategory .brandCategory-left{
+#brandCategory .brandCategory-left {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -756,10 +756,16 @@ main,
     background-color: #AB8A72;
     color: #fff;
 }
+#brandCategory .brandCategory-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 #brandCategory .swiper-wrapper {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin: 0;
 }
 #brandCategory .swiper-slide {
     width: 120px;
@@ -1129,12 +1135,14 @@ main,
 }
 
 /*---------- [메인] 인스타그램 ----------*/
-.sns-section {
+
+#sns-section {
     background: url("/img/insta-bg.jpg") no-repeat center/cover fixed;
     position: relative;
     z-index: 1;
+    margin-top: 20px;
 }
-.sns-section::before {
+#sns-section::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -1144,52 +1152,50 @@ main,
     background-color: rgba(0,0,0,0.4);
     z-index: -1;
 }
-.sns-section .sns-wrap {
+#sns-section .sns-wrap {
     display: flex;
     flex-direction: unset;
     justify-content: space-between;
-    padding: 4rem 0;
-    margin: 0;
+    padding: 3rem 0;
 }
-.sns-section .titleH.left {
+#sns-section .titleH.left {
     color: #fff;
-    margin-bottom: 0.5rem;
 }
-.sns-section .left a {
+#sns-section .left a {
     color: #fff;
     font-size: 1.125rem;
     display: block;
 }
-.sns-section .right {
+#sns-section .right {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.sns-section .sns-list {
+#sns-section .sns-list {
     display: flex;
     gap: 0.5rem;
     min-width: unset;
     margin: 0;
 }
-.sns-section .sns-list li {
+#sns-section .sns-list li {
     max-width: 220px;
     border-radius: 4px;
     overflow: hidden;
     margin: 0;
 }
-.sns-section .thumbnail {
+#sns-section .thumbnail {
     margin: 0;
 }
-.sns-section .sns-list li a {
+#sns-section .sns-list li a {
     display: block;
     width: 100%;
 }
-.sns-section .sns-list li a img {
+#sns-section .sns-list li a img {
     display: block;
     width: 100%;
     transform: scale(1);
     transition: all 0.4s ease-in-out;
 }
-.sns-section .sns-list li a img:hover {
+#sns-section .sns-list li a img:hover {
     transform: scale(1.4);
 }
