@@ -100,13 +100,13 @@ document.querySelectorAll('.qbtn').forEach(qbtn => {
 
 let mainSwiper = new Swiper('.mainB-swiper', {
     effect: "fade", // 페이드 효과
-    autoplay: {
-        delay: 5000, // 자동 재생 시간 설정
-        disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
-    },
     speed: 1000, // 페이드 속도 (1초)
     fadeEffect: {
         crossFade: true // 슬라이드 교차 시 부드럽게 페이드
+    },
+    autoplay: {
+        delay: 5000, // 자동 재생 시간 설정
+        disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
     },
     loop: true,
     loopAdditionalSlides: 1,
@@ -142,10 +142,10 @@ fakeSwiper.controller.control = mainSwiper;
 // ---------- [메인] 브랜드 ----------
 
 let brandSwiper = new Swiper('.brand-swiper', {
-    // autoplay: {
-    //     delay: 5000, // 자동 재생 시간 설정
-    //     disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
-    // },
+    autoplay: {
+        delay: 5000, // 자동 재생 시간 설정
+        disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
+    },
     spaceBetween: 40, // 슬라이드 사이 여백
     slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
     loop: true,
@@ -168,6 +168,11 @@ let brandSwiper = new Swiper('.brand-swiper', {
 // ---------- [메인] 신제품 외부 슬라이드 ----------
 
 var newTitleSwiper = new Swiper('.newProduct-title .swiper-container', {
+    autoplay: {
+        delay: 5000, // 자동 재생 시간 설정
+        disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
+    },
+    speed: 1000, // 페이드 속도 (1초)
     spaceBetween: 80, // 슬라이드 사이 여백
     slidesPerView : 1, // 한 슬라이드에 보여줄 갯수
     centeredSlides: true, //센터모드
@@ -181,6 +186,11 @@ var newTitleSwiper = new Swiper('.newProduct-title .swiper-container', {
 });
 
 var newContentSwiper = new Swiper('.newProduct-content .swiper-container', {
+    autoplay: {
+        delay: 5000, // 자동 재생 시간 설정
+        disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
+    },
+    speed: 800, // 페이드 속도 (.8초)
     spaceBetween: 40, // 슬라이드 사이 여백
     slidesPerView : 1, // 한 슬라이드에 보여줄 갯수
     centeredSlides: true, //센터모드
@@ -262,6 +272,10 @@ categoryTabBtn.forEach(button => {
 function categorySwiper(slideClass) {
     // Swiper 초기화
     new Swiper(slideClass, {
+        autoplay: {
+            delay: 5000, // 자동 재생 시간 설정
+            disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
+        },
         spaceBetween: 20, // 슬라이드 사이 여백
         slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
         loop: true,
