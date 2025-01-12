@@ -1,0 +1,24 @@
+:root {
+    /* color-black */
+    --c-black-1: #121212;
+    --c-black-2: #333;
+    --c-black-3: #ccc;
+    --c-black-4: #ededed;
+    --c-black-5: #fff;
+
+    /* color-point */
+    --c-point: #EC164D;
+
+    /* font-size */
+    --f-size-1: 2rem;
+    --f-size-2: 1.5rem;
+    --f-size-3: 1.125rem;
+    --f-size-4: 1rem;
+    --f-size-5: .875rem;
+    --f-size-6: .75rem;
+
+    /* font-weight */
+    --f-weight-n: 400;
+    --f-weight-m: 500;
+    --f-weight-b: 600;
+}
