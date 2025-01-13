@@ -22,3 +22,48 @@
     --f-weight-m: 500;
     --f-weight-b: 600;
 }
+
+.point {
+    color: var(--c-point);
+}
+
+/* 텍스트 */
+.titleH h2 {
+    font-size: 2rem;
+    line-height: 2.625rem;
+}
+.titleH p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+b {
+    font-weight: var(--f-weight-m, 500);
+}
+
+/* 바로가기 */
+.direct-btn {
+    position: relative;
+    width: 70px;
+}
+.direct-btn::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 10px;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    background: url(/img/icon/directIcon.svg);
+}
+.direct-btn.direct-btn-w,
+.direct-btn.direct-btn-w a {
+    color: #fff;
+}
+.direct-btn.direct-btn-w::after {
+    background: url(/img/icon/directIcon-w.svg);
+}
+
+/* 슬라이드 */
+.s_btn {}
+.s_btn_bg {}
+.s_pagination {}

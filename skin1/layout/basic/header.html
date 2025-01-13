@@ -1,24 +1,24 @@
 <div id="header">
     <div class="inner">
-        <div class="topArea">
-            <div class="inner-left">
-                <h1 module="Layout_LogoTop">
-                    <!--@css(/css/module/layout/logotop.css)-->
-                    <a href="/index.html"><img src="/img/logo/helloRentalLogo.png" alt="LG Hello Rental Logo"></a>
-                    <!-- <a href="/index.html">{$mall_name}</a> -->
-                </h1>
-                <div id="category" module="Layout_category">
-                    <!--@css(/css/module/layout/category.css)-->
-                    <!--@js(/js/module/layout/category.js)-->
-                    <div class="position">
-                        <ul class="category_depth">
-                            <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
-                            <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
-                        </ul>
-                    </div>
+        <div class="inner-left">
+            <h1 module="Layout_LogoTop">
+                <!--@css(/css/module/layout/logotop.css)-->
+                <a href="/index.html"><img src="/img/logo/helloRentalLogo.png" alt="LG Hello Rental Logo"></a>
+                <!-- <a href="/index.html">{$mall_name}</a> -->
+            </h1>
+            <div id="category" module="Layout_category">
+                <!--@css(/css/module/layout/category.css)-->
+                <!--@js(/js/module/layout/category.js)-->
+                <div class="position">
+                    <ul class="category_depth">
+                        <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                        <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                    </ul>
                 </div>
-                <div class="header-bg"></div>
             </div>
+            <div class="header-bg"></div>
+        </div>
+        <div class="inner-right">
             <div class="util-menu">
                 <div class="search-btn">
                     <ol class="search-rank-slider">
@@ -51,106 +51,110 @@
                             <button class="close-btn"><img src="/img/icon/closeIcon.svg" alt="닫기"></button>
                         </div>
                         <div module="search_hotkeyword" class="popup-inner">
-                                <strong>인기검색어</strong>
-                                <ul>
-                                    <li><a href="{$hot_keyword_url}">1. {$hot_keyword_name}</a></li>
-                                    <li><a href="{$hot_keyword_url}">2. {$hot_keyword_name}</a></li>
-                                    <li><a href="{$hot_keyword_url}">3. {$hot_keyword_name}</a></li>
-                                    <li><a href="{$hot_keyword_url}">4. {$hot_keyword_name}</a></li>
-                                    <li><a href="{$hot_keyword_url}">5. {$hot_keyword_name}</a></li>
-                                    <li><a href="{$hot_keyword_url}">6. {$hot_keyword_name}</a></li>
-                                    <li><a href="{$hot_keyword_url}">7. {$hot_keyword_name}</a></li>
-                                    <li><a href="{$hot_keyword_url}">8. {$hot_keyword_name}</a></li>
-                                    <li><a href="{$hot_keyword_url}">9. {$hot_keyword_name}</a></li>
-                                    <li><a href="{$hot_keyword_url}">10. {$hot_keyword_name}</a></li>
-                                </ul>
+                            <strong>인기검색어</strong>
+                            <div>
+                                <ol>
+                                    <li><a href="{$hot_keyword_url}"><b class="point">1.</b><span>{$hot_keyword_name}</span></a></li>
+                                    <li><a href="{$hot_keyword_url}"><b class="point">2.</b><span>{$hot_keyword_name}</span></a></li>
+                                    <li><a href="{$hot_keyword_url}"><b class="point">3.</b><span>{$hot_keyword_name}</span></a></li>
+                                    <li><a href="{$hot_keyword_url}"><b>4.</b><span>{$hot_keyword_name}</span></a></li>
+                                    <li><a href="{$hot_keyword_url}"><b>5.</b><span>{$hot_keyword_name}</span></a></li>
+
+                                </ol>
+                                <ol>
+                                    <li><a href="{$hot_keyword_url}"><b>6.</b><span>{$hot_keyword_name}</span></a></li>
+                                    <li><a href="{$hot_keyword_url}"><b>7.</b><span>{$hot_keyword_name}</span></a></li>
+                                    <li><a href="{$hot_keyword_url}"><b>8.</b><span>{$hot_keyword_name}</span></a></li>
+                                    <li><a href="{$hot_keyword_url}"><b>9.</b><span>{$hot_keyword_name}</span></a></li>
+                                    <li><a href="{$hot_keyword_url}"><b>10.</b><span>{$hot_keyword_name}</span></a></li>
+                                </ol>
                             </div>
-                            <div></div>
                         </div>
+                        <div></div>
                     </div>
-                </div>
-    
-                <div module="Layout_statelogoff">
-                    <!--@css(/css/module/layout/statelogoff.css)-->
-                    <a href="/order/basket.html"><img src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
-                    <!-- <a href="/myshop/order/list.html">주문조회</a> -->
-                    <button class="login-menu-btn"><img src="/img/icon/mypageIcon.svg" alt="로그인 메뉴 버튼"></button>
-                    <div class="login-menu">
-                        <ul>
-                            <li><a href="#" class="log header-login-btn">로그인</a></li>
-                            <li><a href="/member/join.html">회원가입</a></li>
-                            <li><a href="/order/basket.html">장바구니</a></li>
-                            <li><a href="/myshop/index.html">마이페이지</a></li>
-                        </ul>
-                    </div>
-                    <!-- <a class="{$board_display|display}" href="/board/index.html">게시판</a> -->
-                </div>
-            
-                <div module="Layout_stateLogon">
-                    <!--@css(/css/module/layout/statelogon.css)-->
-                    <a href="/order/basket.html"><img src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
-                    <button class="logoff-menu-btn"><img src="/img/icon/mypageIcon.svg" alt="로그아웃 메뉴 버튼"></button>
-                    <div class="logoff-menu">
-                        <span class="myinfo"><strong>{$name}</strong>님 환영합니다.</span>
-                        <ul>
-                            <li><a href="{$action_logout}" class="log">로그아웃</a></li>
-                            <li><a href="/member/modify.html">회원정보수정</a></li>
-                            <li><a href="/order/basket.html">장바구니</a></li>
-                            <li><a href="/myshop/order/list.html">주문조회</a></li>
-                            <li><a href="/myshop/index.html">마이페이지</a></li>
-                        </ul>  
-                    </div>
-                    <!-- <a class="{$board_display|display}" href="/board/index.html">게시판</a> -->
                 </div>
             </div>
-        </div>
     
-        <div module="Layout_multishopList" class="list">
-            <!--@css(/css/module/layout/multishopList.css)-->
-            <button type="button" class="toggle"><span>{$current_language}</span></button>
-            <ul module="Layout_multishopListitem">
-                <li class="{$selected_class}">
-                    <a href="//{$shop_domain}/">                    
-                        <span class="name">{$locale_language}</span>
-                        <span class="unit">{$currency_code}</span>
-                    </a>
-                </li>
-                <li class="{$selected_class}">
-                    <a href="//{$shop_domain}/">
-                        <span class="name">{$locale_language}</span>
-                        <span class="unit">{$currency_code}</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    
-        <div module="Layout_multishopList" class="thumb">
-            <!--@css(/css/module/layout/multishopList.css)-->        
-            <div module="Layout_multishopListmultioption" class="multiOption">
-                <a href="#none">
-                    <span module="Layout_multishopListmultioptionCountry" class="ship">
-                        <strong>Ship to</strong><span> : </span>
-                    </span>
-                    <span module="Layout_multishopListmultioptionLanguage" class="language">
-                        <strong>Language</strong><span> : {$language_name}</span>
-                    </span>
-                </a>
+            <div module="Layout_statelogoff">
+                <!--@css(/css/module/layout/statelogoff.css)-->
+                <a href="/order/basket.html"><img src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
+                <!-- <a href="/myshop/order/list.html">주문조회</a> -->
+                <button class="login-menu-btn"><img src="/img/icon/mypageIcon.svg" alt="로그인 메뉴 버튼"></button>
+                <div class="login-menu">
+                    <ul>
+                        <li><a href="#" class="log header-login-btn">로그인</a></li>
+                        <li><a href="/member/join.html">회원가입</a></li>
+                        <li><a href="/order/basket.html">장바구니</a></li>
+                        <li><a href="/myshop/index.html">마이페이지</a></li>
+                    </ul>
+                </div>
+                <!-- <a class="{$board_display|display}" href="/board/index.html">게시판</a> -->
             </div>
-        </div>
         
-        <!-- <ul module="Layout_shoppingInfo"> -->
-            <!--@css(/css/module/layout/shoppingInfo.css)-->
-            <!-- <li class="{$use_mileage|display}"><a href="/myshop/mileage/historyList.html">{$mileage_name} <strong>{$mileage}</strong></a></li>
-            <li class="{$use_basket_cnt|display}"><a href="/order/basket.html">장바구니 <strong>{$basket_cnt}<span class="{$use_basket_price|display}">({$basket_price})</span></strong></a></li>
-            <li class="{$use_interest_prd|display}"><a href="/myshop/wish_list.html">관심상품 <strong>{$interest_prd_cnt}</strong></a></li>
-            <li class="{$use_like_product_cnt|display}">{$like_prd_tag}</li>
-            <li class="{$use_coupon_cnt|display}"><a href="/myshop/coupon/coupon.html">쿠폰 <strong>{$coupon_cnt}</strong></a></li>
-            <li class="{$use_deposit|display}"><a href="/myshop/deposits/historyList.html">{$deposit_name} <strong>{$deposit}</strong></a></li> -->
-        <!-- </ul> -->
-    
-        <div class="link">
-            <a module="Layout_bookmark" href="/link/bookmark.html" target="_blank" onclick="winPop(this.href); return false;"><span>즐겨찾기</span></a>
-            <a module="Layout_shortcut" href="/link/shortcut.html" target="_blank" onclick="winPop(this.href); return false;">바로가기</a>
+            <div module="Layout_stateLogon">
+                <!--@css(/css/module/layout/statelogon.css)-->
+                <a href="/order/basket.html"><img src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
+                <button class="logoff-menu-btn"><img src="/img/icon/mypageIcon.svg" alt="로그아웃 메뉴 버튼"></button>
+                <div class="logoff-menu">
+                    <span class="myinfo"><strong>{$name}</strong>님 환영합니다.</span>
+                    <ul>
+                        <li><a href="{$action_logout}" class="log">로그아웃</a></li>
+                        <li><a href="/member/modify.html">회원정보수정</a></li>
+                        <li><a href="/order/basket.html">장바구니</a></li>
+                        <li><a href="/myshop/order/list.html">주문조회</a></li>
+                        <li><a href="/myshop/index.html">마이페이지</a></li>
+                    </ul>  
+                </div>
+                <!-- <a class="{$board_display|display}" href="/board/index.html">게시판</a> -->
+            </div>
         </div>
     </div>
-    </div>
+    
+    <!-- <div module="Layout_multishopList" class="list">
+        // @css(/css/module/layout/multishopList.css)
+        <button type="button" class="toggle"><span>{$current_language}</span></button>
+        <ul module="Layout_multishopListitem">
+            <li class="{$selected_class}">
+                <a href="//{$shop_domain}/">                    
+                    <span class="name">{$locale_language}</span>
+                    <span class="unit">{$currency_code}</span>
+                </a>
+            </li>
+            <li class="{$selected_class}">
+                <a href="//{$shop_domain}/">
+                    <span class="name">{$locale_language}</span>
+                    <span class="unit">{$currency_code}</span>
+                </a>
+            </li>
+        </ul>
+    </div> -->
+
+    <!-- <div module="Layout_multishopList" class="thumb">
+        // @css(/css/module/layout/multishopList.css)        
+        <div module="Layout_multishopListmultioption" class="multiOption">
+            <a href="#none">
+                <span module="Layout_multishopListmultioptionCountry" class="ship">
+                    <strong>Ship to</strong><span> : </span>
+                </span>
+                <span module="Layout_multishopListmultioptionLanguage" class="language">
+                    <strong>Language</strong><span> : {$language_name}</span>
+                </span>
+            </a>
+        </div>
+    </div> -->
+    
+    <!-- <ul module="Layout_shoppingInfo">
+        // @css(/css/module/layout/shoppingInfo.css)
+        <li class="{$use_mileage|display}"><a href="/myshop/mileage/historyList.html">{$mileage_name} <strong>{$mileage}</strong></a></li>
+        <li class="{$use_basket_cnt|display}"><a href="/order/basket.html">장바구니 <strong>{$basket_cnt}<span class="{$use_basket_price|display}">({$basket_price})</span></strong></a></li>
+        <li class="{$use_interest_prd|display}"><a href="/myshop/wish_list.html">관심상품 <strong>{$interest_prd_cnt}</strong></a></li>
+        <li class="{$use_like_product_cnt|display}">{$like_prd_tag}</li>
+        <li class="{$use_coupon_cnt|display}"><a href="/myshop/coupon/coupon.html">쿠폰 <strong>{$coupon_cnt}</strong></a></li>
+        <li class="{$use_deposit|display}"><a href="/myshop/deposits/historyList.html">{$deposit_name} <strong>{$deposit}</strong></a></li>
+    </ul> -->
+
+    <!-- <div class="link">
+        <a module="Layout_bookmark" href="/link/bookmark.html" target="_blank" onclick="winPop(this.href); return false;"><span>즐겨찾기</span></a>
+        <a module="Layout_shortcut" href="/link/shortcut.html" target="_blank" onclick="winPop(this.href); return false;">바로가기</a>
+    </div> -->
+</div>
