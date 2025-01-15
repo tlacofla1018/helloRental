@@ -6,7 +6,7 @@
                 <a href="/index.html"><img src="/img/logo/helloRentalLogo.png" alt="LG Hello Rental Logo"></a>
                 <!-- <a href="/index.html">{$mall_name}</a> -->
             </h1>
-            <div id="category" module="Layout_category">
+            <div class="category" module="Layout_category">
                 <!--@css(/css/module/layout/category.css)-->
                 <!--@js(/js/module/layout/category.js)-->
                 <div class="position">
@@ -16,7 +16,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="header-bg"></div>
+            <div class="header_bg"></div>
         </div>
         <div class="inner-right">
             <div class="util-menu">
@@ -50,27 +50,91 @@
                             </div>
                             <button class="close-btn"><img src="/img/icon/closeIcon.svg" alt="닫기"></button>
                         </div>
-                        <div module="search_hotkeyword" class="popup-inner">
-                            <strong>인기검색어</strong>
-                            <div>
-                                <ol>
-                                    <li><a href="{$hot_keyword_url}"><b class="point">1.</b><span>{$hot_keyword_name}</span></a></li>
-                                    <li><a href="{$hot_keyword_url}"><b class="point">2.</b><span>{$hot_keyword_name}</span></a></li>
-                                    <li><a href="{$hot_keyword_url}"><b class="point">3.</b><span>{$hot_keyword_name}</span></a></li>
-                                    <li><a href="{$hot_keyword_url}"><b>4.</b><span>{$hot_keyword_name}</span></a></li>
-                                    <li><a href="{$hot_keyword_url}"><b>5.</b><span>{$hot_keyword_name}</span></a></li>
-
-                                </ol>
-                                <ol>
-                                    <li><a href="{$hot_keyword_url}"><b>6.</b><span>{$hot_keyword_name}</span></a></li>
-                                    <li><a href="{$hot_keyword_url}"><b>7.</b><span>{$hot_keyword_name}</span></a></li>
-                                    <li><a href="{$hot_keyword_url}"><b>8.</b><span>{$hot_keyword_name}</span></a></li>
-                                    <li><a href="{$hot_keyword_url}"><b>9.</b><span>{$hot_keyword_name}</span></a></li>
-                                    <li><a href="{$hot_keyword_url}"><b>10.</b><span>{$hot_keyword_name}</span></a></li>
-                                </ol>
+                        <div module="product_listmain_8" class="recommended ec-base-product">
+                            <!--
+                                $count = 5
+                                    ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                                    ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+                            -->
+                            <div class="popup_title">
+                                <strong>{$category_title_text}</strong>
+                                <span class="recommended_date"></span>
+                            </div>
+                            <div class="swiper mySwiper recommended_swiper">
+                                <ul class="prdList grid2 swiper-wrapper">
+                                    <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                        <div class="thumbnail">
+                                            <div class="prdImg">
+                                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                            </div>
+                                        </div>
+                                        <div class="description">
+                                            <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                                        </div>
+                                    </li>
+                                    <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                        <div class="thumbnail">
+                                            <div class="prdImg">
+                                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                            </div>
+                                        </div>
+                                        <div class="description">
+                                            <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                                        </div>
+                                    </li>
+                                    <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                        <div class="thumbnail">
+                                            <div class="prdImg">
+                                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                            </div>
+                                        </div>
+                                        <div class="description">
+                                            <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                                        </div>
+                                    </li>
+                                    <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                        <div class="thumbnail">
+                                            <div class="prdImg">
+                                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                            </div>
+                                        </div>
+                                        <div class="description">
+                                            <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                                        </div>
+                                    </li>
+                                    <li id="anchorBoxId_{$product_no}" class="swiper-slide">
+                                        <div class="thumbnail">
+                                            <div class="prdImg">
+                                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                            </div>
+                                        </div>
+                                        <div class="description">
+                                            <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="slide_btn slide_next_btn"></div>
+                                <div class="slide_btn slide_prev_btn"></div>
                             </div>
                         </div>
-                        <div></div>
+                        <div module="search_hotkeyword" class="hot_keyword">
+                            <div class="popup_title">
+                                <strong>인기검색어</strong>
+                                <span></span>
+                            </div>
+                            <ol>
+                                <li><a href="{$hot_keyword_url}"><span class="num">1</span><span class="keyword">{$hot_keyword_name}</span><span class="icon"></span></a></li>
+                                <li><a href="{$hot_keyword_url}"><span class="num">2</span><span class="keyword">{$hot_keyword_name}</span><span class="icon up"></span></a></li>
+                                <li><a href="{$hot_keyword_url}"><span class="num">3</span><span class="keyword">{$hot_keyword_name}</span><span class="icon"></span></a></li>
+                                <li><a href="{$hot_keyword_url}"><span class="num">4</span><span class="keyword">{$hot_keyword_name}</span><span class="icon"></span></a></li>
+                                <li><a href="{$hot_keyword_url}"><span class="num">5</span><span class="keyword">{$hot_keyword_name}</span><span class="icon up"></span></a></li>
+                                <li><a href="{$hot_keyword_url}"><span class="num">6</span><span class="keyword">{$hot_keyword_name}</span><span class="icon up"></span></a></li>
+                                <li><a href="{$hot_keyword_url}"><span class="num">7</span><span class="keyword">{$hot_keyword_name}</span><span class="icon"></span></a></li>
+                                <li><a href="{$hot_keyword_url}"><span class="num">8</span><span class="keyword">{$hot_keyword_name}</span><span class="icon down"></span></a></li>
+                                <li><a href="{$hot_keyword_url}"><span class="num">9</span><span class="keyword">{$hot_keyword_name}</span><span class="icon down"></span></a></li>
+                                <li><a href="{$hot_keyword_url}"><span class="num">10</span><span class="keyword">{$hot_keyword_name}</span><span class="icon down"></span></a></li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>

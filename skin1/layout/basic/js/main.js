@@ -1,7 +1,7 @@
 // -------------------- jQuery --------------------
 
 $(document).ready(function () {
-    //---------- [슬릭] 헤더 검색순위 ----------
+    //---------- [헤더] 검색순위 슬릭 ----------
     $('.search-rank-slider').slick({
         infinite: true,       // 무한 스크롤
         slidesToShow: 1,      // 한 번에 보여줄 슬라이드 개수
@@ -13,7 +13,7 @@ $(document).ready(function () {
         vertical: true,       // 세로 방향 슬라이드
     });
 
-    //---------- 검색창 팝업 ----------
+    //---------- [헤더] 검색창 팝업 ----------
     $('.search-btn').on('click', function () {
         $('.search-popup').addClass('show');
     });
@@ -21,7 +21,7 @@ $(document).ready(function () {
         $('.search-popup').removeClass('show');
     });
 
-    //---------- 로그인/로그아웃 메뉴 ----------
+    //---------- [헤더] 로그인/로그아웃 메뉴 ----------
     toggleMenu('.login-menu', '.login-menu-btn');
     toggleMenu('.logoff-menu', '.logoff-menu-btn');
 
@@ -45,7 +45,21 @@ $(document).ready(function () {
         });
     }
 
-    //---------- [슬릭] 퀵버튼 최근 본 상품 ----------
+    //---------- [퀵버튼] 최근 본 상품 ----------
+    // $('.productrecent').slick({
+    //     infinite: true,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     autoplaySpeed: 2000,
+    //     arrows: true,
+    //     prevArrow: '<button class="slick-prev"><img src="/img/icon/prevIcon-bg.svg" alt="이전 상품"></button>',
+    //     nextArrow: '<button class="slick-next"><img src="/img/icon/nextIcon-bg.svg" alt="다음 상품"></button>',
+    //     dots: true,
+    //     customPaging: function (slider, i) {
+    //         return `<img src="/img/icon/dotOff.svg" alt="${i + 1}번째 상품" class="custom-dot">`;
+    //     }
+    // });
     $('.productrecent').slick({
         infinite: true,
         slidesToShow: 1,
@@ -53,8 +67,8 @@ $(document).ready(function () {
         autoplay: true,
         autoplaySpeed: 2000,
         arrows: true,
-        prevArrow: '<button class="slick-prev"><img src="/img/icon/prevIcon-bg.svg" alt="이전 상품"></button>',
-        nextArrow: '<button class="slick-next"><img src="/img/icon/nextIcon-bg.svg" alt="다음 상품"></button>',
+        prevArrow: '<button class="slide_btn slide_prevBg_btn"></button>',
+        nextArrow: '<button class="slide_btn slide_nextBg_btn"></button>',
         dots: true,
         customPaging: function (slider, i) {
             return `<img src="/img/icon/dotOff.svg" alt="${i + 1}번째 상품" class="custom-dot">`;
@@ -78,7 +92,7 @@ $(document).ready(function () {
 
 // -------------------- Java Script --------------------
 
-// ---------- [호버] 아이콘 변경 ----------
+// ---------- [퀵버튼] 호버 아이콘 변경 ----------
 document.querySelectorAll('.qbtn').forEach(qbtn => {
     const basketIcon = qbtn.querySelector('.basketIcon');
     const tellIcon = qbtn.querySelector('.tellIcon');
@@ -96,6 +110,25 @@ document.querySelectorAll('.qbtn').forEach(qbtn => {
 
 
 
+// ---------- [헤더] 검색창 추천상품 ----------
+
+let recommendedHeaderSwiper = new Swiper('.recommended_swiper', {
+    autoplay: {
+        delay: 5000, // 자동 재생 시간 설정
+        disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
+    },
+    spaceBetween: 20, // 슬라이드 사이 여백
+    slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
+    loop: true,
+    loopAdditionalSlides: 1,
+    navigation: {
+        nextEl: ".recommended_swiper .slide_next_btn",
+        prevEl: ".recommended_swiper .slide_prev_btn",
+    },
+});
+
+
+
 // ---------- [메인] 메인배너 ----------
 
 let mainSwiper = new Swiper('.mainB-swiper', {
@@ -108,6 +141,7 @@ let mainSwiper = new Swiper('.mainB-swiper', {
         delay: 5000, // 자동 재생 시간 설정
         disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
     },
+    slidesPerGroup: 1, // 한 번에 이동할 슬라이드 개수
     loop: true,
     loopAdditionalSlides: 1,
     initialSlide: 0, // 첫 번째 슬라이드부터 시작
@@ -130,6 +164,7 @@ let fakeSwiper = new Swiper('.fake-swiper', {
     fadeEffect: {
         crossFade: true
     },
+    slidesPerGroup: 1, // 한 번에 이동할 슬라이드 개수
     loop: true,
     loopAdditionalSlides: 1,
     initialSlide: 0, // 첫 번째 슬라이드부터 시작
@@ -149,8 +184,6 @@ let brandSwiper = new Swiper('.brand-swiper', {
     spaceBetween: 40, // 슬라이드 사이 여백
     slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
     loop: true,
-    loopAdditionalSlides: 1,
-    initialSlide: 0, // 첫 번째 슬라이드부터 시작
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -159,8 +192,8 @@ let brandSwiper = new Swiper('.brand-swiper', {
         },
     },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".brand-swiper .slide_next_btn",
+        prevEl: ".brand-swiper .slide_prev_btn",
     },
 });
 
