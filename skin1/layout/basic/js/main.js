@@ -156,10 +156,6 @@ let mainSwiper = new Swiper('.mainB-swiper', {
 
 let fakeSwiper = new Swiper('.fake-swiper', {
     effect: "fade", // 페이드 효과
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
     speed: 1000,
     fadeEffect: {
         crossFade: true
@@ -219,10 +215,6 @@ var newTitleSwiper = new Swiper('.newProduct-title .swiper-container', {
 });
 
 var newContentSwiper = new Swiper('.newProduct-content .swiper-container', {
-    autoplay: {
-        delay: 5000, // 자동 재생 시간 설정
-        disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
-    },
     speed: 800, // 페이드 속도 (.8초)
     spaceBetween: 40, // 슬라이드 사이 여백
     slidesPerView : 1, // 한 슬라이드에 보여줄 갯수
