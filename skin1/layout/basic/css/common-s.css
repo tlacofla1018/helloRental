@@ -1,10 +1,11 @@
 :root {
     /* color-black */
-    --c-black-1: #121212;
-    --c-black-2: #333;
-    --c-black-3: #ccc;
-    --c-black-4: #ededed;
-    --c-black-5: #fff;
+    --c-black-1: #202020;
+    --c-black-2: #353535;
+    --c-black-3: #757575;
+    --c-black-4: #cfcfcf;
+    --c-black-5: #ededed;
+    --c-black-6: #fff;
 
     /* color-point */
     --c-point: #EC164D;
@@ -24,13 +25,23 @@
 }
 
 /* 텍스트 */
+.titleH {
+    color: var(--c-black-1);
+}
+.titleH.white {
+    color: var(--c-black-6);
+}
 .titleH h2 {
     font-size: 2rem;
     line-height: 2.625rem;
+    letter-spacing: -0.02em;
+    font-weight: var(--f-weight-b);
 }
 .titleH p {
     font-size: 1rem;
     line-height: 1.5rem;
+    letter-spacing: -0.02em;
+    font-weight: var(--f-weight-n);
 }
 
 /* 바로가기 */
@@ -57,6 +68,12 @@
 }
 
 /* 슬라이드 */
+.slide_btn_box {
+    display: flex;
+}
+.slide_btn_box .slide_btn {
+    position: relative;
+}
 .slide_btn {
     position: absolute;
     top: calc(50% - 16px);
@@ -65,6 +82,7 @@
     width: 32px;
     height: 32px;
     z-index: 1;
+    transition: all .4s ease-in-out;
 }
 .slide_btn.slide_prev_btn {
     left: 0;
@@ -78,8 +96,14 @@
     left: 0;
     background: url(/img/icon/prevIcon-bg.svg) no-repeat center/cover;
 }
+.slide_btn.slide_prevBg_btn.swiper-button-disabled {
+    background: url(/img/icon/prevIcon-bg-disabled.svg) no-repeat center/cover;
+}
 .slide_btn.slide_nextBg_btn {
     right: 0;
     background: url(/img/icon/nextIcon-bg.svg) no-repeat center/cover;
+}
+.slide_btn.slide_nextBg_btn.swiper-button-disabled {
+    background: url(/img/icon/nextIcon-bg-disabled.svg) no-repeat center/cover;
 }
 .s_pagination {}

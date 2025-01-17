@@ -101,24 +101,42 @@
                 <!-- 네비게이션 버튼, 페이지네이션 -->
                 <div class="swiper-pagination"></div>
             </div>
-            <div class="fake-swiper">
+            <div class="fake_swiper">
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide banner">
+                        <span class="swiper-title">
+                            <strong>RECLINING<br>HOUSING SOFA</strong>
+                        </span>
                         <span class="img-bg"><img src="/img/mainB/mainB-bg2.jpg" alt="다음 슬라이드"></span>
                     </li>
                     <li class="swiper-slide banner">
+                        <span class="swiper-title">
+                            <strong>BEREX<br>MB-C01</strong>
+                        </span>
                         <span class="img-bg"><img src="/img/mainB/mainB-bg3.jpg" alt="다음 슬라이드"></span>
                     </li>
                     <li class="swiper-slide banner">
+                        <span class="swiper-title">
+                            <strong>NOUHAUS BEST<br>NEW CLASSIC</strong>
+                        </span>
                         <span class="img-bg"><img src="/img/mainB/mainB-bg4.jpg" alt="다음 슬라이드"></span>
                     </li>
                     <li class="swiper-slide banner">
+                        <span class="swiper-title">
+                            <strong>GRAND OPENING<br>'OHCO'</strong>
+                        </span>
                         <span class="img-bg"><img src="/img/mainB/mainB-bg5.jpg" alt="다음 슬라이드"></span>
                     </li>
                     <li class="swiper-slide banner">
+                        <span class="swiper-title">
+                            <strong>HAPPY NEW YEAR<br>1+1 EVENT</strong>
+                        </span>
                         <span class="img-bg"><img src="/img/mainB/mainB-bg6.jpg" alt="다음 슬라이드"></span>
                     </li>
                     <li class="swiper-slide banner">
+                        <span class="swiper-title">
+                            <strong>ALL YOUR's<br>ALL IN</strong>
+                        </span>
                         <span class="img-bg"><img src="/img/mainB/mainB-bg1.jpg" alt="다음 슬라이드"></span>
                     </li>
                 </ul>
@@ -133,13 +151,13 @@
                         ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
                 -->
                 <div class="brandCategory-left">
-                    <div class="titleH">
+                    <div class="titleH white">
                         <h2>{$category_title_text}</h2>
                         <p>선호하는 브랜드 제품만 모아보세요</p>
                     </div>
                     <button class="direct-btn direct-btn-w"><a href="https://tlacofla1018.cafe24.com/product/list.html?cate_no=32">바로가기</a></button>
                 </div>
-                <div class="swiper mySwiper brandCategory-right brand-swiper">
+                <div class="swiper mySwiper brandCategory-right brand_swiper">
                     <ul class="prdList grid2 swiper-wrapper">
                         <li id="anchorBoxId_{$product_no}" class="swiper-slide">
                             <div class="thumbnail">
@@ -252,9 +270,9 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="slide_btn slide_next_btn"></div>
-                    <div class="slide_btn slide_prev_btn"></div>
-                    <div class="swiper-pagination"></div>
+                    <div class="slide_btn slide_nextBg_btn"></div>
+                    <div class="slide_btn slide_prevBg_btn"></div>
+                    <!-- <div class="swiper-pagination"></div> -->
                 </div>
             </div>
         </article>
@@ -293,9 +311,10 @@
                             </div>
                         </div>
                         <div class="description">
+                            <p class="brand-name">{$prd_brand}</p>
                             <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                            <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                            <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                            <!-- <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p> -->
+                            <!-- <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span> -->
                             <ul module="product_ListItem" class="spec">
                                 <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
                                 <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
@@ -313,9 +332,10 @@
                             </div>
                         </div>
                         <div class="description">
+                            <p class="brand-name">{$prd_brand}</p>
                             <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                            <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                            <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span>
+                            <!-- <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p> -->
+                            <!-- <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span> -->
                             <ul module="product_ListItem" class="spec">
                                 <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
                                 <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
@@ -541,7 +561,7 @@
                                             <li>공간을 더 아름답게, 오브제컬렉션 라운지체어</li>
                                             <li>편안한 안마를 도와주는, 릴렉스 편의기능</li>
                                             <li>손 마사지처럼 섬세하게, 핸드모션 입체 안마</li>
-                                            <li>수면에 거의 영향을 주지 않는 저소음 설계로 밤에도 안심</li>
+                                            <li>수면에 영향을 주지 않는 저소음 설계로 밤에도 안심</li>
                                         </ul>
                                     </div>
                                     <div class="swiper mySwiper new-swiper5">
@@ -575,7 +595,7 @@
         <article id="smartGuide">
             <div class="inner">
                 <div class="smartG-text">
-                    <div class="titleH">
+                    <div class="titleH white">
                         <h2>SMART GUIDE</h2>
                         <p>안마의자 구매의 가장 완벽한 가이드</p>
                     </div>
@@ -1262,6 +1282,7 @@
                 </div>
             </div>
         </article>
+        <!-- 인스타그램 -->
         <article id="sns-section">
             <div module="product_listmain_6" class="ec-base-product sns-wrap inner">
                 <!--
@@ -1269,7 +1290,7 @@
                         ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
                         ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
                 -->
-                <div class="titleH left">
+                <div class="titleH white left">
                     <h2>
                         <span style="display: {$category_title_text_display};">{$category_title_text}</span>
                         <span style="display: {$category_title_img_display};"><img src="{$category_title_img}" alt="{$category_title_text}" /></span>

@@ -12,7 +12,7 @@ main,
 section {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 100px;
 }
 .inner {
     width: 87.5%;
@@ -58,12 +58,16 @@ main {
     padding-bottom: 70px;
     overflow: hidden;
 }
-#mainBanner .fake-swiper{
-    width: 14%;
+#mainBanner .fake_swiper {
+    width: 200px;
     height: 100%;
     overflow: hidden;
     margin-bottom: 70px;
     box-sizing: border-box;
+}
+#mainBanner .fake_swiper .img-bg {
+    display: block;
+    width: 90%;
 }
 .swiper-slide {
     opacity: 0; /* 기본적으로 보이지 않게 */
@@ -80,6 +84,7 @@ main {
     top: 20px;
     left: 0;
     z-index: 1;
+    color: var(--c-black-1);
 }
 .swiper-title strong{
     font-size: 3.75rem;
@@ -94,7 +99,22 @@ main {
     overflow: hidden;
 }
 .swiper-title .direct-btn{
-    margin-top: 20px;
+    margin-top: 30px;
+}
+#mainBanner .swiper-slide {
+    background-color: var(--c-black-6);
+}
+.fake_swiper .swiper-title {
+    display: block;
+    transform: rotate(90deg) translate(400px, 212px);
+    transform-origin: right top;
+}
+.fake_swiper strong {
+    display: block;
+    width: 400px;
+    font-size: 40px;
+    line-height: 50px;
+    color: var(--c-black-2);
 }
 .img-bg > img{
     width: 100%;
@@ -186,6 +206,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0 20px;
 }
 #brandCategory .swiper-wrapper {
     display: flex;
@@ -194,12 +215,11 @@ main {
     margin: 0;
 }
 #brandCategory .swiper-slide {
-    width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
     opacity: 1;
+    margin: 0;
 }
 #brandCategory .swiper-slide::after {
     content: none;
@@ -209,7 +229,7 @@ main {
 }
 #brandCategory .prdImg {
     border-radius: 50%;
-    border: solid 1px #ededed;
+    border: solid 1px var(--c-black-5);
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -222,6 +242,10 @@ main {
     width: unset;
     padding: 0;
     margin: 0;
+}
+#brandCategory .name span {
+    font-weight: var(--f-weight-n);
+    line-height: 2rem;
 }
 
 /*---------- [메인] 베스트 아이템 ----------*/

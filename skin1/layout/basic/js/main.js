@@ -129,6 +129,23 @@ let recommendedHeaderSwiper = new Swiper('.recommended_swiper', {
 
 
 
+// ---------- [헤더] 검색창 현재날짜-년월일 ----------
+// 현재 날짜 객체 생성
+const today = new Date();
+
+// 날짜를 "0000년 00월 00일" 형식으로 변환
+const year = today.getFullYear();       // 연도
+const month = String(today.getMonth() + 1).padStart(2, '0'); // 월 (2자리)
+const day = String(today.getDate()).padStart(2, '0');        // 일 (2자리)
+
+// 포맷팅
+const formattedDate = `${year}년 ${month}월 ${day}일`;
+
+// span 요소에 날짜 넣기
+document.querySelector(".current_date").textContent = formattedDate + ' 00:00 기준';
+
+
+
 // ---------- [메인] 메인배너 ----------
 
 let mainSwiper = new Swiper('.mainB-swiper', {
@@ -154,7 +171,7 @@ let mainSwiper = new Swiper('.mainB-swiper', {
     },
 });
 
-let fakeSwiper = new Swiper('.fake-swiper', {
+let fakeSwiper = new Swiper('.fake_swiper', {
     effect: "fade", // 페이드 효과
     speed: 1000,
     fadeEffect: {
@@ -172,24 +189,23 @@ fakeSwiper.controller.control = mainSwiper;
 
 // ---------- [메인] 브랜드 ----------
 
-let brandSwiper = new Swiper('.brand-swiper', {
+let brandSwiper = new Swiper('.brand_swiper', {
     autoplay: {
         delay: 5000, // 자동 재생 시간 설정
         disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
     },
-    spaceBetween: 40, // 슬라이드 사이 여백
-    slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-            return `<span class="${className}"></span>`;
-        },
-    },
+    spaceBetween: 30, // 슬라이드 사이 여백
+    slidesPerView : 7, // 한 슬라이드에 보여줄 갯수
+    // pagination: {
+    //     el: '.swiper-pagination',
+    //     clickable: true,
+    //     renderBullet: function (index, className) {
+    //         return `<span class="${className}"></span>`;
+    //     },
+    // },
     navigation: {
-        nextEl: ".brand-swiper .slide_next_btn",
-        prevEl: ".brand-swiper .slide_prev_btn",
+        nextEl: ".brand_swiper .slide_nextBg_btn",
+        prevEl: ".brand_swiper .slide_prevBg_btn",
     },
 });
 
