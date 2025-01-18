@@ -43,6 +43,9 @@
     letter-spacing: -0.02em;
     font-weight: var(--f-weight-n);
 }
+.brand_name {
+    width: fit-content;
+}
 
 /* 바로가기 */
 .direct-btn {

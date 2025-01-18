@@ -282,8 +282,8 @@
     <!--@import(/product/shoppQ/searchContent.html)-->
     <section class="main-sec2">
         <!-- 베스트 아이템 -->
-        <article id="bestContainer" class="inner">
-            <div module="product_listmain_1" class="ec-base-product bestItem">
+        <article id="bestItem" class="inner">
+            <div module="product_listmain_1" class="ec-base-product">
                 <!--
                     $count = 7
                         ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
@@ -300,7 +300,8 @@
                     <p>지금 가장 인기있는 상품, 여기에 있어요</p>
                 </div>
                 <ul class="prdList grid7">
-                    <li id="anchorBoxId_{$product_no}">
+                    <li id="anchorBoxId_{$product_no}" class="best1">
+                        <span class="num">1</span>
                         <div class="thumbnail">
                             <div class="prdImg">
                                 <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
@@ -311,17 +312,18 @@
                             </div>
                         </div>
                         <div class="description">
-                            <p class="brand-name">{$prd_brand}</p>
-                            <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                            <!-- <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p> -->
-                            <!-- <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span> -->
-                            <ul module="product_ListItem" class="spec">
-                                <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                                <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                            <div>
+                                <p class="brand_name">{$prd_brand}</p>
+                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                            </div>
+                            <ul class="price">
+                                <li class="retail_price">월&nbsp;<span>{$product_custom}</span>원</li>
+                                <li class="selling_price">월&nbsp;<span>{$product_price}</span>원</li>
                             </ul>
                         </div>
                     </li>
                     <li id="anchorBoxId_{$product_no}">
+                        <strong class="num">2</strong>
                         <div class="thumbnail">
                             <div class="prdImg">
                                 <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
@@ -332,13 +334,123 @@
                             </div>
                         </div>
                         <div class="description">
-                            <p class="brand-name">{$prd_brand}</p>
-                            <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></strong>
-                            <!-- <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p> -->
-                            <!-- <span class="name {$rental_icon|display}">월 {$rental_maximum_price|numberformat}원 / {$rental_maximum_term}개월</span> -->
-                            <ul module="product_ListItem" class="spec">
-                                <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
-                                <li class="{$item_display|display}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+                            <div>
+                                <p class="brand_name">{$prd_brand}</p>
+                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                            </div>
+                            <ul class="price">
+                                <li class="retail_price">월&nbsp;<span>{$product_custom}</span>원</li>
+                                <li class="selling_price">월&nbsp;<span>{$product_price}</span>원</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="anchorBoxId_{$product_no}">
+                        <strong class="num">3</strong>
+                        <div class="thumbnail">
+                            <div class="prdImg">
+                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                <ul class="iconList">
+                                    <li class="wish">{$list_wish_icon}</li>
+                                    <li class="button">{$basket_icon}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div>
+                                <p class="brand_name">{$prd_brand}</p>
+                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                            </div>
+                            <ul class="price">
+                                <li class="retail_price">월&nbsp;<span>{$product_custom}</span>원</li>
+                                <li class="selling_price">월&nbsp;<span>{$product_price}</span>원</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="anchorBoxId_{$product_no}">
+                        <strong class="num">4</strong>
+                        <div class="thumbnail">
+                            <div class="prdImg">
+                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                <ul class="iconList">
+                                    <li class="wish">{$list_wish_icon}</li>
+                                    <li class="button">{$basket_icon}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div>
+                                <p class="brand_name">{$prd_brand}</p>
+                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                            </div>
+                            <ul class="price">
+                                <li class="retail_price">월&nbsp;<span>{$product_custom}</span>원</li>
+                                <li class="selling_price">월&nbsp;<span>{$product_price}</span>원</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="anchorBoxId_{$product_no}">
+                        <strong class="num">5</strong>
+                        <div class="thumbnail">
+                            <div class="prdImg">
+                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                <ul class="iconList">
+                                    <li class="wish">{$list_wish_icon}</li>
+                                    <li class="button">{$basket_icon}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div>
+                                <p class="brand_name">{$prd_brand}</p>
+                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                            </div>
+                            <ul class="price">
+                                <li class="retail_price">월&nbsp;<span>{$product_custom}</span>원</li>
+                                <li class="selling_price">월&nbsp;<span>{$product_price}</span>원</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="anchorBoxId_{$product_no}">
+                        <strong class="num">6</strong>
+                        <div class="thumbnail">
+                            <div class="prdImg">
+                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                <ul class="iconList">
+                                    <li class="wish">{$list_wish_icon}</li>
+                                    <li class="button">{$basket_icon}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div>
+                                <p class="brand_name">{$prd_brand}</p>
+                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                            </div>
+                            <ul class="price">
+                                <li class="retail_price">월&nbsp;<span>{$product_custom}</span>원</li>
+                                <li class="selling_price">월&nbsp;<span>{$product_price}</span>원</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="anchorBoxId_{$product_no}">
+                        <strong class="num">7</strong>
+                        <div class="thumbnail">
+                            <div class="prdImg">
+                                <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                                <ul class="iconList">
+                                    <li class="wish">{$list_wish_icon}</li>
+                                    <li class="button">{$basket_icon}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div>
+                                <p class="brand_name">{$prd_brand}</p>
+                                <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                            </div>
+                            <ul class="price">
+                                <li class="retail_price">월&nbsp;<span>{$product_custom}</span>원</li>
+                                <li class="selling_price">월&nbsp;<span>{$product_price}</span>원</li>
                             </ul>
                         </div>
                     </li>
@@ -390,9 +502,9 @@
                                 <div class="newProduct-description">
                                     <div class="description">
                                         <div>
-                                            <p class="brand-name">{$prd_brand}</p>
+                                            <p class="brand_name">{$prd_brand}</p>
                                             <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span>{$product_name}</span><span>{$prd_model}</span></a></strong>
-                                            <p>{$summary_desc}</p>
+                                            <p class="summary_description">{$summary_desc}</p>
                                         </div>
                                         <ul>
                                             <li>바디프랜드만의 기술력으로 구현한 마사지 모듈</li>
@@ -432,9 +544,9 @@
                                 <div class="newProduct-description">
                                     <div class="description">
                                         <div>
-                                            <p class="brand-name">{$prd_brand}</p>
+                                            <p class="brand_name">{$prd_brand}</p>
                                             <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span>{$product_name}</span><span>{$prd_model}</span></a></strong>
-                                            <p>{$summary_desc}</p>
+                                            <p class="summary_description">{$summary_desc}</p>
                                         </div>
                                         <ul>
                                             <li>뇌파 안정 사운드와 함께하는 마인드/슬립 케어 코스</li>
@@ -472,9 +584,9 @@
                                 <div class="newProduct-description">
                                     <div class="description">
                                         <div>
-                                            <p class="brand-name">{$prd_brand}</p>
+                                            <p class="brand_name">{$prd_brand}</p>
                                             <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span>{$product_name}</span><span>{$prd_model}</span></a></strong>
-                                            <p>{$summary_desc}</p>
+                                            <p class="summary_description">{$summary_desc}</p>
                                         </div>
                                         <ul>
                                             <li>공간의 가치를 더하는 컴팩트한 디자인</li>
@@ -512,9 +624,9 @@
                                 <div class="newProduct-description">
                                     <div class="description">
                                         <div>
-                                            <p class="brand-name">{$prd_brand}</p>
+                                            <p class="brand_name">{$prd_brand}</p>
                                             <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span>{$product_name}</span><span>{$prd_model}</span></a></strong>
-                                            <p>{$summary_desc}</p>
+                                            <p class="summary_description">{$summary_desc}</p>
                                         </div>
                                         <ul>
                                             <li>전동 듀얼 모터 탑재 145도 리클라이닝</li>
@@ -553,9 +665,9 @@
                                 <div class="newProduct-description">
                                     <div class="description">
                                         <div>
-                                            <p class="brand-name">{$prd_brand}</p>
+                                            <p class="brand_name">{$prd_brand}</p>
                                             <strong class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span>{$product_name}</span><span>{$prd_model}</span></a></strong>
-                                            <p>{$summary_desc}</p>
+                                            <p class="summary_description">{$summary_desc}</p>
                                         </div>
                                         <ul>
                                             <li>공간을 더 아름답게, 오브제컬렉션 라운지체어</li>
