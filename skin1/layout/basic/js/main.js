@@ -92,6 +92,19 @@ $(document).ready(function () {
 
 // -------------------- Java Script --------------------
 
+// ---------- [공통] 금액 , 설정 ----------
+function formatNumberWithComma(number) {
+    return number.toLocaleString('ko-KR');
+}
+
+// 클래스가 "price"인 모든 요소에 포맷 적용
+document.querySelectorAll('.price').forEach((element) => {
+    const rawValue = parseInt(element.textContent, 10); // 텍스트를 숫자로 변환
+    if (!isNaN(rawValue)) {
+        element.textContent = formatNumberWithComma(rawValue); // 포맷팅된 값으로 변경
+    }
+});
+
 // ---------- [퀵버튼] 호버 아이콘 변경 ----------
 document.querySelectorAll('.qbtn').forEach(qbtn => {
     const basketIcon = qbtn.querySelector('.basketIcon');
@@ -310,7 +323,7 @@ categoryTabBtn.forEach(button => {
     });
 });
 
-function categorySwiper(slideClass) {
+function categorySwiper(slideClass, paginationClass) {
     // Swiper 초기화
     new Swiper(slideClass, {
         autoplay: {
@@ -327,7 +340,7 @@ function categorySwiper(slideClass) {
             prevEl: '.swiper-button-prev',
         },
         pagination: {
-            el: '.swiper-pagination',
+            el: paginationClass,
             clickable: true,
             renderBullet: function (index, className) {
                 return `<span class="${className}"></span>`;
@@ -337,6 +350,6 @@ function categorySwiper(slideClass) {
 }
 
 // 슬라이드 각각 호출
-categorySwiper(".category-swiper01");
-categorySwiper(".category-swiper02");
-categorySwiper(".category-swiper03");
+categorySwiper(".category-swiper01", ".chair .swiper-pagination");
+categorySwiper(".category-swiper02", ".bed .swiper-pagination");
+categorySwiper(".category-swiper03", ".recliner .swiper-pagination");
