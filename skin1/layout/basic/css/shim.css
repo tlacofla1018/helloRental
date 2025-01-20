@@ -24,7 +24,17 @@ section {
     border-radius: 4px;
     overflow: hidden;
 }
+.prdList .thumbnail .prdImg > a {
+    display: block;
+    width: 100%;
+    height: inherit;
+}
 .prdList .thumbnail .prdImg > a > img {
+    display: block;
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    object-position: center;
     background-color: var(--c-black-5);
 }
 /* 썸네일 아이콘 */
@@ -329,9 +339,6 @@ main {
     color: var(--c-black-6);
 }
 #bestItem .best1 .description{
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
     max-width: 570px;
 }
 #bestItem .prdList > li:hover .description{
@@ -365,29 +372,11 @@ main {
     font-size: var(--f-size-2) !important;
     line-height: 32px;
 }
-#bestItem .price_box {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    font-size: var(--f-size-6);
-    font-weight: var(--f-weight-n);
-    line-height: 24px;
-}
 #bestItem .best1 .price_box {
     font-size: var(--f-size-5);
-    line-height: 32px;
-}
-#bestItem .retail_price span {
-    text-decoration: line-through;
-}
-#bestItem .selling_price {
-    font-size: var(--f-size-4);
 }
 #bestItem .best1 .selling_price {
     font-size: var(--f-size-3);
-}
-#bestItem .selling_price span {
-    font-weight: var(--f-weight-m);
 }
 
 
@@ -698,8 +687,8 @@ main {
     align-items: center;
 }
 #category .flex-right {
-    width: 89.5%;
-    max-width: 1480px;
+    width: 80%;
+    max-width: 1360px;
 }
 #category .flex-right > li {
     display: none;
@@ -716,12 +705,26 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 300px;
+    width: 280px;
     opacity: 1;
     margin: 0;
 }
 #category .thumbnail {
     width: 100%;
+}
+#category .prdImg {
+    width: 280px;
+    height: 280px;
+}
+#category .description {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin: 0;
+    color: var(--c-black-1);
+}
+#category .slide_btn {
+    top: calc(50% - 56px);
 }
 
 /*---------- [메인] 인스타그램 ----------*/

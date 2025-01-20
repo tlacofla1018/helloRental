@@ -55,14 +55,32 @@
     white-space: nowrap;      /* 텍스트를 한 줄로 표시 */
     text-align: start;
 }
-.description .name {
-    font-weight: 500;
-}
 .description .summary_description {
     font-size: 12px;
 }
 .brand_name {
     width: fit-content;
+    color: var(--c-black-4);
+}
+
+.price_box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 8px;
+    width: 100%;
+    font-size: var(--f-size-6);
+    font-weight: var(--f-weight-n);
+    line-height: 24px;
+}
+.retail_price span {
+    text-decoration: line-through;
+}
+.selling_price {
+    font-size: var(--f-size-4);
+}
+.selling_price span {
+    font-weight: var(--f-weight-m);
 }
 
 /* 바로가기 */
@@ -89,12 +107,6 @@
 }
 
 /* 슬라이드 */
-.slide_btn_box {
-    display: flex;
-}
-.slide_btn_box .slide_btn {
-    position: relative;
-}
 .slide_btn {
     position: absolute;
     top: calc(50% - 16px);

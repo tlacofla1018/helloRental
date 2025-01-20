@@ -336,11 +336,11 @@ function categorySwiper(slideClass, paginationClass) {
         loopAdditionalSlides: 1,
         initialSlide: 0, // 첫 번째 슬라이드부터 시작
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: `${slideClass} .slide_btn.slide_nextBg_btn`,
+            prevEl: `${slideClass} .slide_btn.slide_prevBg_btn`,
         },
         pagination: {
-            el: paginationClass,
+            el: `${paginationClass} .swiper-pagination`,
             clickable: true,
             renderBullet: function (index, className) {
                 return `<span class="${className}"></span>`;
@@ -350,6 +350,6 @@ function categorySwiper(slideClass, paginationClass) {
 }
 
 // 슬라이드 각각 호출
-categorySwiper(".category-swiper01", ".chair .swiper-pagination");
-categorySwiper(".category-swiper02", ".bed .swiper-pagination");
-categorySwiper(".category-swiper03", ".recliner .swiper-pagination");
+categorySwiper(".category-swiper01", ".chair");
+categorySwiper(".category-swiper02", ".bed");
+categorySwiper(".category-swiper03", ".recliner");

@@ -603,6 +603,7 @@
 }
 .qbtn-name{
     font-size: 12px;
+    font-weight: 400;
     color: #121212;
 }
 .qbtn:hover .qbtn-name{
@@ -633,8 +634,19 @@
 #quick .xans-layout-productrecent li span{
     font-size: 12px;
 }
+#quick h2.qbtn-name {
+    margin-bottom: 8px;
+}
 .productrecent{
     position: relative;
+
+}
+#quick .recent_product_img {
+    display: block;
+    width: 76px;
+    height: 76px;
+    background-color: var(--c-black-5);
+    border-radius: 2px;
 }
 #quick .slide_btn{
     width: 24px;
@@ -650,11 +662,11 @@
     visibility: visible;
     opacity: 1;
 }
-#quick .slide_prev_btn {
-    left: -20px;
+#quick .slide_btn.slide_prevBg_btn {
+    left: -8px;
 }
-#quick .slide_next_btn {
-    right: -20px;
+#quick .slide_btn.slide_nextBg_btn {
+    right: -8px;
 }
 .slick-dots{
     display: flex;

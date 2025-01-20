@@ -170,13 +170,22 @@
             </div>
             <div module="Layout_productRecent">
                 <!--@css(/css/module/layout/productRecent.css)-->
-                <h2><a href="/product/recent_view_product.html" class="qbtn-name">최근 본 상품</a></h2>
+                <h2 class="qbtn-name">최근 본 상품</h2>
                 <ul class="productrecent">
                     <li class="{$disp_recent|display}">
-                        <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="" /><span>{$name}</span></a>
+                        <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="최근 본 상품 1" class="recent_product_img"/><span>{$name}</span></a>
                     </li>
                     <li class="{$disp_recent|display}">
-                        <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="" /><span>{$name}</span></a>
+                        <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="최근 본 상품 2" class="recent_product_img" /><span>{$name}</span></a>
+                    </li>
+                    <li class="{$disp_recent|display}">
+                        <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="최근 본 상품 3" class="recent_product_img"/><span>{$name}</span></a>
+                    </li>
+                    <li class="{$disp_recent|display}">
+                        <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="최근 본 상품 4" class="recent_product_img" /><span>{$name}</span></a>
+                    </li>
+                    <li class="{$disp_recent|display}">
+                        <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="최근 본 상품 5" class="recent_product_img"/><span>{$name}</span></a>
                     </li>
                 </ul>
                 <!-- <p class="player"><img src="//img.echosting.cafe24.com/skin/base/layout/btn_recent_prev.gif" alt="이전 제품" class="prev" /><img src="//img.echosting.cafe24.com/skin/base/layout/btn_recent_next.gif" alt="다음 제품" class="next" /></p> -->
