@@ -180,7 +180,7 @@ $(function(){
                         // 첫 번째 sub-menu의 href 값을 수정
                         $(methods.aSubCategory[iCateNo]).each(function(index) {
                             if (index == 0) { // 첫 번째 항목
-                                aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/shopinfo/company.html">'+this.name+'</a></li>');
+                                aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/company.html">'+this.name+'</a></li>');
                             } else {
                                 aHtml.push('<li class="sub-menu"><a href="'+this.link_product_list+'">'+this.name+'</a></li>');
                             }

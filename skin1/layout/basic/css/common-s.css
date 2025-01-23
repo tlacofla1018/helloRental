@@ -24,6 +24,19 @@
     --f-weight-b: 600;
 }
 
+/* 컨테이너 */
+main,
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.inner {
+    width: 87.5%;
+    max-width: 1680px;
+    margin: 0 auto;
+}
+
 /* 텍스트 */
 .titleH {
     color: var(--c-black-1);

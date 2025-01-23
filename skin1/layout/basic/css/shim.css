@@ -7,19 +7,6 @@ body {
     background-color: #fff;
 }
 
-/* 컨테이너 */
-main,
-section {
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-}
-.inner {
-    width: 87.5%;
-    max-width: 1680px;
-    margin: 0 auto;
-}
-
 .prdList .thumbnail .prdImg {
     border-radius: 4px;
     overflow: hidden;
@@ -749,7 +736,7 @@ main {
     display: flex;
     flex-direction: unset;
     justify-content: space-between;
-    padding: 3rem 0;
+    padding: 4rem 0;
 }
 #sns-section .titleH.left {
     color: #fff;
@@ -791,4 +778,74 @@ main {
 }
 #sns-section .sns-list li a img:hover {
     transform: scale(1.4);
+}
+
+/* [회사소개] 슬로건 */
+#slogan .slogan_color_name {
+    display: block;
+    font-weight: var(--f-weight-m);
+}
+#slogan .flex_inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#slogan .slogan_color {
+    width: 80px;
+    height: 80px;
+    border-radius: 2px;
+}
+#slogan .slogan_color1 {
+    background-color: #53565A;
+}
+#slogan .slogan_color2 {
+    background-color: #ED174D;
+}
+#slogan .slogan_color3 {
+    background-color: #BFE10E;
+}
+
+/* [회사소개] 유튜브 */
+#youtube {
+    position: relative;
+}
+#youtube .youtube-swiper {
+    margin: 0 40px;
+}
+#youtube .swiper-wrapper {
+    align-items: center;
+}
+#youtube .swiper-slide {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    z-index: 1;
+    opacity: 1;
+    pointer-events: none; /* 기본적으로 클릭 불가 */
+    transition: transform 0.3s ease, z-index 0.3s ease; /* 크기 변화와 z-index의 부드러운 전환 */
+}
+#youtube .swiper-slide-next::before,
+#youtube .swiper-slide-prev::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+}
+#youtube .swiper-slide-active {
+    width: 1024px;
+    height: 576px;
+    z-index: 2;
+}
+#youtube .swiper-slide-active,
+#youtube .swiper-slide-next,
+#youtube .swiper-slide-prev {
+    pointer-events: auto; /* 활성 슬라이드 및 양옆 슬라이드는 클릭 가능 */
+}
+#youtube iframe {
+    width: 100%;
+    height: 100%;
 }
