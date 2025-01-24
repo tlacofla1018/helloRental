@@ -67,8 +67,8 @@
                 @css(/css/module/layout/boardInfo.css)
                 <h2>전체게시판</h2>
                 <ul>
-                    <li><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
-                    <li><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
+                    <li><a href="{$board_list_url}">{$board_name}</a> {$board_adult_icon}</li>
+                    <li><a href="{$board_list_url}">{$board_name}</a> {$board_adult_icon}</li>
                 </ul>
             </div>
 
@@ -78,8 +78,8 @@
                 @js(/js/module/layout/project.js)
                 <h2>쇼핑기획전</h2>
                 <ul>
-                    <li><a href="{$link_product_project}"><img src="{$category_image}" alt="" /></a></li>
-                    <li><a href="{$link_product_project}"><img src="{$category_image}" alt="" /></a></li>
+                    <li><a href="/product/project.html{$param}"><img src="{$category_image}" alt="" /></a></li>
+                    <li><a href="/product/project.html{$param}"><img src="{$category_image}" alt="" /></a></li>
                 </ul>
                 <div class="control">
                     <button type="button" class="prev" id="prevButton-project"><span>이전</span></button>

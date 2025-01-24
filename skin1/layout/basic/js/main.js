@@ -34,6 +34,30 @@ $(document).ready(function () {
 });
 
 // Java Script
+// [공통] 페이지별 컨텐츠 노출 ----------
+const currentUrl = window.location.href;
+
+document.querySelectorAll('.list_main').forEach(element => {
+    element.style.display = 'none'; // 초기에는 모두 숨기기
+});
+
+if (currentUrl.endsWith("product/list.html?cate_no=25")) {
+    const rental = document.getElementById('rental_content');
+    if (rental) {
+        rental.style.display = 'block'; // Page 1만 보이기
+    }
+} else if (currentUrl.endsWith("product/list.html?cate_no=32")) {
+    const brand = document.getElementById('brand_content');
+    if (brand) {
+        brand.style.display = 'block'; // Page 1만 보이기
+    }
+} else {
+    const list = document.getElementById('list_content');
+    if (list) {
+        list.style.display = 'block'; // Page 1만 보이기
+    }
+}
+
 // [공통] 금액 , 설정 ----------
 function formatNumberWithComma(number) {
     return number.toLocaleString('ko-KR');

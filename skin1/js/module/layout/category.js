@@ -64,7 +64,7 @@
 //             var aHtml = [];
 //             aHtml.push('<ul>');
 //             $(methods.aSubCategory[iCateNo]).each(function() {
-//                 aHtml.push('<li><a href="'+this.link_product_list+'">'+this.name+'</a></li>');
+//                 aHtml.push('<li><a href="/'+this.design_page_url+this.param+'">'+this.name+'</a></li>');
 //             });
 //             aHtml.push('</ul>');
 
@@ -181,8 +181,10 @@ $(function(){
                         $(methods.aSubCategory[iCateNo]).each(function(index) {
                             if (index == 0) { // 첫 번째 항목
                                 aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/company.html">'+this.name+'</a></li>');
+                            // } else if (index == 1) { // 두 번째 항목
+                            //     aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/rental.html">' + this.name + '</a></li>');
                             } else {
-                                aHtml.push('<li class="sub-menu"><a href="'+this.link_product_list+'">'+this.name+'</a></li>');
+                                aHtml.push('<li class="sub-menu"><a href="/'+this.design_page_url+this.param+'">'+this.name+'</a></li>');
                             }
                         });
                         aHtml.push('</ul>');
@@ -210,15 +212,15 @@ $(function(){
                     subCategoryHtml.push('>');
 
                     $(methods.aSubCategory[iCateNo]).each(function(index) {
-                // 두 번째 sub-category-list에서 첫 번째, 두 번째 항목의 href를 변경
-                if (iCateNo == 24 && index == 0) {
-                    subCategoryHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/skin-skin1/shopinfo/company.html">'+this.name+'</a></li>');
-                } else if (iCateNo == 24 && index == 1) {
-                    subCategoryHtml.push('<li class="sub-menu"><a href="https://soodesignshop.cafe24.com/board/gallery/list.html">'+this.name+'</a></li>');
-                } else {
-                    subCategoryHtml.push('<li class="sub-menu"><a href="'+this.link_product_list+'">'+this.name+'</a></li>');
-                }
-            });
+                        subCategoryHtml.push('<li class="sub-menu"><a href="/'+this.design_page_url+this.param+'">'+this.name+'</a></li>');
+
+                        // 세 번째 sub-category-list에서 첫 번째, 두 번째 항목의 href를 변경
+                        // if (iCateNo == 25 && index == 0) {
+                        //     subCategoryHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/brand.html">'+this.name+'</a></li>');
+                        // } else {
+                        //     subCategoryHtml.push('<li class="sub-menu"><a href="/'+this.design_page_url+this.param+'">'+this.name+'</a></li>');
+                        // }
+                    });
 
                     subCategoryHtml.push('</ul>');
                 }
