@@ -16,7 +16,8 @@
     box-sizing: border-box;
     background-color: var(--c-black-6);
 }
-#header .inner {
+#header .inner,
+#header .inner_1440 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,6 +25,9 @@
     width: 87.5%;
     height: 70px;
     padding: 0;
+}
+#header .inner_1440 {
+    width: 75%;
 }
 #header .inner-left {
     display: flex;
@@ -170,7 +174,8 @@
 }
 
 /* 유틸메뉴 */
-#header .inner .util-menu {
+#header .inner .util-menu,
+#header .inner_1440 .util-menu {
     position: relative;
     display: flex;
     align-items: center;

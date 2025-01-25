@@ -23,6 +23,7 @@ body {
     object-fit: cover;
     object-position: center;
     background-color: var(--c-black-5);
+    border: 0;
 }
 /* 썸네일 아이콘 */
 .prdList .thumbnail .prdImg .iconList {
@@ -851,6 +852,48 @@ main {
     height: 100%;
 }
 
-.list_main {
-    display: none;
+/* [브랜드] */
+#brand_content .titleH {
+    width: 100%;
+    text-align: center;
+}
+#brand_content .prdList {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 60px;
+}
+#brand_content .prdList li {
+    width: 100%;
+    max-width: 33.33%;
+    padding: 0 16px;
+    margin: 16px 0;
+    box-sizing: border-box;
+}
+#brand_content .thumbnail {
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all .6s ease-in-out;
+}
+#brand_content .prdImg {
+    transition: all .6s ease-in-out;
+}
+#brand_content .prdList li:hover .thumbnail {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, .6);
+}
+#brand_content .prdList li:hover .prdImg {
+    transform: scale(1.2);
+}
+
+.more_btn {
+    display: block;
+    width: 25%;
+    max-width: 400px;
+    padding: 1rem;
+    margin: 0 auto 80px;
+    box-sizing: border-box;
+    font-size: 1.125rem;
+    text-align: center;
+    border: solid 1px var(--c-black-4);
+    border-radius: 4px;
 }

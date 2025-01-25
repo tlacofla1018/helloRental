@@ -1,5 +1,5 @@
 // jQuery
-$(document).ready(function () {
+$(function () {
     // [헤더] 검색창 팝업 ----------
     $('.search-btn').on('click', function () {
         $('.search-popup').addClass('show');
@@ -31,6 +31,27 @@ $(document).ready(function () {
             $menu.removeClass('show');
         });
     }
+
+    // [브랜드] 더보기 버튼 ----------
+    const items = $("#brand_content .prdList > li"); // 모든 li 요소
+    const itemsPerClick = 6; // 한 번에 표시할 항목 수
+    let visibleCount = 6; // 초기 표시 개수
+
+    // 초기 6개 항목만 표시
+    items.hide().slice(0, visibleCount).show();
+
+    // "더보기" 버튼 클릭 이벤트
+    $(".more_btn").click(function () {
+        visibleCount += itemsPerClick; // 표시 개수 증가
+
+        // 추가 항목 표시
+        items.slice(0, visibleCount).slideDown();
+
+        // 모든 항목이 표시되면 버튼 숨기기
+        if (visibleCount >= items.length) {
+            $(this).hide();
+        }
+    });
 });
 
 // Java Script

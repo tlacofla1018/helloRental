@@ -36,6 +36,36 @@ section {
     max-width: 1680px;
     margin: 0 auto;
 }
+.inner_1440 {
+    width: 75%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.list_main {
+    margin-bottom: 140px;
+}
+.list_main .path {
+    margin-top: 16px;
+}
+.list_main .path li {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: #8f8f8f;
+    background: url(/img/icon/path_dot.svg) no-repeat 0 0px;
+    margin: 0;
+    padding: 0 0 0 24px;
+}
+.list_main .path li:first-child {
+    background: none;
+}
+.list_main .titleH {
+    margin: 80px 0 90px;
+}
+.list_main .xans-product-menupackage,
+.list_main .ec-base-product {
+    margin: 0;
+}
 
 /* 텍스트 */
 .titleH {

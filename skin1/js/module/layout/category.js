@@ -197,23 +197,26 @@ $(function(){
             var subCategoryHtml = [];
             subCategoryHtml.push('<div class="sub-list-box">');
 
-            var isFirstSubCategory = true; // 첫 번째 sub-category를 숨기기 위한 변수 추가
+            var currentCategoryIndex = 0; // 현재 sub-category의 순서를 추적하는 변수
 
             for (var iCateNo in methods.aSubCategory) {
                 if (methods.aSubCategory.hasOwnProperty(iCateNo)) {
+                    currentCategoryIndex++; // 각 카테고리 리스트마다 증가
+
+                    // ul 태그 열기
                     subCategoryHtml.push('<ul class="sub-category-list"');
 
-                    // 첫 번째 sub-category-list는 숨김 처리
-                    if (isFirstSubCategory) {
+                    // 3번째와 4번째 sub-category-list만 보이도록 처리
+                    if (currentCategoryIndex !== 3 && currentCategoryIndex !== 4) {
                         subCategoryHtml.push(' style="display:none;"');
-                        isFirstSubCategory = false; // 첫 번째 카테고리 숨긴 후에는 더 이상 숨기지 않음
                     }
 
                     subCategoryHtml.push('>');
 
+                    // 각 카테고리의 항목 추가
                     $(methods.aSubCategory[iCateNo]).each(function(index) {
-                        subCategoryHtml.push('<li class="sub-menu"><a href="/'+this.design_page_url+this.param+'">'+this.name+'</a></li>');
-
+                        subCategoryHtml.push('<li class="sub-menu"><a href="/' + this.design_page_url + this.param + '">' + this.name + '</a></li>');
+                        
                         // 세 번째 sub-category-list에서 첫 번째, 두 번째 항목의 href를 변경
                         // if (iCateNo == 25 && index == 0) {
                         //     subCategoryHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/brand.html">'+this.name+'</a></li>');
@@ -222,10 +225,11 @@ $(function(){
                         // }
                     });
 
+                    // ul 태그 닫기
                     subCategoryHtml.push('</ul>');
                 }
             }
-
+            
             subCategoryHtml.push('</div>'); // div.sub-list-box 닫기
 
             // 페이지에 바로 출력
