@@ -67,7 +67,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 60px 0;
+    padding: 60px 0 0;
 }
 #mainBanner .mainB-swiper{
     position: relative;
@@ -155,6 +155,7 @@ main {
 .img-product img{
     width: 100%;
     height: 520px;
+    object-fit: contain;
 }
 @keyframes slideInFromLeft {
     0% {
@@ -162,7 +163,7 @@ main {
         opacity: 0;
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(80px);
         opacity: 1;
     }
 }
@@ -206,6 +207,7 @@ main {
     flex-direction: row;
     align-items: center;
     gap: 40px;
+    margin-bottom: 20px;
 }
 #brandCategory .brandCategory-left {
     display: flex;
@@ -895,5 +897,98 @@ main {
     font-size: 1.125rem;
     text-align: center;
     border: solid 1px var(--c-black-4);
-    border-radius: 4px;
+    border-radius: 50px;
+}
+
+.list_main {
+    margin-bottom: 140px;
+}
+.list_main .prdList.grid4 > li {
+    margin: 0;
+    margin-bottom: 80px;
+}
+.list_main .prdList.grid2 > li {
+    margin: 0;
+    margin-bottom: 60px;
+}
+.list_main .flex_inner {
+    display: flex;
+    align-items: center;
+}
+.list_main .titleH {
+    margin: 80px 0 90px;
+}
+.list_main .xans-product-menupackage,
+.list_main .ec-base-product {
+    margin: 0;
+}
+.list_main .function {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px;
+    border: 0;
+    overflow: visible;
+}
+.list_main .list_style {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.select_box {
+    position: relative;
+    height: 32px;
+}
+.select_btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    padding: 4px 2px 4px 8px;
+    font-size: var(--f-size-5);
+}
+.select_btn::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(/img/icon/more_btn.svg);
+}
+.select_box #type.option_list {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    height: 0;
+    flex-direction: column;
+    margin: 0;
+    border: solid 1px var(--c-black-5);
+    border-radius: 12px;
+    background-color: var(--c-black-6);
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+.select_box #type.option_list.show {
+    height: 192px;
+    opacity: 1;
+}
+.select_box #type.option_list li {
+    padding: 0;
+    text-align: center;
+    font-size: var(--f-size-5);
+    background: none;
+}
+.select_box #type.option_list li a.sort {
+    font-weight: var(--f-weight-m) !important;
+}
+.select_box #type.option_list li:hover a {
+    color: var(--c-point);
+}
+
+.xans-product-normalmenu .function .btnCompare {
+    border: 0;
 }

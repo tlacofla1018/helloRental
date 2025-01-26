@@ -162,8 +162,8 @@
 
     <div id="quick">
         <div class="qTop">
-            <div class="qbtn" module="Layout_orderBasketcount">
-                <a href="/order/basket.html"><span class="qbtn-img"><img class="basketIcon" src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></span><span class="qbtn-name">장바구니</span></a>
+            <div class="qbtn compare {$product_compare_display|display}" module="product_normalmenu">
+                <a href="#none" class="btnCompare" onclick="{$product_compare_action}"><span class="qbtn-img"><img class="compareIcon" src="/img/icon/compare_icon.svg" alt="상품 비교하기 최대 4개까지 가능합니다"><span class="count"><span class="compare_count"></span></span></span><span class="qbtn-name">상품비교</span></a>
             </div>
             <div class="qbtn tell">
                 <a href="/skin-skin1/category/고객센터/42/"><img class="tellIcon" src="/img/icon/tellIcon.svg" alt="빠른상담"><span class="qbtn-name">빠른상담</span></a>

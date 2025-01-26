@@ -41,13 +41,13 @@ section {
     max-width: 1440px;
     margin: 0 auto;
 }
-.list_main {
-    margin-bottom: 140px;
+.ec-base-product .prdList {
+    margin: 0;
 }
-.list_main .path {
+.path {
     margin-top: 16px;
 }
-.list_main .path li {
+.path li {
     font-weight: 400;
     font-size: 13px;
     line-height: 24px;
@@ -56,15 +56,43 @@ section {
     margin: 0;
     padding: 0 0 0 24px;
 }
-.list_main .path li:first-child {
+.path li:first-child {
     background: none;
 }
-.list_main .titleH {
-    margin: 80px 0 90px;
+.xans-product-normalmenu .prdCount{
+    font-size: 14px;
+    color: var(--c-black-1);
+    line-height: 32px;
 }
-.list_main .xans-product-menupackage,
-.list_main .ec-base-product {
+.view_style {
+    display: flex;
+}
+.view_right {
+    margin-left: -1px;
+}
+
+.ec-base-product .prdList .chk {
+    position: relative;
+    top: 0;
     margin: 0;
+}
+.chk input {
+    display: none;
+}
+.chk input[type=checkbox] + label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.chk label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(/img/icon/compare_icon.svg) center/cover no-repeat;
+}
+.chk input:checked + label::before {
+    background: url(/img/icon/compare_icon_hover.svg) center/cover no-repeat;
 }
 
 /* 텍스트 */
@@ -183,3 +211,21 @@ section {
     background: url(/img/icon/nextIcon-bg-disabled.svg) no-repeat center/cover;
 }
 .s_pagination {}
+
+
+/* 1:1 비율의 상품이미지 */
+.aspect_ratio_1.prdList .thumbnail .prdImg a[name^="anchorBoxName_"] {
+    display: block; /* 블록 요소로 변경 */
+    position: relative;
+    width: 100%; /* 원하는 너비 */
+    padding-top: 100%; /* 높이를 1대 1 비율로 유지 */
+    overflow: hidden; /* 이미지 넘침 방지 */
+}
+.aspect_ratio_1.prdList .thumbnail .prdImg a[name^="anchorBoxName_"] img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 영역을 꽉 채우도록 */
+}
