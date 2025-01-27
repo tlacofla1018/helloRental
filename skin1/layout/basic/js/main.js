@@ -268,3 +268,4 @@ const month = String(today.getMonth() + 1).padStart(2, '0'); // 월 (2자리)
 const day = String(today.getDate()).padStart(2, '0');        // 일 (2자리)
 const formattedDate = `${year}년 ${month}월 ${day}일`; // 포맷팅 (날짜를 "0000년 00월 00일" 형식으로 변환)
 document.querySelector(".current_date").textContent = formattedDate + ' 00:00 기준'; // span 요소에 날짜 넣기
+
