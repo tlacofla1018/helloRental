@@ -31,6 +31,28 @@ $(document).ready(function () {
 });
 
 // Swiper
+function oneSlideSwiper(selector, options = {}) {
+    return new Swiper(selector, {
+        slidesPerView: 1, // 한 번에 하나의 슬라이드
+        autoplay: {
+            delay: 5000, // 자동 재생 시간 설정
+            disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
+        },
+        navigation: {
+            nextEl: `${selector} .slide_nextBg_btn`, // 네비게이션 버튼
+            prevEl: `${selector} .slide_prevBg_btn`,
+        },
+        pagination: {
+            el: `${selector} .swiper-pagination`, // 페이지네이션
+            clickable: true,
+        },
+        loop: true, // 무한 반복
+        ...options, // 추가 옵션 병합
+    });
+}
+
+oneSlideSwiper('.rental_brand_swiper', {});
+
 // [헤더] 검색창 추천상품 ----------
 let recommendedHeaderSwiper = new Swiper('.recommended_swiper', {
     autoplay: {
@@ -192,25 +214,7 @@ calculateSlideWidth(".new-swiper3", ".new-scrollbar3");
 calculateSlideWidth(".new-swiper4", ".new-scrollbar4");
 calculateSlideWidth(".new-swiper5", ".new-scrollbar5");
 
-// [메인] 카테고리 탭 + 스와이퍼 ----------
-// 탭 버튼과 콘텐츠 선택
-const categoryTabBtn = document.querySelectorAll('.flex-left li');
-const categoryTabContents = document.querySelectorAll('.flex-right li');
-
-// 탭 버튼 클릭 이벤트
-categoryTabBtn.forEach(button => {
-    button.addEventListener('click', () => {
-        // 기존 활성화 클래스 제거
-        categoryTabBtn.forEach(btn => btn.classList.remove('active'));
-        categoryTabContents.forEach(content => content.classList.remove('active'));
-
-        // 클릭된 버튼과 관련 콘텐츠 활성화
-        button.classList.add('active');
-        const targetTab = button.getAttribute('data-tab');
-        document.getElementById(targetTab).classList.add('active');
-    });
-});
-
+// [메인] 카테고리 스와이퍼 ----------
 function categorySwiper(slideClass, paginationClass) {
     // Swiper 초기화
     new Swiper(slideClass, {

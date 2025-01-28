@@ -213,6 +213,43 @@ document.querySelectorAll('.price').forEach((element) => { // 클래스가 "pric
     }
 });
 
+// [공통] 탭
+function tabFunction(containerSelector) {
+    // 컨테이너 내 탭 버튼과 콘텐츠를 선택
+    const container = document.querySelector(containerSelector);
+    if (!container) return; // 컨테이너가 없으면 함수 종료
+
+    const tabBtns = container.querySelectorAll('.tab_btn li');
+    const tabContents = container.querySelectorAll('.tab_content li');
+
+    // 탭 버튼 클릭 이벤트 설정
+    tabBtns.forEach(button => {
+        button.addEventListener('click', () => {
+            // 기존 활성화 클래스 제거
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // 클릭된 버튼과 관련 콘텐츠 활성화
+            button.classList.add('active');
+            const targetTab = button.getAttribute('data-tab');
+            const targetContent = container.querySelector(`#${targetTab}`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+}
+
+// 메인인덱스 카테고리 탭
+if (document.querySelector('#category .tab_container')) {
+    tabFunction('#category .tab_container');
+}
+
+// 렌탈 하위분류 탭
+if (document.querySelector('#rental_category .tab_container')) {
+    tabFunction('#rental_category .tab_container');
+}
+
 // [퀵버튼] 호버 아이콘 변경 ----------
 document.querySelectorAll('.qbtn').forEach(qbtn => {
     const compareIcon = qbtn.querySelector('.compareIcon');
