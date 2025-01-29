@@ -1,0 +1,10 @@
+@keyframes underlineExpand {
+    0% {
+        left: 50%;
+        width: 0;
+    }
+    100% {
+        left: 38%;
+        width: 24%;
+    }
+}

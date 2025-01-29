@@ -52,6 +52,7 @@ function oneSlideSwiper(selector, options = {}) {
 }
 
 oneSlideSwiper('.rental_brand_swiper', {});
+oneSlideSwiper('.brams_swiper', {});
 
 // [헤더] 검색창 추천상품 ----------
 let recommendedHeaderSwiper = new Swiper('.recommended_swiper', {
@@ -115,7 +116,7 @@ let brandSwiper = new Swiper('.brand_swiper', {
         disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
     },
     spaceBetween: 30, // 슬라이드 사이 여백
-    slidesPerView : 7, // 한 슬라이드에 보여줄 갯수
+    slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
     // pagination: {
     //     el: '.swiper-pagination',
     //     clickable: true,

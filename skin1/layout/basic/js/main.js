@@ -181,24 +181,61 @@ $(function () {
 // [공통] 페이지별 컨텐츠 노출 ----------
 const currentUrl = window.location.href;
 
+// URL에서 cate_no 값 추출
+const cateNoMatch = currentUrl.match(/cate_no=(\d+)/);
+const cateNo = cateNoMatch ? cateNoMatch[1] : null;
+
+// 모든 컨텐츠 숨기기
 document.querySelectorAll('.list_main').forEach(element => {
-    element.style.display = 'none'; // 초기에는 모두 숨기기
+    element.style.display = 'none';
+});
+document.querySelectorAll('.brand_banner').forEach(element => {
+    element.style.display = 'none';
 });
 
-if (currentUrl.endsWith("product/list.html?cate_no=25")) {
-    const rental = document.getElementById('rental_content');
-    if (rental) {
-        rental.style.display = 'block'; // Page 1만 보이기
-    }
-} else if (currentUrl.endsWith("product/list.html?cate_no=32")) {
-    const brand = document.getElementById('brand_content');
-    if (brand) {
-        brand.style.display = 'block'; // Page 1만 보이기
-    }
-} else {
-    const list = document.getElementById('list_content');
-    if (list) {
-        list.style.display = 'block'; // Page 1만 보이기
+// cate_no에 해당하는 컨텐츠 노출
+if (cateNo) {
+    if (cateNo === "25") {
+        const rental = document.getElementById('rental_content');
+        if (rental) {
+            rental.style.display = 'block'; // 렌탈만 보이기
+        }
+    } else if (cateNo === "32") {
+        const brand = document.getElementById('brand_content');
+        if (brand) {
+            brand.style.display = 'block'; // 브랜드관만 보이기
+        }
+    } else if (cateNo === "57") {
+        const brand_list = document.getElementById('brand_list_content');
+        if (brand_list) {
+            brand_list.style.display = 'block'; // 브랜드 리스트만 보이기
+            
+            const brandBanner = document.querySelector('.brams_brand_banner');
+            if (brandBanner) {
+                brandBanner.style.display = 'block'; // 배너 노출
+                setTimeout(() => {
+                    document.querySelector('.brand_banner_content').classList.add('animated'); // 애니메이션 트리거
+                }, 100);
+            }
+        }
+    } else if (cateNo === "58") {
+        const brand_list = document.getElementById('brand_list_content');
+        if (brand_list) {
+            brand_list.style.display = 'block'; // 브랜드 리스트만 보이기
+            
+            const brandBanner = document.querySelector('.coway_brand_banner');
+            if (brandBanner) {
+                brandBanner.style.display = 'block'; // 배너 노출
+                setTimeout(() => {
+                    document.querySelector('.brand_banner_content').classList.add('animated'); // 애니메이션 트리거
+                }, 100);
+            }
+        }
+    } else {
+        const list = document.getElementById('list_content');
+        if (list) {
+            list.style.display = 'block'; // 기본 페이지
+        }
     }
 }
 
