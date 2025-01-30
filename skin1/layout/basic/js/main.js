@@ -192,52 +192,72 @@ document.querySelectorAll('.list_main').forEach(element => {
 document.querySelectorAll('.brand_banner').forEach(element => {
     element.style.display = 'none';
 });
+document.querySelectorAll('.content_div').forEach(element => {
+    element.style.display = 'none';
+});
+
+// 브랜드 리스트와 배너를 보여주는 함수
+function showBrandContent(contentId, bannerClass, bannerContentSelector, brandContentsClass) {
+    const brandList = document.getElementById(contentId);
+    if (brandList) {
+        brandList.style.display = 'block'; // 브랜드 리스트만 보이기
+    }
+
+    const brandBanner = document.querySelector(bannerClass);
+    if (brandBanner) {
+        brandBanner.style.display = 'block'; // 배너 노출
+    }
+
+    // 배너 애니메이션 트리거
+    setTimeout(() => {
+        const brandBannerContent = document.querySelector(bannerContentSelector);
+        if (brandBannerContent) {
+            brandBannerContent.classList.add('animated'); // 애니메이션 트리거
+        }
+    }, 100);
+
+    const brandContentsDiv = document.querySelector(brandContentsClass);
+    if (brandContentsDiv) {
+        brandContentsDiv.style.display = 'block'; // 오프라인 스토어 노출
+    }
+}
+
+// 브랜드별 설정 객체
+const brandSettings = {
+    "57": { contentId: 'brand_list_content', bannerClass: '.brams_brand_banner', bannerContentSelector: '.brams_brand_banner .brand_banner_content', brandContentsClass: '.brams_content_div' },
+    "58": { contentId: 'brand_list_content', bannerClass: '.coway_brand_banner', bannerContentSelector: '.coway_brand_banner .brand_banner_content', brandContentsClass: '.coway_content_div' },
+    "65": { contentId: 'brand_list_content', bannerClass: '.ceragem_brand_banner', bannerContentSelector: '.ceragem_brand_banner .brand_banner_content', brandContentsClass: '.ceragem_content_div' },
+    "66": { contentId: 'brand_list_content', bannerClass: '.bodyfriend_brand_banner', bannerContentSelector: '.bodyfriend_brand_banner .brand_banner_content', brandContentsClass: '.bodyfriend_content_div' },
+    "59": { contentId: 'brand_list_content', bannerClass: '.cozyma_brand_banner', bannerContentSelector: '.cozyma_brand_banner .brand_banner_content', brandContentsClass: '.cozyma_content_div' },
+    "63": { contentId: 'brand_list_content', bannerClass: '.lisso_brand_banner', bannerContentSelector: '.lisso_brand_banner .brand_banner_content', brandContentsClass: '.lisso_content_div' },
+    "56": { contentId: 'brand_list_content', bannerClass: '.nouhaus_brand_banner', bannerContentSelector: '.nouhaus_brand_banner .brand_banner_content', brandContentsClass: '.nouhaus_content_div' },
+    "62": { contentId: 'brand_list_content', bannerClass: '.ohco_brand_banner', bannerContentSelector: '.ohco_brand_banner .brand_banner_content', brandContentsClass: '.ohco_content_div' },
+    "60": { contentId: 'brand_list_content', bannerClass: '.panasonic_brand_banner', bannerContentSelector: '.panasonic_brand_banner .brand_banner_content', brandContentsClass: '.panasonic_content_div' },
+    "61": { contentId: 'brand_list_content', bannerClass: '.wellmoa_brand_banner', bannerContentSelector: '.wellmoa_brand_banner .brand_banner_content', brandContentsClass: '.wellmoa_content_div' },
+    "64": { contentId: 'brand_list_content', bannerClass: '.zespa_brand_banner', bannerContentSelector: '.zespa_brand_banner .brand_banner_content', brandContentsClass: '.zespa_content_div' },
+};
 
 // cate_no에 해당하는 컨텐츠 노출
 if (cateNo) {
-    if (cateNo === "25") {
+    const setting = brandSettings[cateNo];
+    
+    if (setting) {
+        showBrandContent(setting.contentId, setting.bannerClass, setting.bannerContentSelector, setting.brandContentsClass);
+    } else if (cateNo === "25") {
         const rental = document.getElementById('rental_content');
-        if (rental) {
-            rental.style.display = 'block'; // 렌탈만 보이기
-        }
+        if (rental) rental.style.display = 'block'; // 렌탈만 보이기
     } else if (cateNo === "32") {
         const brand = document.getElementById('brand_content');
-        if (brand) {
-            brand.style.display = 'block'; // 브랜드관만 보이기
-        }
-    } else if (cateNo === "57") {
-        const brand_list = document.getElementById('brand_list_content');
-        if (brand_list) {
-            brand_list.style.display = 'block'; // 브랜드 리스트만 보이기
-            
-            const brandBanner = document.querySelector('.brams_brand_banner');
-            if (brandBanner) {
-                brandBanner.style.display = 'block'; // 배너 노출
-                setTimeout(() => {
-                    document.querySelector('.brand_banner_content').classList.add('animated'); // 애니메이션 트리거
-                }, 100);
-            }
-        }
-    } else if (cateNo === "58") {
-        const brand_list = document.getElementById('brand_list_content');
-        if (brand_list) {
-            brand_list.style.display = 'block'; // 브랜드 리스트만 보이기
-            
-            const brandBanner = document.querySelector('.coway_brand_banner');
-            if (brandBanner) {
-                brandBanner.style.display = 'block'; // 배너 노출
-                setTimeout(() => {
-                    document.querySelector('.brand_banner_content').classList.add('animated'); // 애니메이션 트리거
-                }, 100);
-            }
-        }
+        if (brand) brand.style.display = 'block'; // 브랜드관만 보이기
     } else {
         const list = document.getElementById('list_content');
-        if (list) {
-            list.style.display = 'block'; // 기본 페이지
-        }
+        if (list) list.style.display = 'block'; // 기본 페이지
     }
 }
+
+
+
+
 
 // [공통] 금액 , 설정 ----------
 function formatNumberWithComma(number) {
@@ -249,6 +269,10 @@ document.querySelectorAll('.price').forEach((element) => { // 클래스가 "pric
         element.textContent = formatNumberWithComma(rawValue); // 포맷팅된 값으로 변경
     }
 });
+
+
+
+
 
 // [공통] 탭
 function tabFunction(containerSelector) {
@@ -287,6 +311,10 @@ if (document.querySelector('#rental_category .tab_container')) {
     tabFunction('#rental_category .tab_container');
 }
 
+
+
+
+
 // [퀵버튼] 호버 아이콘 변경 ----------
 document.querySelectorAll('.qbtn').forEach(qbtn => {
     const compareIcon = qbtn.querySelector('.compareIcon');
@@ -303,37 +331,53 @@ document.querySelectorAll('.qbtn').forEach(qbtn => {
     });
 });
 
+
+
+
+
 // [상품 정렬] ----------
-function toggleOptionList() {
-    var optionList = document.getElementsByClassName('option_list')[0];
-    if (optionList.className.includes('show')) {
-        optionList.className = optionList.className.replace('show', '').trim();
-    } else {
-        optionList.className += ' show';
-    }
+function toggleOptionList(btn) {
+    var optionList = btn.nextElementSibling; // 버튼 다음 요소를 가져옴
+
+    if (!optionList || !optionList.classList.contains('option_list')) return; // 요소가 없으면 종료
+
+    // `display: none;`으로 숨겨진 요소는 건너뛰기
+    if (window.getComputedStyle(optionList).display === 'none') return;
+
+    optionList.classList.toggle('show'); // 개별적으로 show 토글
 }
 
 // 페이지 로드 시, sort 클래스를 가진 요소의 텍스트로 버튼 텍스트 변경
 window.onload = function() {
-    var selectBtn = document.getElementsByClassName('select_btn')[0];
-    var sortElement = document.querySelector('.sort');
+    var selectBtns = document.querySelectorAll('.select_btn'); // 모든 .select_btn 요소 선택
+    var sortElements = document.querySelectorAll('.sort'); // 모든 .sort 요소 선택
 
-    if (sortElement) {
-        selectBtn.textContent = sortElement.textContent; // sort 클래스를 가진 요소의 텍스트로 버튼 텍스트 변경
+    // .select_btn과 .sort의 개수가 같을 때
+    if (selectBtns.length === sortElements.length) {
+        selectBtns.forEach(function(selectBtn, index) {
+            selectBtn.textContent = sortElements[index].textContent; // 각 버튼에 대응하는 .sort 텍스트로 버튼 텍스트 변경
+        });
     }
 };
 
+// 페이지 전역 클릭 감지하여 옵션 리스트 닫기
 document.addEventListener('click', function(event) {
-    var optionList = document.getElementsByClassName('option_list')[0];
-    var selectBox = document.getElementsByClassName('select_box')[0];
+    var selectBoxes = document.querySelectorAll('.select_box');
 
-    // 클릭된 곳이 select_box 또는 그 안의 요소가 아닐 경우 show 클래스를 제거
-    if (!selectBox.contains(event.target)) {
-        if (optionList.className.includes('show')) {
-            optionList.className = optionList.className.replace('show', '').trim();
+    selectBoxes.forEach(function(selectBox) {
+        var optionList = selectBox.querySelector('.option_list');
+        
+        if (optionList && optionList.classList.contains('show')) {
+            if (!selectBox.contains(event.target)) {
+                optionList.classList.remove('show'); // 외부 클릭 시 닫기
+            }
         }
-    }
+    });
 });
+
+
+
+
 
 // [헤더] 검색창 현재날짜-년월일 ----------
 const today = new Date(); // 현재 날짜 객체 생성
@@ -342,4 +386,3 @@ const month = String(today.getMonth() + 1).padStart(2, '0'); // 월 (2자리)
 const day = String(today.getDate()).padStart(2, '0');        // 일 (2자리)
 const formattedDate = `${year}년 ${month}월 ${day}일`; // 포맷팅 (날짜를 "0000년 00월 00일" 형식으로 변환)
 document.querySelector(".current_date").textContent = formattedDate + ' 00:00 기준'; // span 요소에 날짜 넣기
-

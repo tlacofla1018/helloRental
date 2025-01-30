@@ -32,7 +32,7 @@ section {
     gap: 100px;
 }
 .inner {
-    width: 87.5%;
+    width: 87.5% !important;
     max-width: 1680px;
     margin: 0 auto;
 }
@@ -184,6 +184,9 @@ section {
 }
 
 /* 슬라이드 */
+.slide_box {
+    position: relative;
+}
 .slide_btn {
     position: absolute;
     top: calc(50% - 16px);
@@ -250,10 +253,180 @@ section {
     width: 25%;
     max-width: 400px;
     padding: 1rem;
-    margin: 0 auto 80px;
+    margin: 0 auto 120px;
     box-sizing: border-box;
     font-size: 1.125rem;
     text-align: center;
     border: solid 1px var(--c-black-4);
     border-radius: 50px;
+}
+.typeMoreview {
+    margin-bottom: 120px;
+}
+
+/* .D_flex_threeBox 디자인 */
+.D_flex_threeBox {
+    margin: 20px 0 100px;
+}
+.D_flex_threeBox .inner {
+    display: flex;
+    justify-content: space-between;
+}
+.D_flex_threeBox .inner .titleH {
+    margin: 20px 0 0;
+}
+.D_flex_threeBox .flex_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+.D_flex_threeBox .flex_right > li {
+    width: 32%;
+    transition: all .4s ease-in-out;
+}
+.D_flex_threeBox .flex_right > li:hover {
+    transform: scale(1.2);
+    z-index: 10;
+}
+.D_flex_threeBox .inner .flex_right > li:hover .text {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.D_flex_threeBox .flex_content {
+    position: relative;
+    display: block;
+    height: 460px;
+    background-color: #ccc;
+}
+.D_flex_threeBox .text {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px 30px;
+    background-color: rgb(255, 255, 255, .8);
+    box-sizing: border-box;
+}
+.D_flex_threeBox .flex_right > li:nth-child(2) .text {
+    top: 0;
+    bottom: auto;
+    flex-direction: column-reverse;
+}
+.D_flex_threeBox .text strong {
+    font-size: var(--f-size-3);
+    font-weight: var(--f-weight-n);
+    line-height: 20px;
+}
+.D_flex_threeBox .text strong span {
+    font-weight: var(--f-weight-b);
+}
+.D_flex_threeBox .hashtag {
+    display: flex;
+    gap: 8px;
+    font-size: var(--f-size-6);
+    line-height: 24px;
+}
+.D_flex_threeBox .btn {
+    width: 60%;
+    display: none;
+    font-size: .875rem;
+    padding: .75rem;
+    margin: 80px 0 0;
+    border: solid 1px var(--c-black-3);
+}
+.D_flex_threeBox .flex_right > li:hover .btn {
+    display: block;
+}
+
+/* .D_flexSlider */
+.D_flexSlider .ec-base-product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+.D_flexSlider.D_flexSlider_colunm .ec-base-product {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.D_flexSlider .flex_left {
+    /* color: #fff; */
+}
+.D_flexSlider .flex_right {
+    width: 100%;
+    overflow: hidden;
+}
+.D_flexSlider .swiper.mySwiper {
+    margin: 0 20px;
+}
+.D_flexSlider .flex_right .swiper-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+}
+.D_flexSlider .flex_right .swiper-wrapper .swiper-slide {
+    opacity: 1;
+    margin: 0;
+}
+.D_flexSlider .flex_right .swiper-wrapper .swiper-slide::after {
+    content: none;
+}
+.D_flexSlider .flex_right .swiper-wrapper .swiper-slide .thumbnail {
+    width: 100%;
+    height: 100%;
+}
+.D_flexSlider .flex_right .swiper-wrapper .swiper-slide .prdImg {
+    height: inherit;
+    border-radius: 50%;
+    border: solid 1px var(--c-black-5);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.D_flexSlider .flex_right .swiper-wrapper .swiper-slide .prdImg a,
+.D_flexSlider .flex_right .swiper-wrapper .swiper-slide .prdImg img {
+    display: block;
+    width: 100%;
+}
+
+/* [회사소개] 유튜브 */
+.D_youtube {
+    position: relative;
+}
+.D_youtube .youtube_swiper {
+    margin: 0 40px;
+}
+.D_youtube .swiper-wrapper {
+    align-items: center;
+}
+.D_youtube .swiper-slide {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    z-index: 1;
+    opacity: .6;
+    pointer-events: none; /* 기본적으로 클릭 불가 */
+    transition: transform 0.3s ease, z-index 0.3s ease; /* 크기 변화와 z-index의 부드러운 전환 */
+}
+.D_youtube .swiper-slide-active {
+    width: 1024px;
+    height: 576px;
+    z-index: 2;
+    opacity: 1;
+}
+.D_youtube .swiper-slide-active,
+.D_youtube .swiper-slide-next,
+.D_youtube .swiper-slide-prev {
+    pointer-events: auto; /* 활성 슬라이드 및 양옆 슬라이드는 클릭 가능 */
+}
+.D_youtube iframe {
+    width: 100%;
+    height: 100%;
 }

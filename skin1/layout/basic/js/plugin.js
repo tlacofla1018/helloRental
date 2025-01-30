@@ -31,28 +31,84 @@ $(document).ready(function () {
 });
 
 // Swiper
-function oneSlideSwiper(selector, options = {}) {
-    return new Swiper(selector, {
-        slidesPerView: 1, // 한 번에 하나의 슬라이드
+function autoSlideSwiperBG(selector, options = {}) {
+    let swiper = new Swiper(selector, {
         autoplay: {
             delay: 5000, // 자동 재생 시간 설정
             disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
         },
         navigation: {
-            nextEl: `${selector} .slide_nextBg_btn`, // 네비게이션 버튼
-            prevEl: `${selector} .slide_prevBg_btn`,
+            nextEl: '.slide_box .slide_nextBg_btn', // 네비게이션 버튼
+            prevEl: '.slide_box .slide_prevBg_btn',
         },
         pagination: {
-            el: `${selector} .swiper-pagination`, // 페이지네이션
+            el: '.slide_box .swiper-pagination', // 페이지네이션
             clickable: true,
         },
         loop: true, // 무한 반복
         ...options, // 추가 옵션 병합
+        on: {
+            init: function () {
+                // `.rental_brand_swiper`와 `.youtube-swiper` 제외하고 높이 조정
+                if (!['.rental_brand_swiper', '.youtube_swiper'].includes(selector)) {
+                    adjustSlideHeight(selector);
+                }
+            },
+            resize: function () {
+                // 윈도우 리사이즈 시 `.rental_brand_swiper`와 `.youtube-swiper` 제외하고 높이 재설정
+                if (!['.rental_brand_swiper', '.youtube_swiper'].includes(selector)) {
+                    adjustSlideHeight(selector);
+                }
+            }
+        }
+    });
+
+    return swiper;
+}
+
+// 슬라이드 높이를 자동으로 width에 맞추는 함수
+function adjustSlideHeight(selector) {
+    let swiperEl = document.querySelector(selector);
+    if (!swiperEl) return;
+
+    let slides = swiperEl.querySelectorAll('.swiper-slide');
+
+    slides.forEach(slide => {
+        let width = slide.offsetWidth; // 슬라이드의 width 가져오기
+        slide.style.height = width + "px"; // height를 width와 동일하게 설정
     });
 }
 
-oneSlideSwiper('.rental_brand_swiper', {});
-oneSlideSwiper('.brams_swiper', {});
+// `.rental_brand_swiper`는 원래 설정 유지
+autoSlideSwiperBG('.rental_brand_swiper', {
+    slidesPerView: 1,
+});
+
+autoSlideSwiperBG('#mainBrandCategory .brand_swiper', {
+    slidesPerView: 7, 
+    spaceBetween: 30,
+});
+
+autoSlideSwiperBG('#brand_list_content .brand_swiper', {
+    slidesPerView: 10,
+    spaceBetween: 10,
+    autoplay: {
+        delay: 2000, // 자동 재생 시간 설정
+        disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
+    },
+});
+
+autoSlideSwiperBG('.youtube_swiper', {
+    spaceBetween: -30, // 슬라이드 사이 여백
+    slidesPerView: 1.5, // 한 슬라이드에 보여줄 갯수
+    centeredSlides: true, //센터모드
+    loopAdditionalSlides: 1,
+    initialSlide: 0, // 첫 번째 슬라이드부터 시작
+    navigation: {
+        nextEl: '.D_youtube .slide_btn.slide_next_btn',
+        prevEl: '.D_youtube .slide_btn.slide_prev_btn',
+    },
+});
 
 // [헤더] 검색창 추천상품 ----------
 let recommendedHeaderSwiper = new Swiper('.recommended_swiper', {
@@ -109,26 +165,6 @@ let fakeSwiper = new Swiper('.fake_swiper', {
 mainSwiper.controller.control = fakeSwiper;
 fakeSwiper.controller.control = mainSwiper;
 
-// [메인] 브랜드 ----------
-let brandSwiper = new Swiper('.brand_swiper', {
-    autoplay: {
-        delay: 5000, // 자동 재생 시간 설정
-        disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
-    },
-    spaceBetween: 30, // 슬라이드 사이 여백
-    slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
-    // pagination: {
-    //     el: '.swiper-pagination',
-    //     clickable: true,
-    //     renderBullet: function (index, className) {
-    //         return `<span class="${className}"></span>`;
-    //     },
-    // },
-    navigation: {
-        nextEl: ".brand_swiper .slide_nextBg_btn",
-        prevEl: ".brand_swiper .slide_prevBg_btn",
-    },
-});
 
 // [메인] 신제품 외부 슬라이드 ----------
 // 외부 슬라이드
@@ -247,16 +283,3 @@ categorySwiper(".category-swiper01", ".chair");
 categorySwiper(".category-swiper02", ".bed");
 categorySwiper(".category-swiper03", ".recliner");
 
-// [회사소개] 유튜브 슬라이드 ----------
-var newTitleSwiper = new Swiper('.youtube-swiper', {
-    spaceBetween: -30, // 슬라이드 사이 여백
-    slidesPerView : 1.5, // 한 슬라이드에 보여줄 갯수
-    centeredSlides: true, //센터모드
-    loop: true,
-    loopAdditionalSlides: 1,
-    initialSlide: 0, // 첫 번째 슬라이드부터 시작
-    navigation: {
-        nextEl: '#youtube .slide_btn.slide_next_btn',
-        prevEl: '#youtube .slide_btn.slide_prev_btn',
-    },
-});
