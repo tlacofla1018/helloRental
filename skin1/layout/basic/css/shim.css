@@ -798,9 +798,6 @@ main {
     display: flex;
     align-items: center;
 }
-#list_content .titleH {
-    margin: 80px 0 90px;
-}
 .list_main .xans-product-menupackage,
 .list_main .ec-base-product {
     margin: 0;
@@ -877,9 +874,6 @@ main {
     border: 0;
 }
 
-#rental_content {
-    margin: 0;
-}
 #rental_brand {
     position: relative;
     margin: -46px 0 120px;
@@ -1055,18 +1049,36 @@ main {
     background: url("/img/brand_banner/zespa_brand_banner.jpg") no-repeat bottom/cover;
 }
 
-#brand_list_content .D_flexSlider {
-    transform: translateY(40px);
+.list_main .D_flexSlider {
+    transform: translateY(80px);
 }
-#brand_list_content .D_flexSlider .swiper-slide img {
+.list_main .D_flexSlider .swiper.mySwiper.brand_swiper {
+    margin: 0;
+}
+.list_main .D_flexSlider .prdImg {
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+.list_main .D_flexSlider .swiper-slide img {
     opacity: .6;
     filter: grayscale(100%);
     transition: all .4s ease-in-out;
 }
-#brand_list_content .D_flexSlider .swiper-slide:hover img {
+.list_main .D_flexSlider .swiper-slide:hover img {
     opacity: 1;
     filter: none;
 }
+
+.brams_content_div .brand_offline_store .content1 {
+    background: url("/img/offline_store/brams1.jpg") no-repeat center/cover;
+}
+.brams_content_div .brand_offline_store .content2 {
+    background: url("/img/offline_store/brams2.jpg") no-repeat center/cover;
+}
+.brams_content_div .brand_offline_store .content3 {
+    background: url("/img/offline_store/brams3.jpg") no-repeat center/cover;
+}
+
 
 .tab_btn > li::after {
     content: '';

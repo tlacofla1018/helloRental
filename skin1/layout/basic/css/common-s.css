@@ -103,6 +103,7 @@ section {
 
 /* 텍스트 */
 .titleH {
+    margin: 80px 0 60px;
     color: var(--c-black-1);
 }
 .titleH.white {
@@ -286,7 +287,7 @@ section {
     transition: all .4s ease-in-out;
 }
 .D_flex_threeBox .flex_right > li:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     z-index: 10;
 }
 .D_flex_threeBox .inner .flex_right > li:hover .text {
@@ -356,9 +357,6 @@ section {
     flex-direction: column;
     align-items: flex-start;
 }
-.D_flexSlider .flex_left {
-    /* color: #fff; */
-}
 .D_flexSlider .flex_right {
     width: 100%;
     overflow: hidden;
@@ -396,7 +394,40 @@ section {
     width: 100%;
 }
 
-/* [회사소개] 유튜브 */
+/* 중간 배너 .D_middle_banner */
+.D_middle_banner {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 120px;
+}
+.D_middle_banner .banner_img {
+    display: block;
+}
+.D_middle_banner img {
+    display: block;
+    width: 100%;
+    transition: all .6s ease-in-out;
+}
+.D_middle_banner:hover img {
+    transform: scale(1.1);
+}
+.D_middle_banner .banner_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--c-black-6);
+    transform: translate(-50%, -50%);
+}
+.D_middle_banner strong {
+    margin-top: 16px;
+    font-size: var(--f-size-1);
+    font-weight: var(--f-weight-b);
+}
+
+
+/* 유튜브 .D_youtube */
 .D_youtube {
     position: relative;
 }

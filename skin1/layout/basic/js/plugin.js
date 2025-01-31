@@ -89,11 +89,11 @@ autoSlideSwiperBG('#mainBrandCategory .brand_swiper', {
     spaceBetween: 30,
 });
 
-autoSlideSwiperBG('#brand_list_content .brand_swiper', {
+autoSlideSwiperBG('.list_main .brand_swiper', {
     slidesPerView: 10,
-    spaceBetween: 10,
+    spaceBetween: 0,
     autoplay: {
-        delay: 2000, // 자동 재생 시간 설정
+        delay: 3000, // 자동 재생 시간 설정
         disableOnInteraction: false, // 사용자 상호작용 후에도 자동 재생 유지
     },
 });
