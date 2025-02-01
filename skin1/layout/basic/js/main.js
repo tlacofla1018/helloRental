@@ -218,7 +218,7 @@ function showBrandContent(contentId, bannerClass, bannerContentSelector, brandCo
 
     const brandContentsDiv = document.querySelector(brandContentsClass);
     if (brandContentsDiv) {
-        brandContentsDiv.style.display = 'block'; // 오프라인 스토어 노출
+        brandContentsDiv.style.display = 'block';
     }
 }
 
@@ -252,6 +252,28 @@ if (cateNo) {
     } else {
         const list = document.getElementById('list_content');
         if (list) list.style.display = 'block'; // 기본 페이지
+    
+        // cate_no 값에 따라 배너 보이기
+        const bannerMapping = {
+            "33": ".chair_banner",
+            "43": ".bed_banner",
+            "44": ".recliner_banner"
+        };
+    
+        if (cateNo && bannerMapping[cateNo]) {
+            const banner = document.querySelector(bannerMapping[cateNo]);
+            if (banner) {
+                banner.style.display = 'block';
+            }
+            
+            // 배너 애니메이션 트리거
+            setTimeout(() => {
+                const brandBannerContent = document.querySelector(bannerContentSelector);
+                if (brandBannerContent) {
+                    brandBannerContent.classList.add('animated'); // 애니메이션 트리거
+                }
+            }, 100);
+        }
     }
 }
 
