@@ -283,3 +283,11 @@ categorySwiper(".category-swiper01", ".chair");
 categorySwiper(".category-swiper02", ".bed");
 categorySwiper(".category-swiper03", ".recliner");
 
+var companyHistorySwiper = new Swiper(".company_history_swiper", {
+    direction: "vertical",
+    scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+    },
+    mousewheel: true,
+});

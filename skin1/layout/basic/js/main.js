@@ -186,7 +186,7 @@ const cateNoMatch = currentUrl.match(/cate_no=(\d+)/);
 const cateNo = cateNoMatch ? cateNoMatch[1] : null;
 
 // 모든 컨텐츠 숨기기
-document.querySelectorAll('.list_main').forEach(element => {
+document.querySelectorAll('.list_main.list_main_block').forEach(element => {
     element.style.display = 'none';
 });
 document.querySelectorAll('.brand_banner').forEach(element => {
@@ -243,9 +243,6 @@ if (cateNo) {
     
     if (setting) {
         showBrandContent(setting.contentId, setting.bannerClass, setting.bannerContentSelector, setting.brandContentsClass);
-    } else if (cateNo === "25") {
-        const rental = document.getElementById('rental_content');
-        if (rental) rental.style.display = 'block'; // 렌탈만 보이기
     } else if (cateNo === "32") {
         const brand = document.getElementById('brand_content');
         if (brand) brand.style.display = 'block'; // 브랜드관만 보이기

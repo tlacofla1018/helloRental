@@ -102,6 +102,9 @@ section {
 }
 
 /* 텍스트 */
+.point {
+    color: var(--c-point);
+}
 .titleH {
     margin: 80px 0 60px;
     color: var(--c-black-1);
@@ -110,16 +113,23 @@ section {
     color: var(--c-black-6);
 }
 .titleH h2 {
-    font-size: 2rem;
     line-height: 2.625rem;
-    letter-spacing: -0.02em;
-    font-weight: var(--f-weight-b);
 }
 .titleH p {
     font-size: 1rem;
     line-height: 1.5rem;
     letter-spacing: -0.02em;
     font-weight: var(--f-weight-n);
+}
+h2 {
+    font-size: var(--f-size-1);
+    font-weight: var(--f-weight-b);
+    letter-spacing: -0.02em;
+}
+h3 {
+    font-size: var(--f-size-2);
+    font-weight: var(--f-weight-b);
+    letter-spacing: -0.02em;
 }
 .description > div {
     width: 100%;
@@ -260,6 +270,11 @@ section {
     text-align: center;
     border: solid 1px var(--c-black-4);
     border-radius: 50px;
+}
+.btn:hover {
+    border: solid 1px var(--c-black-3);
+    background-color: var(--c-black-3);
+    color: var(--c-black-6);
 }
 .typeMoreview {
     margin-bottom: 120px;
