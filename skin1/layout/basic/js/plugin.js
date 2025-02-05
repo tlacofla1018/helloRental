@@ -42,20 +42,23 @@ function autoSlideSwiperBG(selector, options = {}) {
             prevEl: '.slide_box .slide_prevBg_btn',
         },
         pagination: {
-            el: '.slide_box .swiper-pagination', // 페이지네이션
+            el: '.slide_box .swiper_pagination', // 페이지네이션
             clickable: true,
         },
         loop: true, // 무한 반복
         ...options, // 추가 옵션 병합
         on: {
             init: function () {
-                // `.rental_brand_swiper`와 `.youtube-swiper` 제외하고 높이 조정
                 if (!['.rental_brand_swiper', '.youtube_swiper'].includes(selector)) {
                     adjustSlideHeight(selector);
                 }
+
+                // 유튜브 슬라이드라면 영상 재생 감지 이벤트 추가
+                if (selector === '.youtube_swiper') {
+                    loadYouTubeAPI(() => detectYouTubePlayback(swiper));
+                }
             },
             resize: function () {
-                // 윈도우 리사이즈 시 `.rental_brand_swiper`와 `.youtube-swiper` 제외하고 높이 재설정
                 if (!['.rental_brand_swiper', '.youtube_swiper'].includes(selector)) {
                     adjustSlideHeight(selector);
                 }
@@ -79,10 +82,38 @@ function adjustSlideHeight(selector) {
     });
 }
 
-// `.rental_brand_swiper`는 원래 설정 유지
-autoSlideSwiperBG('.rental_brand_swiper', {
-    slidesPerView: 1,
-});
+// 유튜브 API 로드 함수
+function loadYouTubeAPI(callback) {
+    if (window.YT && window.YT.Player) {
+        callback();
+    } else {
+        let script = document.createElement('script');
+        script.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(script);
+
+        window.onYouTubeIframeAPIReady = callback;
+    }
+}
+
+// 유튜브 영상이 재생 중일 때 자동 슬라이드를 멈추는 기능 추가
+function detectYouTubePlayback(swiper) {
+    const iframes = document.querySelectorAll(".youtube_swiper .swiper-slide iframe");
+    let players = [];
+
+    iframes.forEach((iframe, index) => {
+        players[index] = new YT.Player(iframe, {
+            events: {
+                "onStateChange": (event) => {
+                    if (event.data === YT.PlayerState.PLAYING) {
+                        swiper.autoplay.stop(); // 영상 재생 중이면 슬라이드 멈춤
+                    } else if (event.data === YT.PlayerState.ENDED || event.data === YT.PlayerState.PAUSED) {
+                        swiper.autoplay.start(); // 영상이 끝나거나 멈추면 다시 자동 재생
+                    }
+                },
+            },
+        });
+    });
+}
 
 autoSlideSwiperBG('#mainBrandCategory .brand_swiper', {
     slidesPerView: 7, 
@@ -101,7 +132,7 @@ autoSlideSwiperBG('.list_main .brand_swiper', {
 autoSlideSwiperBG('.youtube_swiper', {
     spaceBetween: -30, // 슬라이드 사이 여백
     slidesPerView: 1.5, // 한 슬라이드에 보여줄 갯수
-    centeredSlides: true, //센터모드
+    centeredSlides: true, // 센터 모드
     loopAdditionalSlides: 1,
     initialSlide: 0, // 첫 번째 슬라이드부터 시작
     navigation: {
@@ -142,7 +173,7 @@ let mainSwiper = new Swiper('.mainB-swiper', {
     loopAdditionalSlides: 1,
     initialSlide: 0, // 첫 번째 슬라이드부터 시작
     pagination: {
-        el: '.swiper-pagination',
+        el: '.slide_pagination',
         clickable: true,
         renderBullet: function (index, className) {
             return `<span class="${className}"></span>`;
@@ -291,3 +322,78 @@ var companyHistorySwiper = new Swiper(".company_history_swiper", {
     },
     mousewheel: true,
 });
+
+const label = document.querySelector(".label");
+const options = document.querySelectorAll(".optionItem");
+const optionBoxes = document.querySelectorAll(".map_optionItemBox");
+
+// 드롭다운 메뉴 열고 닫기
+label.addEventListener("click", function () {
+    const parent = label.closest('.map_selectBox');
+    parent.classList.toggle('active'); // active 클래스 토글
+});
+
+options.forEach(option => {
+    option.addEventListener("click", function () {
+        // 선택한 옵션의 클래스를 가져옴
+        const selectedClass = this.classList[1].replace("optionItem_", "map_optionItemBox_");
+
+        // 버튼 텍스트 변경
+        label.textContent = this.textContent;
+
+        // 모든 옵션 박스 숨김
+        optionBoxes.forEach(box => box.style.display = "none");
+
+        // 선택한 옵션과 매칭되는 박스만 표시
+        const selectedBox = document.querySelector("." + selectedClass);
+        if (selectedBox) {
+            selectedBox.style.display = "block";
+        }
+
+        // 드롭다운 메뉴 닫기
+        const parent = this.closest('.map_selectBox');
+        parent.classList.remove('active');
+    });
+});
+
+// 지도를 생성하는 함수
+function createMapAndMarker(containerId, lat, lng, level) {
+    var mapContainer = document.getElementById(containerId),
+        mapOption = {
+            center: new kakao.maps.LatLng(lat, lng),
+            level: level
+        };
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+    var markerPosition = new kakao.maps.LatLng(lat, lng);
+    var marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+    marker.setMap(map);
+    return map;
+}
+
+// 지도 생성
+createMapAndMarker('map_s1', 33.450701, 126.570667, 3);
+createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+createMapAndMarker('map_i1', 33.450701, 126.570667, 3);
+createMapAndMarker('map_i2', 33.450701, 126.570667, 3);
+createMapAndMarker('map_i3', 33.450701, 126.570667, 3);
+createMapAndMarker('map_i4', 33.450701, 126.570667, 3);
+createMapAndMarker('map_g1', 33.450701, 126.570667, 3);
+createMapAndMarker('map_g2', 33.450701, 126.570667, 3);
+createMapAndMarker('map_g3', 33.450701, 126.570667, 3);
+createMapAndMarker('map_c1', 33.450701, 126.570667, 3);
+createMapAndMarker('map_j1', 33.450701, 126.570667, 3);
+createMapAndMarker('map_j2', 33.450701, 126.570667, 3);
+createMapAndMarker('map_j3', 33.450701, 126.570667, 3);
+createMapAndMarker('map_d1', 33.450701, 126.570667, 3);
+createMapAndMarker('map_d2', 33.450701, 126.570667, 3);
+createMapAndMarker('map_d3', 33.450701, 126.570667, 3);
+createMapAndMarker('map_b1', 33.450701, 126.570667, 3);
+createMapAndMarker('map_b2', 33.450701, 126.570667, 3);
+createMapAndMarker('map_b3', 33.450701, 126.570667, 3);
+createMapAndMarker('map_b4', 33.450701, 126.570667, 3);
+createMapAndMarker('map_b5', 33.450701, 126.570667, 3);
+createMapAndMarker('map_b6', 33.450701, 126.570667, 3);
+createMapAndMarker('map_b7', 33.450701, 126.570667, 3);

@@ -162,17 +162,17 @@ main .titleH{
 }
 @keyframes slideInFromLeft {
     0% {
-        transform: translateX(-140px);
+        transform: translateX(-120px);
         opacity: 0;
     }
     100% {
-        transform: translateX(80px);
+        transform: translateX(20px);
         opacity: 1;
     }
 }
 
 .img-product {
-    transform: translateX(-140px); /* 초기 위치 */
+    transform: translateX(-120px); /* 초기 위치 */
     opacity: 0; /* 초기 투명도 */
     transition: transform 1s ease-out, opacity 1s ease-out; /* 부드러운 효과 */
 }
@@ -180,28 +180,10 @@ main .titleH{
 .swiper-slide-active .img-product {
     animation: slideInFromLeft 1s forwards; /* 좌에서 우로 이동 */
 }
-/* 페이지네이션 기본 스타일 */
-#mainBanner .swiper-pagination {
-    display: flex;
-    align-items: center;
-    position: absolute;
+
+#mainBanner .slide_pagination {
     bottom: 90px;
-    right: 20px;
-}
-.swiper-pagination-bullet {
-    width: 16px;
-    height: 1px;
-    background-color: #ccc;
-    opacity: 1; /* 투명도 제거 */
-    transition: all 0.3s ease;
-    cursor: pointer;
-    margin: 0 !important;
-}
-/* 활성화된 페이지네이션 */
-.swiper-pagination-bullet-active {
-    height: 2px;
-    background-color: #333;
-    border-radius: 50px;
+    z-index: 1;
 }
 
 /*---------- [메인] 브랜드존 ----------*/
@@ -747,18 +729,6 @@ main .titleH{
 #company_info_content {
     margin-bottom: 140px;
 }
-#company_info_content .titleH {
-    display: flex;
-    gap: 40px;
-}
-#company_info_content .titleH h2 {
-    line-height: unset;
-}
-#company_info_content .titleH div {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
 #company_info_content .titleH strong,
 #company_info_content .titleH p {
     line-height: 1.5rem;
@@ -901,6 +871,56 @@ main .titleH{
 #slogan .slogan_color3 {
     background-color: #BFE10E;
 }
+.map_selectBox {
+    position: relative;
+    display: inline-block;
+}
+
+.map_selectBox .label {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.map_selectBox .optionList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 10;
+    transition: max-height 0.3s ease;
+}
+
+.map_selectBox.active .optionList {
+    max-height: 200px;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.map_selectBox .optionItem {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.map_selectBox .optionItem:hover {
+    background-color: #f4f4f4;
+}
+
+/* 옵션 박스 숨기기 */
+.map_optionItemBox {
+    display: none;
+}
+
+.map_optionItemBox.active {
+    display: block;
+}
 
 /* [브랜드] */
 #brand_content .titleH {
@@ -1026,81 +1046,35 @@ main .titleH{
     border: 0;
 }
 
-#rental_brand {
-    position: relative;
-    margin: -46px 0 120px;
-    z-index: 8;
-}
-#rental_brand .rental_brand_swiper {
-    width: 100%;
-}
-#rental_brand .swiper-slide {
-    height: 520px;
-    margin: 0;
-}
-#rental_brand .thumbnail.flex_left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    margin: 0;
-}
-#rental_brand .thumbnail.flex_left .prdImg > a > img {
-    height: 520px;
-}
-#rental_brand .description.flex_right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    padding: 0;
-    background-color: var(--c-black-5);
-}
-#rental_brand .description.flex_right > a {
+#list_content .titleH.tab_titleH,
+#company_info_content .titleH.tab_titleH {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 520px;
-    line-height: normal;
-}
-
-#rental_category .titleH {
-    display: flex;
     align-items: center;
     gap: 12px;
 }
-#rental_category .tab_btn {
-    display: flex;
+#company_info_content .titleH.tab_titleH {
+    margin: 0 auto;
 }
-#rental_category .tab_btn > li {
+#list_content .tab_btn,
+#company_info_content .tab_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#list_content .tab_btn > li,
+#company_info_content .tab_btn > li {
     padding: 4px 8px;
 }
-#rental_category .tab_btn > li::after {
+#list_content .tab_btn > li::after,
+#company_info_content .tab_btn > li::after {
     content: none;
 }
-#rental_category .tab_content {
+#list_content .tab_content,
+#company_info_content .tab_content {
     margin: 40px 0 0;
 }
 
-#rental_content.list_smartGuide {
-    position: relative;
-    z-index: 1;
-    padding: 80px 0;
-    margin: 0 0 60px;
-    background: url("/img/rental_guide_bg.jpg") no-repeat center/cover fixed;
-}
-#rental_content.list_smartGuide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0, .2);
-}
 .list_smartGuide .inner {
     position: relative;
     z-index: 2;
@@ -1116,14 +1090,14 @@ main .titleH{
 }
 
 .company_banner,
-.list_main .brand_banner {
+.list_banner {
     width: 100%;
     height: 680px;
     margin-bottom: 80px;
     transform: translateY(-46px);
 }
 .company_banner_content,
-.list_main .brand_banner_content {
+.list_banner_content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1133,7 +1107,7 @@ main .titleH{
     height: 100%;
     background-color: rgb(0, 0, 0, .4);
 }
-.list_main .brand_banner_content::after {
+.list_banner_content::after {
     content: '';
     position: absolute;
     bottom: 40px;
@@ -1144,7 +1118,7 @@ main .titleH{
     background-color: var(--c-black-6);
 }
 .company_banner_content.animated::after,
-.list_main .brand_banner_content.animated::after {
+.list_banner_content.animated::after {
     animation: underlineExpand 0.6s ease-in-out forwards;
 }
 .company_banner_content .company_logo,
@@ -1153,7 +1127,8 @@ main .titleH{
     height: 200px;
     margin-top: -100px;
 }
-.company_banner_content .company_logo {
+.company_banner_content .company_logo,
+.list_banner_content .list_logo {
     height: unset;
     padding: 80px 0;
 }
@@ -1166,7 +1141,7 @@ main .titleH{
     object-position: center;
 }
 .company_banner_content .company_text,
-.list_main .brand_text {
+.list_text {
     text-align: center;
     line-height: 24px;
     color: var(--c-black-6);
@@ -1216,14 +1191,8 @@ main .titleH{
 #brand_list_content .zespa_brand_banner {
     background: url("/img/brand_banner/zespa_brand_banner.jpg") no-repeat bottom/cover;
 }
-#list_content .chair_banner {
-    background: url("/img/chair_bannerBg.jpg") no-repeat center/cover;
-}
-#list_content .bed_banner {
+#list_content .list_banner {
     background: url("/img/bed_bannerBg.jpg") no-repeat center/cover;
-}
-#list_content .recliner_banner {
-    background: url("/img/recliner_bannerBg.jpg") no-repeat center/cover;
 }
 
 .list_main .D_flexSlider .swiper.mySwiper.brand_swiper {
@@ -1291,7 +1260,10 @@ main .titleH{
     background: url("/img/offline_store/coway3.jpg") no-repeat left/cover;
 }
 
-
+.tab_btn,
+.tab_btn.flex_inner {
+    align-items: center;
+}
 .tab_btn > li::after {
     content: '';
     display: inline-block;
@@ -1301,18 +1273,33 @@ main .titleH{
     background-color: #121212;
     transition: all .4s ease-in-out;
 }
-.tab_btn > li h3 {
+.tab_btn > li h2,
+.tab_btn > li h3,
+.tab_btn > li h2 > a,
+.tab_btn > li h3 > a {
     width: 100%;
     display: inline-block;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: var(--f-size-4);
+    font-weight: var(--f-weight-n);
+    color: var(--c-black-3);
     transition: all .4s ease-in-out;
+}
+.tab_btn > li h2,
+.tab_btn > li h2 > a {
+    font-size: var(--f-size-3);
 }
 .tab_btn > li.active::after {
     width: 100%;
 }
-.tab_btn > li.active h3 {
-    font-size: 20px;
-    font-weight: 500;
-    color: #121212;
+.tab_btn > li.active h2,
+.tab_btn > li.active h3,
+.tab_btn > li.active h2 > a,
+.tab_btn > li.active h3 > a {
+    font-size: var(--f-size-3);
+    font-weight: var(--f-weight-m);
+    color: var(--c-black-1);
+}
+.tab_btn > li.active h2,
+.tab_btn > li.active h2 > a {
+    font-size: var(--f-size-2);
 }

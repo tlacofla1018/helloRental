@@ -1,10 +1,11 @@
-/* ---------- 헤더입니다 ---------- */
 #header::before,
 #header::after,
-#header .inner::after {
+#header .inner::after,
+#footer::before {
     content: none;
 }
 
+/* ---------- 헤더입니다 ---------- */
 #header {
     position: sticky;
     top: 0;
@@ -32,7 +33,9 @@
 #header .inner-left {
     display: flex;
     align-items: center;
-    gap: 1.875rem;
+    gap: 30px;
+    width: 70%;
+    max-width: 1176px;
 }
 #header h1 {
     width: 150px;
@@ -47,16 +50,12 @@
     width: 100%;
 }
 #header .category {
-    width: 600px;
+    width: 100%;
     margin: 0;
 }
 #header .category_depth {
     position: relative;
     width: 100%;
-}
-#header .category_depth > li,
-#header .category_depth > .xans-record-{
-    display: none;
 }
 #header .main-category-list {
     display: flex;
@@ -64,7 +63,7 @@
 }
 #header .main-category-list > li {
     text-align: center;
-    width: calc(100% / 6);
+    padding: 0 24px;
 }
 #header .main-category-list > li > a {
     display: block;
@@ -93,20 +92,15 @@
     opacity: 1;
     visibility: visible;
 }
+#header .sub-list-box {
+    transform: translateX(79px);
+}
 #header .sub-category-list {
-    width: calc(100% / 6);
     text-align: center;
     margin: 0 0 2rem;
 }
-#header .sub-category-list:nth-child(2) {
-    display: none;
-}
-#header .sub-category-list:nth-child(3) {
-    transform: translateX(100%);
-}
-#header .sub-category-list:last-child {
-    border-right: none;
-    transform: translateX(-300%);
+#header .sub-menu {
+    padding: 0 24px;
 }
 #header .sub-menu > a {
     display: inline-flex;
@@ -140,7 +134,9 @@
 #header .inner-right {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    justify-content: space-between;
+    width: 15%;
+    max-width: 240px;
 }
 #header .xans-layout-statelogon,
 #header .xans-layout-statelogoff {
@@ -162,7 +158,7 @@
     top: 100%;
     left: 0;
     position: absolute;
-    height: 12rem;
+    height: 12.125rem;
     z-index: 98;
     transition: all .2s ease-in-out;
     opacity: 0;
@@ -490,9 +486,6 @@
 }
 #footer strong{
     font-weight: 500;
-}
-#footer::before{
-    content: none;
 }
 #footer .inner,
 #footer .xans-layout-footer{

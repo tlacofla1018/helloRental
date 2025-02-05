@@ -180,17 +180,17 @@ $(function(){
                         // 첫 번째 sub-menu의 href 값을 수정
                         $(methods.aSubCategory[iCateNo]).each(function(index) {
                             if (index == 0) { // 첫 번째 항목 (회사소개)
-                                aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/company.html">' + this.name + '</a></li>');
+                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/company/vision.html">' + this.name + '</a></li>');
                             } else if (index == 1) { // 두 번째 항목 (렌탈)
-                                aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/rental.html">' + this.name + '</a></li>');
+                                aHtml.push('<li class="sub-menu"><a href="/product/list.html?cate_no=33">' + this.name + '</a></li>');
                             } else if (index == 2) { // 세 번째 항목 (이벤트/혜택)
-                                aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/event.html">' + this.name + '</a></li>');
+                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/event.html">' + this.name + '</a></li>');
                             } else if (index == 3) { // 네 번째 항목 (매장안내)
-                                aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/store.html">' + this.name + '</a></li>');
+                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/store.html">' + this.name + '</a></li>');
                             } else if (index == 4) { // 다섯 번째 항목 (B2B)
-                                aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/b2b.html">' + this.name + '</a></li>');
+                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/b2b.html">' + this.name + '</a></li>');
                             } else if (index == 5) { // 여섯 번째 항목 (고객센터)
-                                aHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/consumer.html">' + this.name + '</a></li>');
+                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/consumer.html">' + this.name + '</a></li>');
                             } else {
                                 aHtml.push('<li class="sub-menu"><a href="/' + this.design_page_url + this.param + '">' + this.name + '</a></li>');
                             }

@@ -1,0 +1,98 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div id="company_info_content">
+    <div class="path inner">
+        <span>현재 위치</span>
+        <ol>
+            <li><a href="/">홈</a></li>
+            <li><a href="/layout/basic/company/vision.html">회사소개</a></li>
+        </ol>
+    </div>
+    
+    <div class="company_banner">
+        <div class="company_banner_content">
+            <div class="company_logo"><img src="/img/hellorental_logo.png" alt="헬로렌탈 로고, 회사소개 페이지입니다"></div>
+            <p class="company_text">
+                LG헬로비전은 고객의 홈 라이프를 더욱 편리하게 만들고 지역과 다채롭게 연결하는 서비스를 제공합니다 <br>
+                고객의 생활에 녹아들 수 있는 서비스로 고객의 삶을 가치있게 연결하는 것이 LG헬로비전이 추구하는 방향성입니다
+            </p>
+        </div>
+    </div>
+    <div class="company_inner inner">
+        <div class="titleH tab_titleH">
+            <ul class="flex_inner tab_btn">
+                <li><h2><a href="/layout/basic/company/vision.html">비전 및 철학</a></h2></li>
+                <li><h2><a href="/layout/basic/company/ci.html">CI</a></h2></li>
+                <li><h2><a href="/layout/basic/company/history.html">연혁</a></h2></li>
+                <li class="active"><h2><a href="/layout/basic/company/map.html">오시는 길</a></h2></li>
+                <li><h2><a href="/layout/basic/company/youtube.html">헬로티비</a></h2></li>
+            </ul>
+        </div>
+        <div class="map_selectBox ">
+            <button class="label">서울</button>
+            <ul class="optionList">
+                <li class="optionItem optionItem_s">서울</li>
+                <li class="optionItem optionItem_i">경기/인천</li>
+                <li class="optionItem optionItem_g">강원</li>
+                <li class="optionItem optionItem_c">충청</li>
+                <li class="optionItem optionItem_j">전라</li>
+                <li class="optionItem optionItem_d">대구/경북</li>
+                <li class="optionItem optionItem_b">부산/경남</li>
+            </ul>
+        </div>
+        <ul>
+            <li class="map_optionItemBox map_optionItemBox_s tab_container tab_container_s active">
+                <ul class="tab_btn">
+                    <li class="active" data-tab="tab_map_s1">상암본사</li>
+                    <li data-tab="tab_map_s2">양천방송</li>
+                    <li data-tab="tab_map_s3">은평방송</li>
+                </ul>
+                <ul class="tab_content">
+                    <li id="tab_map_s1" class="active flex_inner">
+                        <!-- 지도를 표시할 div 입니다 -->
+                        <div id="map_s1" style="width:50%;height:480px;"></div>
+                        <div>
+                            <h3>LG헬로비전 상암본사</h3>
+                            <ul>
+                                <li><span>주소</span><span>서울특별시 마포구 월드컵북로56길 19 상암디지털드림타워 (03923)</span></li>
+                                <li><span>전화번호</span><span>1855-1000</span></li>
+                                <li><span>대중교통</span><span>지선버스(초록) 7730, 7737, 7013a, 7013b<br>지하철 경의선, 6호선 디지털미디어시티역 (2번 출구)</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="tab_map_s2" class="flex_inner">
+                        <!-- 지도를 표시할 div 입니다 -->
+                        <div id="map_s2" style="width:50%;height:480px;"></div>
+                        <div>
+                            <h3>LG헬로비전 양천방송</h3>
+                            <ul>
+                                <li><span>주소</span><span>서울특별시 양천구 신정로 267번지 양천벤처타운 903호 양천고객센터 (08079)</span></li>
+                                <li><span>전화번호</span><span>1855-1002</span></li>
+                                <li><span>대중교통</span><span>지선버스(초록) 6716, 6614, 6620, 6623, 6640B<br>지하철 2호선 신정네거리역 (1번 출구)</span></li>
+                                <li><span>서비스 지역</span><span>서울 양천구</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="tab_map_s3" class="flex_inner">
+                        <!-- 지도를 표시할 div 입니다 -->
+                        <div id="map_s3" style="width:50%;height:480px;"></div>
+                        <div>
+                            <h3>LG헬로비전 은평방송</h3>
+                            <ul>
+                                <li><span>주소</span><span>경기도 고양시 덕양구 용두로47번길 120, 2층 은평고객센터 (10548)</span></li>
+                                <li><span>전화번호</span><span>1855-1002</span></li>
+                                <li><span>대중교통</span><span>광역버스(빨강) 9701, 간선버스(파랑) 702A</span></li>
+                                <li><span>서비스 지역</span><span>서울 은평구</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="map_optionItemBox map_optionItemBox_i"></li>
+            <li class="map_optionItemBox map_optionItemBox_g"></li>
+            <li class="map_optionItemBox map_optionItemBox_c"></li>
+            <li class="map_optionItemBox map_optionItemBox_j"></li>
+            <li class="map_optionItemBox map_optionItemBox_d"></li>
+            <li class="map_optionItemBox map_optionItemBox_b"></li>
+        </ul>
+    </div>
+</div>

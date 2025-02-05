@@ -192,6 +192,9 @@ document.querySelectorAll('.list_main.list_main_block').forEach(element => {
 document.querySelectorAll('.brand_banner').forEach(element => {
     element.style.display = 'none';
 });
+document.querySelectorAll('.list_tab_titleH_box .tab_titleH').forEach(element => {
+    element.style.display = 'none';
+});
 document.querySelectorAll('.content_div').forEach(element => {
     element.style.display = 'none';
 });
@@ -252,9 +255,9 @@ if (cateNo) {
     
         // cate_no 값에 따라 배너 보이기
         const bannerMapping = {
-            "33": ".chair_banner",
-            "43": ".bed_banner",
-            "44": ".recliner_banner"
+            "33": ".chair_tab_titleH",
+            "43": ".bed_tab_titleH",
+            "44": ".recliner_tab_titleH"
         };
     
         if (cateNo && bannerMapping[cateNo]) {
@@ -299,8 +302,8 @@ function tabFunction(containerSelector) {
     const container = document.querySelector(containerSelector);
     if (!container) return; // 컨테이너가 없으면 함수 종료
 
-    const tabBtns = container.querySelectorAll('.tab_btn li');
-    const tabContents = container.querySelectorAll('.tab_content li');
+    const tabBtns = container.querySelectorAll('.tab_btn > li');
+    const tabContents = container.querySelectorAll('.tab_content > li');
 
     // 탭 버튼 클릭 이벤트 설정
     tabBtns.forEach(button => {
@@ -316,6 +319,57 @@ function tabFunction(containerSelector) {
             if (targetContent) {
                 targetContent.classList.add('active');
             }
+
+            // 지도 생성 함수 실행 (탭 클릭 시 해당 지도 생성)
+            if (targetTab === 'tab_map_s1') {
+                createMapAndMarker('map_s1', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_s2') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_s3') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_i1') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_i2') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_i3') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_i4') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_g1') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_g2') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_g3') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_c1') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_j1') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_j2') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_j3') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_d1') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_d2') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_d3') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_b1') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_b2') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_b3') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_b4') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_b5') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_b6') {
+                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+            } else if (targetTab === 'tab_map_b7') {
+                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+            }
         });
     });
 }
@@ -330,6 +384,10 @@ if (document.querySelector('#rental_category .tab_container')) {
     tabFunction('#rental_category .tab_container');
 }
 
+// 헬로+ 오시는 길 지도
+if (document.querySelector('#company_info_content .tab_container')) {
+    tabFunction('#company_info_content .tab_container');
+}
 
 
 
