@@ -323,77 +323,170 @@ var companyHistorySwiper = new Swiper(".company_history_swiper", {
     mousewheel: true,
 });
 
-const label = document.querySelector(".label");
-const options = document.querySelectorAll(".optionItem");
-const optionBoxes = document.querySelectorAll(".map_optionItemBox");
+document.addEventListener("DOMContentLoaded", function () {
+    const label = document.querySelector(".label");
+    const options = document.querySelectorAll(".optionItem");
+    const selectBox = document.querySelector(".map_selectBox");
 
-// 드롭다운 메뉴 열고 닫기
-label.addEventListener("click", function () {
-    const parent = label.closest('.map_selectBox');
-    parent.classList.toggle('active'); // active 클래스 토글
-});
+    // 요소가 없으면 함수 실행 중단
+    if (!label || !options.length || !selectBox) {
+        return;
+    }
 
-options.forEach(option => {
-    option.addEventListener("click", function () {
-        // 선택한 옵션의 클래스를 가져옴
-        const selectedClass = this.classList[1].replace("optionItem_", "map_optionItemBox_");
+    // 드롭다운 메뉴 열고 닫기
+    label.addEventListener("click", function (event) {
+        event.stopPropagation(); // 이벤트 버블링 방지
+        selectBox.classList.toggle('active');
+    });
 
-        // 버튼 텍스트 변경
-        label.textContent = this.textContent;
+    // 옵션 클릭 시 선택한 값 적용 + 드롭다운 닫기
+    options.forEach(option => {
+        option.addEventListener("click", function (event) {
+            event.stopPropagation(); // 이벤트 버블링 방지
+            
+            // 선택한 옵션의 텍스트를 label에 반영
+            label.textContent = this.textContent;
 
-        // 모든 옵션 박스 숨김
-        optionBoxes.forEach(box => box.style.display = "none");
+            // 드롭다운 닫기
+            selectBox.classList.remove('active');
 
-        // 선택한 옵션과 매칭되는 박스만 표시
-        const selectedBox = document.querySelector("." + selectedClass);
-        if (selectedBox) {
-            selectedBox.style.display = "block";
-        }
+            // 모든 옵션 박스 숨김
+            document.querySelectorAll(".map_optionItemBox").forEach(box => {
+                box.style.display = "none";
+            });
 
-        // 드롭다운 메뉴 닫기
-        const parent = this.closest('.map_selectBox');
-        parent.classList.remove('active');
+            // 선택한 옵션과 매칭되는 박스만 표시
+            const selectedClass = this.classList[1]?.replace("optionItem_", "map_optionItemBox_");
+            const selectedBox = selectedClass ? document.querySelector("." + selectedClass) : null;
+            if (selectedBox) {
+                selectedBox.style.display = "block";
+
+                // 지도 생성 함수 호출 (각 지도 컨테이너가 존재하는지 확인 후 실행)
+                const locations = [
+                    ['map_s1', 37.58215549826089, 126.88828066386085, 12256059],
+                    ['map_s2', 37.5122197905037, 126.850668115021, 7981432],
+                    ['map_s3', 37.625475239417, 126.891239514577, 1709493349],
+                    ['map_i1', 37.501738269947, 126.722936953106, 18216252],
+                    ['map_i2', 37.501738269947, 126.722936953106, 26981707],
+                    ['map_i3', 37.72218868627937, 127.0482828523194, 8224334],
+                    ['map_i4', 37.501738269947, 126.722936953106, 1332789312],
+                    ['map_g1', 37.771164886328926, 128.9109412192755, 8008692],
+                    ['map_g2', 37.3281627041938, 127.97631046052452, 10499085],
+                    ['map_g3', 37.89466563833509, 127.74671810291392, 25539183],
+                    ['map_c1', 36.88613086488948, 126.61670342136986, 27150954],
+                    ['map_j1', 35.58735143148956, 126.85942185920504, 12841710],
+                    ['map_j2', 34.80137756370428, 126.41440858915229, 9574064],
+                    ['map_j3', 34.953804738096004, 127.52584638063139, 1346876084],
+                    ['map_d1', 35.8395429095138, 128.626404489539, 27319412],
+                    ['map_d2', 35.85193815298739, 129.20969583415504, 26893446],
+                    ['map_d3', 36.58135498810642, 128.73466505884917, 9856721],
+                    ['map_b1', 35.169246097308935, 129.17667658559583, 12904290],
+                    ['map_b2', 35.15559158638332, 129.06461723979263, 2094229657],
+                    ['map_b3', 35.2359386429224, 128.68933401177455, 27367741],
+                    ['map_b4', 35.2387308157627, 128.867810301474, 11872428],
+                    ['map_b5', 35.1555660671912, 129.0646604856535, 12479829],
+                    ['map_b6', 35.15560054737253, 129.0646202094601, 27088673],
+                    ['map_b7', 35.235945400087765, 128.68933415191506, 27367741]
+                ];
+
+                locations.forEach(([id, lat, lng, placeId]) => {
+                    if (document.getElementById(id)) {
+                        createMapAndMarker(id, lat, lng, placeId);
+                    }
+                });
+            }
+        });
+    });
+
+    // 드롭다운 영역 밖을 클릭하면 닫기
+    document.addEventListener("click", function () {
+        selectBox.classList.remove('active');
     });
 });
-
 // 지도를 생성하는 함수
-function createMapAndMarker(containerId, lat, lng, level) {
-    var mapContainer = document.getElementById(containerId),
-        mapOption = {
-            center: new kakao.maps.LatLng(lat, lng),
-            level: level
-        };
+function createMapAndMarker(containerId, lat, lng, placeId) {
+    var mapContainer = document.getElementById(containerId);
+
+    // 요소가 존재하지 않으면 함수 실행 중단
+    if (!mapContainer) {
+        console.warn(`지도를 생성할 컨테이너(${containerId})가 존재하지 않습니다.`);
+        return;
+    }
+
+    var mapOption = {
+        center: new kakao.maps.LatLng(lat, lng),
+        level: 3
+    };
     var map = new kakao.maps.Map(mapContainer, mapOption);
-    var markerPosition = new kakao.maps.LatLng(lat, lng);
+
+    var imageSrc = 'https://tlacofla1018.cafe24.com/img/company/map_marker.png', // 마커 이미지 경로
+        imageSize = new kakao.maps.Size(52, 64), // 마커 이미지 크기
+        imageOption = { offset: new kakao.maps.Point(27, 64) }; // 마커 이미지 옵션
+
+    // 마커 이미지 객체 생성
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+        markerPosition = new kakao.maps.LatLng(lat, lng);
+
+    // 마커 생성 (markerImage 적용)
     var marker = new kakao.maps.Marker({
-        position: markerPosition
+        position: markerPosition,
+        image: markerImage // 마커 이미지 추가
     });
+
+    // 지도에 마커 표시
     marker.setMap(map);
+
+    // .store_name을 가진 요소 찾기
+    var customOverlayElement = document.querySelector(`#${containerId} ~ .map_info .store_name`);
+
+    // 요소가 존재하면 텍스트 추출
+    var storeText = customOverlayElement ? customOverlayElement.textContent.trim() : "LG헬로비전";
+
+    // 커스텀 오버레이 내용 생성
+    var content = `
+        <div class="map_customoverlay">
+            <a href="https://map.kakao.com/link/map/${placeId}" target="_blank">
+                <span class="map_title">${storeText}</span>
+            </a>
+        </div>
+    `;
+
+    // 💡 오버레이를 마커 위에 위치하도록 `yAnchor` 값을 조정
+    var customOverlay = new kakao.maps.CustomOverlay({
+        map: map,
+        position: markerPosition, // 마커 위치와 동일하게 설정
+        content: content,
+        yAnchor: 3 // 기본 값(1)보다 높게 설정해 마커 위로 띄우기
+    });
+
     return map;
 }
 
 // 지도 생성
-createMapAndMarker('map_s1', 33.450701, 126.570667, 3);
-createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
-createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
-createMapAndMarker('map_i1', 33.450701, 126.570667, 3);
-createMapAndMarker('map_i2', 33.450701, 126.570667, 3);
-createMapAndMarker('map_i3', 33.450701, 126.570667, 3);
-createMapAndMarker('map_i4', 33.450701, 126.570667, 3);
-createMapAndMarker('map_g1', 33.450701, 126.570667, 3);
-createMapAndMarker('map_g2', 33.450701, 126.570667, 3);
-createMapAndMarker('map_g3', 33.450701, 126.570667, 3);
-createMapAndMarker('map_c1', 33.450701, 126.570667, 3);
-createMapAndMarker('map_j1', 33.450701, 126.570667, 3);
-createMapAndMarker('map_j2', 33.450701, 126.570667, 3);
-createMapAndMarker('map_j3', 33.450701, 126.570667, 3);
-createMapAndMarker('map_d1', 33.450701, 126.570667, 3);
-createMapAndMarker('map_d2', 33.450701, 126.570667, 3);
-createMapAndMarker('map_d3', 33.450701, 126.570667, 3);
-createMapAndMarker('map_b1', 33.450701, 126.570667, 3);
-createMapAndMarker('map_b2', 33.450701, 126.570667, 3);
-createMapAndMarker('map_b3', 33.450701, 126.570667, 3);
-createMapAndMarker('map_b4', 33.450701, 126.570667, 3);
-createMapAndMarker('map_b5', 33.450701, 126.570667, 3);
-createMapAndMarker('map_b6', 33.450701, 126.570667, 3);
-createMapAndMarker('map_b7', 33.450701, 126.570667, 3);
+createMapAndMarker('map_s1', 37.58215549826089, 126.88828066386085, 12256059);
+createMapAndMarker('map_s2', 37.5122197905037, 126.850668115021, 7981432);
+createMapAndMarker('map_s3', 37.625475239417, 126.891239514577, 1709493349);
+createMapAndMarker('map_i1', 37.501738269947, 126.722936953106, 18216252);
+createMapAndMarker('map_i2', 37.501738269947, 126.722936953106, 26981707);
+createMapAndMarker('map_i3', 37.72218868627937, 127.0482828523194, 8224334);
+createMapAndMarker('map_i4', 37.501738269947, 126.722936953106, 1332789312);
+createMapAndMarker('map_g1', 37.771164886328926, 128.9109412192755, 8008692);
+createMapAndMarker('map_g2', 37.3281627041938, 127.97631046052452, 10499085);
+createMapAndMarker('map_g3', 37.89466563833509, 127.74671810291392, 25539183);
+createMapAndMarker('map_c1', 36.88613086488948, 126.61670342136986, 27150954);
+createMapAndMarker('map_j1', 35.58735143148956, 126.85942185920504, 12841710);
+createMapAndMarker('map_j2', 34.80137756370428, 126.41440858915229, 9574064);
+createMapAndMarker('map_j3', 34.953804738096004, 127.52584638063139, 1346876084);
+createMapAndMarker('map_d1', 35.8395429095138, 128.626404489539, 27319412);
+createMapAndMarker('map_d2', 35.85193815298739, 129.20969583415504, 26893446);
+createMapAndMarker('map_d3', 36.58135498810642, 128.73466505884917, 9856721);
+createMapAndMarker('map_b1', 35.169246097308935, 129.17667658559583, 12904290);
+createMapAndMarker('map_b2', 35.15559158638332, 129.06461723979263, 2094229657);
+createMapAndMarker('map_b3', 35.2359386429224, 128.68933401177455, 27367741);
+createMapAndMarker('map_b4', 35.2387308157627, 128.867810301474, 11872428);
+createMapAndMarker('map_b5', 35.1555660671912, 129.0646604856535, 12479829);
+createMapAndMarker('map_b6', 35.15560054737253, 129.0646202094601, 27088673);
+createMapAndMarker('map_b7', 35.235945400087765, 128.68933415191506, 27367741);
+createMapAndMarker('openStudio_1', 35.2350206837638, 128.866411000408, 1773954104);
+createMapAndMarker('openStudio_2', 37.335574340078715, 127.92920604803543, 53956412);
+createMapAndMarker('openStudio_3', 34.8131395139559, 126.462089373874, 1655856961);

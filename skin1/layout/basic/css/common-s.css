@@ -43,6 +43,7 @@ section {
 }
 .flex_inner {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 .ec-base-product .prdList {
@@ -515,4 +516,24 @@ iframe {
 }
 .D_youtube .slide_btn.slide_prev_btn {
     left: -32px;
+}
+
+.map_customoverlay {
+    border: solid 2px var(--c-point);
+    border-radius: 4px;
+    background-color: var(--c-black-6);
+}
+.map_customoverlay a {
+    display: flex;
+    align-items: center;
+    padding: 8px 4px 8px 10px;
+    font-size: var(--f-size-5);
+    line-height: 16px;
+}
+.map_customoverlay a::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(/img/icon/nextIcon.svg) no-repeat center/cover;
 }

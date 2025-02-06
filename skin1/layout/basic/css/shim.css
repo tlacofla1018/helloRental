@@ -568,6 +568,7 @@ main .titleH{
     min-width: 280px;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: unset;
     margin-top: 2.5rem;
     padding-bottom: 220px;
     gap: 1.25rem;
@@ -871,44 +872,68 @@ main .titleH{
 #slogan .slogan_color3 {
     background-color: #BFE10E;
 }
-.map_selectBox {
-    position: relative;
-    display: inline-block;
-}
 
+/* [헬로+] 오시는 길 */
+.map_contents {
+    position: relative;
+    padding-top: 60px;
+}
+.map_selectBox {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 140px;
+    display: block;
+}
 .map_selectBox .label {
-    padding: 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 140px;
+    padding: 8px 20px 8px 14px;
+    border: 1px solid var(--c-black-4);
+    border-radius: 20px;
+    box-sizing: border-box;
     cursor: pointer;
 }
-
+.map_selectBox .label::after {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url(/img/icon/nextIcon.svg) no-repeat center/cover;;
+    transform: rotate(90deg);
+    transition: all .4s ease-in-out;
+}
+.map_selectBox.active .label::after {
+    transform: rotate(-90deg);
+}
 .map_selectBox .optionList {
     position: absolute;
-    top: 100%;
+    top: 39px;
     left: 0;
+    visibility: hidden;
     width: 100%;
-    max-height: 0;
+    height: 0;
     overflow: hidden;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-top: none;
+    background-color: var(--c-black-6);
+    border: 1px solid var(--c-black-4);
+    border-radius: 16px;
     z-index: 10;
-    transition: max-height 0.3s ease;
+    box-sizing: border-box;
+    transition: all .4s ease-in-out;
 }
-
 .map_selectBox.active .optionList {
-    max-height: 200px;
-    transition: max-height 0.3s ease-in-out;
+    visibility: visible;
+    height: 254px;
+    transition: all .4s ease-in-out;
 }
-
 .map_selectBox .optionItem {
     padding: 10px;
     cursor: pointer;
     background-color: #fff;
     transition: background-color 0.3s;
 }
-
 .map_selectBox .optionItem:hover {
     background-color: #f4f4f4;
 }
@@ -917,9 +942,82 @@ main .titleH{
 .map_optionItemBox {
     display: none;
 }
-
 .map_optionItemBox.active {
     display: block;
+}
+#company_info_content .map_optionItemBox .tab_btn {
+    justify-content: flex-end;
+}
+.map_optionItemBox .tab_content > li.active,
+#openStudio_store_content .tab_content > li.active {
+    display: flex;
+}
+.map_optionItemBox .tab_btn > li,
+#openStudio_store_content .tab_btn > li {
+    font-size: var(--f-size-4);
+    font-weight: var(--f-weight-n);
+    color: var(--c-black-3);
+}
+.map_optionItemBox .tab_btn > li.active,
+#openStudio_store_content .tab_btn > li.active {
+    font-weight: var(--f-weight-m);
+    color: var(--c-black-1);
+}
+#openStudio_store_content .tab_container {
+    position: relative;
+    margin-bottom: 140px;
+}
+#openStudio_store_content .tab_container .tab_btn {
+    position: absolute;
+    top: 72px;
+    left: calc(50% + 40px);
+}
+.tab_container .map_info {
+    width: 50%;
+    padding: 0 0 0 40px;
+    box-sizing: border-box;
+}
+.map_info .store_name {
+    margin-bottom: 32px;
+    font-size: var(--f-size-3);
+    font-weight: var(--f-weight-m);
+}
+.map_info ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.map_info ul li {
+    display: flex;
+    font-size: var(--f-size-4);
+    line-height: 20px;
+}
+.map_info .info_title {
+    width: 100px;
+    font-weight: var(--f-weight-m);
+}
+#openStudio_store_content .map_info {
+    padding-top: 30px;
+}
+#openStudio_store_content .sns {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    margin-top: 80px
+}
+#openStudio_store_content .sns_icon {
+    display: block;
+}
+#openStudio_store_content .sns_icon a {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+#openStudio_store_content .sns_icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* [브랜드] */
@@ -1057,21 +1155,30 @@ main .titleH{
     margin: 0 auto;
 }
 #list_content .tab_btn,
-#company_info_content .tab_btn {
+#company_info_content .tab_btn,
+#openStudio_info_content .tab_btn,
+#openStudio_store_content .tab_btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 12px;
 }
-#list_content .tab_btn > li,
-#company_info_content .tab_btn > li {
-    padding: 4px 8px;
+#company_info_content .tab_container .tab_btn > li,
+#openStudio_store_content .tab_container .tab_btn > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 }
 #list_content .tab_btn > li::after,
-#company_info_content .tab_btn > li::after {
+#company_info_content .tab_titleH .tab_btn > li::after,
+#openStudio_info_content .tab_titleH .tab_btn > li::after,
+#openStudio_store_content .tab_titleH .tab_btn > li::after {
     content: none;
 }
 #list_content .tab_content,
-#company_info_content .tab_content {
+#company_info_content .tab_content,
+#openStudio_store_content .tab_content {
     margin: 40px 0 0;
 }
 
@@ -1282,7 +1389,6 @@ main .titleH{
     font-size: var(--f-size-4);
     font-weight: var(--f-weight-n);
     color: var(--c-black-3);
-    transition: all .4s ease-in-out;
 }
 .tab_btn > li h2,
 .tab_btn > li h2 > a {

@@ -499,10 +499,17 @@
 .footer-content:last-child{
     border: 0;
 }
-.footer-inner{
+.footer_inner{
     width: 100%;
     max-width: 1920px;
     padding: 0 7.5rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.footer_inner_1440{
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 15rem;
     box-sizing: border-box;
     margin: 0 auto;
 }

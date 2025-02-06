@@ -1,6 +1,6 @@
 <!--@layout(/layout/basic/layout.html)-->
 <div id="company_info_content">
-    <div class="path inner">
+    <div class="path inner_1440">
         <span>현재 위치</span>
         <ol>
             <li><a href="/">홈</a></li>
@@ -17,7 +17,7 @@
             </p>
         </div>
     </div>
-    <div class="company_inner inner">
+    <div class="company_inner inner_1440">
         <div class="titleH tab_titleH">
             <ul class="flex_inner tab_btn">
                 <li><h2><a href="/layout/basic/company/vision.html">비전 및 철학</a></h2></li>
@@ -27,72 +27,398 @@
                 <li><h2><a href="/layout/basic/company/youtube.html">헬로티비</a></h2></li>
             </ul>
         </div>
-        <div class="map_selectBox ">
-            <button class="label">서울</button>
-            <ul class="optionList">
-                <li class="optionItem optionItem_s">서울</li>
-                <li class="optionItem optionItem_i">경기/인천</li>
-                <li class="optionItem optionItem_g">강원</li>
-                <li class="optionItem optionItem_c">충청</li>
-                <li class="optionItem optionItem_j">전라</li>
-                <li class="optionItem optionItem_d">대구/경북</li>
-                <li class="optionItem optionItem_b">부산/경남</li>
+        <div class="map_contents">
+            <div class="map_selectBox">
+                <button class="label">서울</button>
+                <ul class="optionList">
+                    <li class="optionItem optionItem_s">서울</li>
+                    <li class="optionItem optionItem_i">경기/인천</li>
+                    <li class="optionItem optionItem_g">강원</li>
+                    <li class="optionItem optionItem_c">충청</li>
+                    <li class="optionItem optionItem_j">전라</li>
+                    <li class="optionItem optionItem_d">대구/경북</li>
+                    <li class="optionItem optionItem_b">부산/경남</li>
+                </ul>
+            </div>
+            <ul>
+                <li class="map_optionItemBox map_optionItemBox_s tab_container tab_container_s active">
+                    <ul class="tab_btn">
+                        <li class="active" data-tab="tab_map_s1">상암본사</li>
+                        <li data-tab="tab_map_s2">양천방송</li>
+                        <li data-tab="tab_map_s3">은평방송</li>
+                    </ul>
+                    <ul class="tab_content">
+                        <li id="tab_map_s1" class="active flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_s1" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 상암본사</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>서울특별시 마포구 월드컵북로56길 19 상암디지털드림타워 (03923)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>지선버스(초록) 7730, 7737, 7013a, 7013b<br>지하철 경의선, 6호선 디지털미디어시티역 (2번 출구)</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_s2" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_s2" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 양천방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>서울특별시 양천구 신정로 267번지 양천벤처타운 903호 양천고객센터 (08079)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1002</span></li>
+                                    <li><span class="info_title">대중교통</span><span>지선버스(초록) 6716, 6614, 6620, 6623, 6640B<br>지하철 2호선 신정네거리역 (1번 출구)</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>서울 양천구</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_s3" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_s3" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 은평방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>경기도 고양시 덕양구 용두로47번길 120, 2층 은평고객센터 (10548)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1002</span></li>
+                                    <li><span class="info_title">대중교통</span><span>광역버스(빨강) 9701, 간선버스(파랑) 702A</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>서울 은평구</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="map_optionItemBox map_optionItemBox_i tab_container tab_container_i">
+                    <ul class="tab_btn">
+                        <li class="active" data-tab="tab_map_i1">부천방송</li>
+                        <li data-tab="tab_map_i2">김포방송</li>
+                        <li data-tab="tab_map_i3">나라방송</li>
+                        <li data-tab="tab_map_i4">북인천방송</li>
+                    </ul>
+                    <ul class="tab_content">
+                        <li id="tab_map_i1" class="active flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_i1" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 부천방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>인천광역시 부평구 부흥북로 7 3층 (21358)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1002</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 111-2, 12, 14-1, 551, 555, 556, 1400<br>인천 지하철 1호선 부평시장역</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>경기도 부천시</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_i2" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_i2" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 김포방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>인천광역시 부평구 부흥북로 7 3층 (21358)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1002</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 111-2, 12, 14-1, 551, 555, 556, 1400<br>인천 지하철 1호선 부평시장역</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>경기도 김포시</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_i3" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_i3" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 나라방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>경기도 의정부시 평화로 340 (11705)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>031-840-9090</span></li>
+                                    <li><span class="info_title">대중교통</span><span>일반버스-5, 10, 10-3, 36, 133, 7, 39, 39-4, 36, 37, 48, 118, 39-1, 74, 72, 72-3<br>간선버스-106, 108<br>급행버스-8409<br>지하철 1호선 회룡역 3번 출구</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>의정부시, 양주시, 포천시, 동두천시, 연천군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_i4" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_i4" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 북인천방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>인천광역시 부평구 부흥북로 7 (21358)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 111-2, 12, 14-1, 551, 555, 556, 1400<br>인천 지하철 1호선 부평시장역</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>부평구, 계양구</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="map_optionItemBox map_optionItemBox_g tab_container tab_container_g">
+                    <ul class="tab_btn">
+                        <li class="active" data-tab="tab_map_g1">영동방송</li>
+                        <li data-tab="tab_map_g2">영서방송</li>
+                        <li data-tab="tab_map_g3">강원방송</li>
+                    </ul>
+                    <ul class="tab_content">
+                        <li id="tab_map_g1" class="active flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_g1" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 영동방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>강원도 강릉시 강릉대로 422-3 (25485)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 104, 105, 200, 222, 223, 510 등 (정류장: 포남동 동인병원입구)</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>강원도 강릉시, 속초시, 고성군, 양양군, 동해시, 삼척시, 태백시</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_g2" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_g2" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 영서방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>강원도 원주시 동부순환로 154-25 (26460)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>033-747-6700</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 84번 영서방송역 5,8,80,80-1번 동신아파트역 하차</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>강원도 원주시, 문막읍, 횡성군, 영월군, 평창군, 정선군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_g3" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_g3" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 강원방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>강원도 춘천시 동면 소양강로 76 (24210)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1877-5500</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 1, 2, 3, 5, 7 후평동 버스 종점</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>강원도 춘천시, 철원군, 화천군, 홍천군, 인제군, 양구군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="map_optionItemBox map_optionItemBox_c tab_container tab_container_c">
+                    <ul class="tab_btn">
+                        <li class="active" data-tab="tab_map_c1">충남방송</li>
+                    </ul>
+                    <ul class="tab_content">
+                        <li id="tab_map_c1" class="active flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_c1" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 충남방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>충청남도 당진시 역천로 849-38 (31783)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>당진 시외버스터미널에서 소방서 방향으로 3km</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>충청남도 당진시, 서산시, 홍성군, 예산군, 청양군, 태안군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="map_optionItemBox map_optionItemBox_j tab_container tab_container_j">
+                    <ul class="tab_btn">
+                        <li class="active" data-tab="tab_map_j1">전북방송</li>
+                        <li data-tab="tab_map_j2">호남방송</li>
+                        <li data-tab="tab_map_j3">아라방송</li>
+                    </ul>
+                    <ul class="tab_content">
+                        <li id="tab_map_j1" class="active flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_j1" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 전북방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>전라북도 정읍시 수성6로 5-10 (수성동) (56171)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>070-8145-6300</span></li>
+                                    <li><span class="info_title">대중교통</span><span>시외버스터미널 ,정읍역(KTX) >택시 (기본운임)</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>전라북도 정읍시, 남원시, 김제시, 고창군, 부안군, 순창군, 임실군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_j2" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_j2" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 호남방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>전라남도 목포시 하당로115-1 (58667)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>061-280-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 84번 영서방송역 5,8,80,80-1번 동신아파트역 하차</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>강원도 원주시, 문막읍, 횡성군, 영월군, 평창군, 정선군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_j3" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_j3" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 아라방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>전라남도 순천시 장선배기길 31 SKY빌딩 2층 (57968)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 7, 13, 20 500 영흥중고교입구 정류장 하차</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>전라남도 목포시,강진군,무안군,신안군,영암군,완도군,장흥군,진도군,해남군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="map_optionItemBox map_optionItemBox_d tab_container tab_container_d">
+                    <ul class="tab_btn">
+                        <li class="active" data-tab="tab_map_d1">대구방송</li>
+                        <li data-tab="tab_map_d2">신라방송</li>
+                        <li data-tab="tab_map_d3">영남방송</li>
+                    </ul>
+                    <ul class="tab_content">
+                        <li id="tab_map_d1" class="active flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_d1" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 대구방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>대구광역시 수성구 청수로 165 (42176)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 100, 349, 414, 427</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>대구 동구, 수성구</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_d2" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_d2" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 신라방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>경상북도 경주시 봉황로 139 (38136)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 40번, 51번 성건동주민센터 앞 도보 10분</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>경상북도 경주시, 영천시, 경산시, 청도군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_d3" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_d3" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 영남방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>경상북도 안동시 퇴계로 278 (36682)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 0번, 57번, 67번 버스</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>경상북도 안동시, 영주시, 문경시, 의성군, 예천군, 봉화군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="map_optionItemBox map_optionItemBox_b tab_container tab_container_b">
+                    <ul class="tab_btn">
+                        <li class="active" data-tab="tab_map_b1">해운대기장방송</li>
+                        <li data-tab="tab_map_b2">중부산방송</li>
+                        <li data-tab="tab_map_b3">경남방송</li>
+                        <li data-tab="tab_map_b4">가야방송</li>
+                        <li data-tab="tab_map_b5">금정방송</li>
+                        <li data-tab="tab_map_b6">중앙방송</li>
+                        <li data-tab="tab_map_b7">마산방송</li>
+                    </ul>
+                    <ul class="tab_content">
+                        <li id="tab_map_b1" class="active flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_b1" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 해운대기장방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>부산광역시 해운대구 해운대로 802 웅신씨네아트 5층 (48111)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 115-1, 240, 36<br>지하철 2호선 장산역</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>부산 해운대구, 기장군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_b2" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_b2" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 중부산방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>부산광역시 부산진구 서전로46번길 48 중앙빌딩 (47293)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 5-1, 10, 10-1, 20, 53, 57, 142, 169-1<br>지하철 2호선 전포역 7번 출구</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>부산 중구, 동구, 영도구</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_b3" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_b3" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 경남방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>경상남도 창원시 의창구 중앙대로 263 오피스플라자 1층 (51430)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 58, 97, 101, 110, 111, 116, 122, 150, 211, 214, 221<br>좌석 97, 704, 707, 752, 801</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>경상남도 창원시 (의창구, 성산구, 진해구) 함안군, 의령군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_b4" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_b4" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 가야방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>경상남도 김해시 내외중앙로 100 송암빌딩 3층 (50948)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 7번 현대1차아파트 앞 정거장</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>경상남도 김해시, 양산시, 밀양시, 거창군, 창녕군, 합천군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_b5" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_b5" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 금정방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>부산광역시 부산진구 서전로46번길 48 중앙빌딩 (47293)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 5-1, 10, 10-1, 20, 53, 57, 142, 169-1<br>지하철 2호선 전포역 7번 출구</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>부산 금정구</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_b6" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_b6" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 중앙방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>부산광역시 부산진구 서전로46번길 48 중앙빌딩 (47293)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 5-1, 10, 10-1, 20, 53, 57, 142, 169-1<br>지하철 2호선 전포역 7번 출구</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>부산 부산진구</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="tab_map_b7" class="flex_inner">
+                            <!-- 지도를 표시할 div 입니다 -->
+                            <div id="map_b7" style="width:50%;height:480px;"></div>
+                            <div class="map_info">
+                                <h3 class="store_name">LG헬로비전 마산방송</h3>
+                                <ul>
+                                    <li><span class="info_title">주소</span><span>경상남도 창원시 의창구 중앙대로 263 오피스플라자 1층 (51430)</span></li>
+                                    <li><span class="info_title">전화번호</span><span>1855-1000</span></li>
+                                    <li><span class="info_title">대중교통</span><span>버스 58, 97, 101, 110, 111, 116, 122, 150, 211, 214, 221<br>좌석 97, 704, 707, 752, 801</span></li>
+                                    <li><span class="info_title">서비스 지역</span><span>경상남도 창원시 (합포구, 회원구), 통영시, 거제시, 고성군</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
-        <ul>
-            <li class="map_optionItemBox map_optionItemBox_s tab_container tab_container_s active">
-                <ul class="tab_btn">
-                    <li class="active" data-tab="tab_map_s1">상암본사</li>
-                    <li data-tab="tab_map_s2">양천방송</li>
-                    <li data-tab="tab_map_s3">은평방송</li>
-                </ul>
-                <ul class="tab_content">
-                    <li id="tab_map_s1" class="active flex_inner">
-                        <!-- 지도를 표시할 div 입니다 -->
-                        <div id="map_s1" style="width:50%;height:480px;"></div>
-                        <div>
-                            <h3>LG헬로비전 상암본사</h3>
-                            <ul>
-                                <li><span>주소</span><span>서울특별시 마포구 월드컵북로56길 19 상암디지털드림타워 (03923)</span></li>
-                                <li><span>전화번호</span><span>1855-1000</span></li>
-                                <li><span>대중교통</span><span>지선버스(초록) 7730, 7737, 7013a, 7013b<br>지하철 경의선, 6호선 디지털미디어시티역 (2번 출구)</span></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li id="tab_map_s2" class="flex_inner">
-                        <!-- 지도를 표시할 div 입니다 -->
-                        <div id="map_s2" style="width:50%;height:480px;"></div>
-                        <div>
-                            <h3>LG헬로비전 양천방송</h3>
-                            <ul>
-                                <li><span>주소</span><span>서울특별시 양천구 신정로 267번지 양천벤처타운 903호 양천고객센터 (08079)</span></li>
-                                <li><span>전화번호</span><span>1855-1002</span></li>
-                                <li><span>대중교통</span><span>지선버스(초록) 6716, 6614, 6620, 6623, 6640B<br>지하철 2호선 신정네거리역 (1번 출구)</span></li>
-                                <li><span>서비스 지역</span><span>서울 양천구</span></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li id="tab_map_s3" class="flex_inner">
-                        <!-- 지도를 표시할 div 입니다 -->
-                        <div id="map_s3" style="width:50%;height:480px;"></div>
-                        <div>
-                            <h3>LG헬로비전 은평방송</h3>
-                            <ul>
-                                <li><span>주소</span><span>경기도 고양시 덕양구 용두로47번길 120, 2층 은평고객센터 (10548)</span></li>
-                                <li><span>전화번호</span><span>1855-1002</span></li>
-                                <li><span>대중교통</span><span>광역버스(빨강) 9701, 간선버스(파랑) 702A</span></li>
-                                <li><span>서비스 지역</span><span>서울 은평구</span></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-            <li class="map_optionItemBox map_optionItemBox_i"></li>
-            <li class="map_optionItemBox map_optionItemBox_g"></li>
-            <li class="map_optionItemBox map_optionItemBox_c"></li>
-            <li class="map_optionItemBox map_optionItemBox_j"></li>
-            <li class="map_optionItemBox map_optionItemBox_d"></li>
-            <li class="map_optionItemBox map_optionItemBox_b"></li>
-        </ul>
     </div>
 </div>

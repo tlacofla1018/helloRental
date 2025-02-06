@@ -186,7 +186,7 @@ $(function(){
                             } else if (index == 2) { // 세 번째 항목 (이벤트/혜택)
                                 aHtml.push('<li class="sub-menu"><a href="/layout/basic/event.html">' + this.name + '</a></li>');
                             } else if (index == 3) { // 네 번째 항목 (매장안내)
-                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/store.html">' + this.name + '</a></li>');
+                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/openStudio/open_studio.html">' + this.name + '</a></li>');
                             } else if (index == 4) { // 다섯 번째 항목 (B2B)
                                 aHtml.push('<li class="sub-menu"><a href="/layout/basic/b2b.html">' + this.name + '</a></li>');
                             } else if (index == 5) { // 여섯 번째 항목 (고객센터)

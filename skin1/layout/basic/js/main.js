@@ -178,6 +178,22 @@ $(function () {
 });
 
 // Java Script
+// 메인 인덱스 컨테이너 조정
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+    const innerElements = document.querySelectorAll(".inner_1440");
+    const footerInnerElements = document.querySelectorAll(".footer_inner_1440");
+
+    innerElements.forEach(element => {
+        element.classList.remove("inner_1440");
+        element.classList.add("inner");
+    });
+
+    footerInnerElements.forEach(element => {
+        element.classList.remove("footer_inner_1440");
+        element.classList.add("footer_inner");
+    });
+}
+
 // [공통] 페이지별 컨텐츠 노출 ----------
 const currentUrl = window.location.href;
 
@@ -322,53 +338,59 @@ function tabFunction(containerSelector) {
 
             // 지도 생성 함수 실행 (탭 클릭 시 해당 지도 생성)
             if (targetTab === 'tab_map_s1') {
-                createMapAndMarker('map_s1', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_s1', 37.58215549826089, 126.88828066386085, 12256059);
             } else if (targetTab === 'tab_map_s2') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_s2', 37.5122197905037, 126.850668115021, 7981432);
             } else if (targetTab === 'tab_map_s3') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_s3', 37.625475239417, 126.891239514577, 1709493349);
             } else if (targetTab === 'tab_map_i1') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_i1', 37.501738269947, 126.722936953106, 18216252);
             } else if (targetTab === 'tab_map_i2') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_i2', 37.501738269947, 126.722936953106, 26981707);
             } else if (targetTab === 'tab_map_i3') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_i3', 37.72218868627937, 127.0482828523194, 8224334);
             } else if (targetTab === 'tab_map_i4') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_i4', 37.501738269947, 126.722936953106, 1332789312);
             } else if (targetTab === 'tab_map_g1') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_g1', 37.771164886328926, 128.9109412192755, 8008692);
             } else if (targetTab === 'tab_map_g2') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_g2', 37.3281627041938, 127.97631046052452, 10499085);
             } else if (targetTab === 'tab_map_g3') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_g3', 37.89466563833509, 127.74671810291392, 25539183);
             } else if (targetTab === 'tab_map_c1') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_c1', 36.88613086488948, 126.61670342136986, 27150954);
             } else if (targetTab === 'tab_map_j1') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_j1', 35.58735143148956, 126.85942185920504, 12841710);
             } else if (targetTab === 'tab_map_j2') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_j2', 34.80137756370428, 126.41440858915229, 9574064);
             } else if (targetTab === 'tab_map_j3') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_j3', 34.953804738096004, 127.52584638063139, 1346876084);
             } else if (targetTab === 'tab_map_d1') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_d1', 35.8395429095138, 128.626404489539, 27319412);
             } else if (targetTab === 'tab_map_d2') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_d2', 35.85193815298739, 129.20969583415504, 26893446);
             } else if (targetTab === 'tab_map_d3') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_d3', 36.58135498810642, 128.73466505884917, 9856721);
             } else if (targetTab === 'tab_map_b1') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_b1', 35.169246097308935, 129.17667658559583, 12904290);
             } else if (targetTab === 'tab_map_b2') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_b2', 35.15559158638332, 129.06461723979263, 2094229657);
             } else if (targetTab === 'tab_map_b3') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_b3', 35.2359386429224, 128.68933401177455, 27367741);
             } else if (targetTab === 'tab_map_b4') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_b4', 35.2387308157627, 128.867810301474, 11872428);
             } else if (targetTab === 'tab_map_b5') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_b5', 35.1555660671912, 129.0646604856535, 12479829);
             } else if (targetTab === 'tab_map_b6') {
-                createMapAndMarker('map_s3', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_b6', 35.15560054737253, 129.0646202094601, 27088673);
             } else if (targetTab === 'tab_map_b7') {
-                createMapAndMarker('map_s2', 33.450701, 126.570667, 3);
+                createMapAndMarker('map_b7', 35.235945400087765, 128.68933415191506, 27367741);
+            } else if (targetTab === 'tab_openStudio_1') {
+                createMapAndMarker('openStudio_1', 35.2350206837638, 128.866411000408, 1773954104);
+            } else if (targetTab === 'tab_openStudio_2') {
+                createMapAndMarker('openStudio_2', 37.335574340078715, 127.92920604803543, 53956412);
+            } else if (targetTab === 'tab_openStudio_3') {
+                createMapAndMarker('openStudio_3', 34.8131395139559, 126.462089373874, 1655856961);
             }
         });
     });
@@ -384,11 +406,33 @@ if (document.querySelector('#rental_category .tab_container')) {
     tabFunction('#rental_category .tab_container');
 }
 
-// 헬로+ 오시는 길 지도
-if (document.querySelector('#company_info_content .tab_container')) {
-    tabFunction('#company_info_content .tab_container');
+// 헬로+ 오시는 길 탭
+if (document.querySelector('#company_info_content .tab_container_s')) {
+    tabFunction('#company_info_content .tab_container_s');
+}
+if (document.querySelector('#company_info_content .tab_container_i')) {
+    tabFunction('#company_info_content .tab_container_i');
+}
+if (document.querySelector('#company_info_content .tab_container_g')) {
+    tabFunction('#company_info_content .tab_container_g');
+}
+if (document.querySelector('#company_info_content .tab_container_c')) {
+    tabFunction('#company_info_content .tab_container_c');
+}
+if (document.querySelector('#company_info_content .tab_container_j')) {
+    tabFunction('#company_info_content .tab_container_j');
+}
+if (document.querySelector('#company_info_content .tab_container_d')) {
+    tabFunction('#company_info_content .tab_container_d');
+}
+if (document.querySelector('#company_info_content .tab_container_b')) {
+    tabFunction('#company_info_content .tab_container_b');
 }
 
+// 오픈스튜디오 오시는 길 탭
+if (document.querySelector('#openStudio_store_content .tab_container_open')) {
+    tabFunction('#openStudio_store_content .tab_container_open');
+}
 
 
 
