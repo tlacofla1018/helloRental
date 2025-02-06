@@ -46,6 +46,10 @@ section {
     justify-content: space-between;
     align-items: center;
 }
+.flex_inner.flex_column {
+    flex-direction: column;
+    text-align: center;
+}
 .ec-base-product .prdList {
     margin: 0;
 }

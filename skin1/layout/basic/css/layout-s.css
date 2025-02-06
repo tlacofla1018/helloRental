@@ -135,8 +135,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 15%;
-    max-width: 240px;
+    width: 240px;
 }
 #header .xans-layout-statelogon,
 #header .xans-layout-statelogoff {

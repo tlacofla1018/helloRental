@@ -1197,14 +1197,16 @@ main .titleH{
 }
 
 .company_banner,
-.list_banner {
+.list_banner,
+.openStudio_banner {
     width: 100%;
     height: 680px;
     margin-bottom: 80px;
     transform: translateY(-46px);
 }
 .company_banner_content,
-.list_banner_content {
+.list_banner_content,
+.openStudio_banner_content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1225,22 +1227,26 @@ main .titleH{
     background-color: var(--c-black-6);
 }
 .company_banner_content.animated::after,
-.list_banner_content.animated::after {
+.list_banner_content.animated::after,
+.openStudio_banner_content.animated::after {
     animation: underlineExpand 0.6s ease-in-out forwards;
 }
 .company_banner_content .company_logo,
-#brand_list_content .brand_logo {
+#brand_list_content .brand_logo,
+.openStudio_banner_content .openStudio_logo {
     width: 240px;
     height: 200px;
     margin-top: -100px;
 }
 .company_banner_content .company_logo,
-.list_banner_content .list_logo {
+.list_banner_content .list_logo,
+.openStudio_banner_content .openStudio_logo {
     height: unset;
     padding: 80px 0;
 }
 .company_banner_content .company_logo img,
-#brand_list_content .brand_logo img {
+#brand_list_content .brand_logo img,
+.openStudio_banner_content .openStudio_logo img {
     display: block;
     width: 100%;
     height: 100%;
@@ -1248,7 +1254,8 @@ main .titleH{
     object-position: center;
 }
 .company_banner_content .company_text,
-.list_text {
+.list_text,
+.openStudio_banner_content .openStudio_text {
     text-align: center;
     line-height: 24px;
     color: var(--c-black-6);
@@ -1259,6 +1266,9 @@ main .titleH{
 }
 .company_banner {
     background: url("/img/company/company_banner_bg.jpg") no-repeat center/cover;
+}
+.openStudio_banner {
+    background: url("/img/openStudio/visual_open_studio.jpg") no-repeat center/cover;
 }
 #brand_list_content .brams_brand_banner {
     background: url("/img/brand_banner/brams_brand_banner.jpg") no-repeat center/cover;
@@ -1408,4 +1418,58 @@ main .titleH{
 .tab_btn > li.active h2,
 .tab_btn > li.active h2 > a {
     font-size: var(--f-size-2);
+}
+
+.openStudio_contents {
+    gap: 40px;
+    margin-top: -40px;
+    margin-bottom: 140px;
+}
+.openStudio_contents > div {
+    width: 100%;
+}
+.openStudio_contents .img_box {
+    width: 100%;
+    gap: 20px;
+}
+.openStudio_contents .img_box > div {
+    position: relative;
+    width: 100%;
+}
+.openStudio_contents .img_box > div:hover img {
+    transform: scale(1.1);
+    z-index: 10;
+}
+.openStudio_contents .small_img {
+    width: 31.86%;
+    max-width: 453px;
+}
+.openStudio_contents .big_img {
+    width: 68.14%;
+    max-width: 967px;
+}
+.openStudio_contents .img_box span {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.openStudio_contents .img_box img {
+    display: block;
+    width: 100%;
+    object-fit: fill;
+    transition: all .4s ease-in-out;
+}
+.openStudio_contents .img_text {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px 30px;
+    background-color: rgb(255, 255, 255, .8);
+    box-sizing: border-box;
 }
