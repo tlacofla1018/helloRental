@@ -48,7 +48,6 @@ section {
 }
 .flex_inner.flex_column {
     flex-direction: column;
-    text-align: center;
 }
 .ec-base-product .prdList {
     margin: 0;
@@ -111,7 +110,8 @@ section {
     color: var(--c-point);
 }
 .titleH {
-    margin: 80px 0 60px;
+    width: 100%;
+    margin: 0 0 60px;
     color: var(--c-black-1);
 }
 .titleH.white {
@@ -179,6 +179,18 @@ h4 {
 }
 .selling_price span {
     font-weight: var(--f-weight-m);
+}
+.black_line {
+    border: none;      /* 기본 테두리 제거 */
+    height: 1px;       /* 두께 설정 */
+    background-color: var(--c-black-1); /* 색상 지정 */
+    margin: 100px 0;    /* 위아래 여백 */
+}
+.gray_line {
+    border: none;      /* 기본 테두리 제거 */
+    height: 1px;       /* 두께 설정 */
+    background-color: var(--c-black-5); /* 색상 지정 */
+    margin: 60px 0;    /* 위아래 여백 */
 }
 
 /* 바로가기 */

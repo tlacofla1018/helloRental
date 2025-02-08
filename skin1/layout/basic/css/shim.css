@@ -712,11 +712,11 @@ main .titleH{
 }
 
 /* [회사소개]*/
-#company_info_content .company_inner {
+.company_info_content .company_inner {
     display: flex;
     flex-direction: column;
 }
-#company_info_content .company_inner .inner::after {
+.company_info_content .company_inner .inner::after {
     content: '';
     display: block;
     width: 100%;
@@ -724,67 +724,170 @@ main .titleH{
     background-color: var(--c-black-5);
     margin-top: 80px;
 }
-#company_info_content .company_inner .inner:last-child:after {
+.company_info_content .company_inner .inner:last-child:after {
     content: none;
 }
-#company_info_content {
+.company_info_content {
     margin-bottom: 140px;
 }
-#company_info_content .titleH strong,
-#company_info_content .titleH p {
+.company_info_content .titleH h3 {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.vision_bg {
+    height: 500px;
+    background: url(/img/company/sub_vision_img_01.png) no-repeat center/cover;
+}
+.vision_bg ul {
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    text-align: center;
+    line-height: 20px;
+}
+.vision_bg ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23%;
+}
+.vision_bg .vision_title {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    font-size: var(--f-size-3);
+    font-weight: var(--f-weight-m);
+    line-height: 24px;
+    color: var(--c-black-6);
+}
+.vision_bg .vision_text {
+    display: flex;
+    align-items: center;
+    height: 200px;
+}
+.lg_way_bg {
+    height: 920px;
+    background: url(/img/company/sub_vision_img_03.png) no-repeat center/cover;
+}
+.lg_way_bg ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+}
+.lg_way_bg li {
+    position: absolute;
+    left: 80px;
+    height: 306px;
+}
+.lg_way_bg li.lg_way1 {
+    top: 20px;
+}
+.lg_way_bg li.lg_way2 {
+    top: 400px;
+}
+.lg_way_bg li.lg_way3 {
+    top: 740px;
+}
+#company_history {
+    position: relative;
+    margin-top: 80px;
+}
+#company_history .titleH {
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    z-index: 2;
+    width: 30%;
+    margin: 0;
+}
+.company_info_content .titleH strong,
+.company_info_content .titleH p {
     line-height: 1.5rem;
 }
-#company_history .company_history_swiper {
-    width: 90%;
-    height: 400px;
+#company_history .swiper-scrollbar {
+    background-color: var(--c-black-2);
 }
-#company_history .flex_inner {
-    align-items: flex-start;
+#company_history .swiper-scrollbar-drag {
+    background-color: var(--c-black-6);
+}
+#company_history .company_history_swiper {
+    height: 680px;
+    color: var(--c-black-6);
+    background: url("/img/company/history_banner.png") no-repeat center/cover fixed;
 }
 #company_history .swiper-slide {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 60px 40px;
 }
 #company_history .swiper-slide .flex_inner {
-    gap: 80px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+    margin-left: 40%;
+}
+#company_history .history_year {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    color: var(--c-black-6);
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+#company_history .history_year::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--c-black-6);
 }
 #company_history .history_year_data {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
 }
 #company_history .history_year_data li {
     display: flex;
-    align-items: center;
-    width: 40%;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 2%;
+    box-sizing: border-box;
+    line-height: 20px;
 }
 #company_history .history_month {
     display: flex;
     align-items: center;
-    gap: 4px;
-    margin-right: 4px;
-    color: var(--c-black-3);
+    gap: 10px;
+    margin-right: 10px;
+    color: var(--c-black-5);
 }
-#company_history .history_month::after {
+
+#company_history .history_month::before {
     content: '';
     display: block;
-    width: 3px;
-    height: 3px;
+    width: 4px;
+    height: 4px;
+    margin-top: 3px;
     border-radius: 50%;
-    background-color: var(--c-black-3);
+    background-color: var(--c-black-5);
 }
+
 #ci .ci_content_box {
     display: flex;
     flex-direction: column;
-    gap: 90px;
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 20px;
 }
 #ci .ci_content_flex {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
 }
 #ci .ci_content_flex:last-child {
     align-items: center;
@@ -793,33 +896,34 @@ main .titleH{
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding: 30px;
 }
 #ci .ci_content_title {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-#ci .ci_content_title h3 {
-    font-size: var(--f-size-2);
-    font-weight: var(--f-weight-b);
+#ci .ci_content_title h4 {
+    font-size: var(--f-size-3);
+    font-weight: var(--f-weight-m);
+    line-height: 24px;
 }
-#ci .ci_content_img img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+#ci .ci_content_title p {
+    line-height: 20px;
 }
-#ci .ci_content {
-    width: 48%;
+#ci .ci_content_img {
+    display: flex;
+    justify-content: center;
 }
 #ci .ci_content1 {
     flex-direction: row-reverse;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
+    justify-content: center;
 }
-#ci .ci_content1 .ci_content_title {
-    width: 100%;
+#ci .ci_content2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
 }
 #ci .ci_content4 {
     display: flex;
@@ -827,9 +931,10 @@ main .titleH{
     justify-content: center;
     gap: 40px;
     width: 100%;
+    margin-top: 80px;
 }
 #ci .ci_content4 .btn {
-    width: 80%;
+    width: 320px;
     margin: 0;
 }
 #slogan .slogan_content.flex_inner {
@@ -876,11 +981,11 @@ main .titleH{
 /* [헬로+] 오시는 길 */
 .map_contents {
     position: relative;
-    padding-top: 60px;
+    padding-top: 80px;
 }
 .map_selectBox {
     position: absolute;
-    top: 60px;
+    top: 80px;
     left: 0;
     width: 140px;
     display: block;
@@ -945,7 +1050,7 @@ main .titleH{
 .map_optionItemBox.active {
     display: block;
 }
-#company_info_content .map_optionItemBox .tab_btn {
+.company_info_content .map_optionItemBox .tab_btn {
     justify-content: flex-end;
 }
 .map_optionItemBox .tab_content > li.active,
@@ -1145,17 +1250,17 @@ main .titleH{
 }
 
 #list_content .titleH.tab_titleH,
-#company_info_content .titleH.tab_titleH {
+.company_info_content .titleH.tab_titleH {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
 }
-#company_info_content .titleH.tab_titleH {
-    margin: 0 auto;
+.company_info_content .titleH.tab_titleH {
+    margin: 0 auto 100px;
 }
 #list_content .tab_btn,
-#company_info_content .tab_btn,
+.company_info_content .tab_btn,
 #openStudio_info_content .tab_btn,
 #openStudio_store_content .tab_btn {
     display: flex;
@@ -1163,7 +1268,7 @@ main .titleH{
     align-items: center;
     gap: 12px;
 }
-#company_info_content .tab_container .tab_btn > li,
+.company_info_content .tab_container .tab_btn > li,
 #openStudio_store_content .tab_container .tab_btn > li {
     display: flex;
     flex-direction: column;
@@ -1171,13 +1276,13 @@ main .titleH{
     gap: 4px;
 }
 #list_content .tab_btn > li::after,
-#company_info_content .tab_titleH .tab_btn > li::after,
+.company_info_content .tab_titleH .tab_btn > li::after,
 #openStudio_info_content .tab_titleH .tab_btn > li::after,
 #openStudio_store_content .tab_titleH .tab_btn > li::after {
     content: none;
 }
 #list_content .tab_content,
-#company_info_content .tab_content,
+.company_info_content .tab_content,
 #openStudio_store_content .tab_content {
     margin: 40px 0 0;
 }
@@ -1195,7 +1300,7 @@ main .titleH{
 .list_smartGuide .content3 {
     background: url("/img/guide3_bg.jpg") no-repeat center/cover;
 }
-
+.event_banner,
 .company_banner,
 .list_banner,
 .openStudio_banner {
@@ -1263,6 +1368,9 @@ main .titleH{
 }
 #list_content .titleH {
     margin: 80px 0;
+}
+.event_banner {
+    background: url("/img/event_banner.png") no-repeat center/cover;
 }
 .company_banner {
     background: url("/img/company/company_banner_bg.jpg") no-repeat center/cover;
@@ -1421,9 +1529,8 @@ main .titleH{
 }
 
 .openStudio_contents {
-    gap: 40px;
-    margin-top: -40px;
-    margin-bottom: 140px;
+    gap: 100px;
+    margin: 60px 0 140px;
 }
 .openStudio_contents > div {
     width: 100%;

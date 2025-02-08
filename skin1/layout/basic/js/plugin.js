@@ -316,42 +316,45 @@ categorySwiper(".category-swiper03", ".recliner");
 
 var companyHistorySwiper = new Swiper(".company_history_swiper", {
     direction: "vertical",
+    slidesPerView: "auto",
+    freeMode: true,
     scrollbar: {
         el: ".swiper-scrollbar",
-        hide: true,
+        draggable: true,
+        dragSize: 140,
     },
     mousewheel: true,
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+// 요소가 없으면 함수 실행 중단 -> 전역 범위에서는 return 사용 불가하므로 즉시 실행 함수 사용
+(() => {
     const label = document.querySelector(".label");
     const options = document.querySelectorAll(".optionItem");
     const selectBox = document.querySelector(".map_selectBox");
 
-    // 요소가 없으면 함수 실행 중단
     if (!label || !options.length || !selectBox) {
         return;
     }
 
     // 드롭다운 메뉴 열고 닫기
     label.addEventListener("click", function (event) {
-        event.stopPropagation(); // 이벤트 버블링 방지
-        selectBox.classList.toggle('active');
+        event.stopPropagation();
+        selectBox.classList.toggle("active");
     });
 
     // 옵션 클릭 시 선택한 값 적용 + 드롭다운 닫기
-    options.forEach(option => {
+    options.forEach((option) => {
         option.addEventListener("click", function (event) {
-            event.stopPropagation(); // 이벤트 버블링 방지
-            
+            event.stopPropagation();
+
             // 선택한 옵션의 텍스트를 label에 반영
             label.textContent = this.textContent;
 
             // 드롭다운 닫기
-            selectBox.classList.remove('active');
+            selectBox.classList.remove("active");
 
             // 모든 옵션 박스 숨김
-            document.querySelectorAll(".map_optionItemBox").forEach(box => {
+            document.querySelectorAll(".map_optionItemBox").forEach((box) => {
                 box.style.display = "none";
             });
 
@@ -363,34 +366,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // 지도 생성 함수 호출 (각 지도 컨테이너가 존재하는지 확인 후 실행)
                 const locations = [
-                    ['map_s1', 37.58215549826089, 126.88828066386085, 12256059],
-                    ['map_s2', 37.5122197905037, 126.850668115021, 7981432],
-                    ['map_s3', 37.625475239417, 126.891239514577, 1709493349],
-                    ['map_i1', 37.501738269947, 126.722936953106, 18216252],
-                    ['map_i2', 37.501738269947, 126.722936953106, 26981707],
-                    ['map_i3', 37.72218868627937, 127.0482828523194, 8224334],
-                    ['map_i4', 37.501738269947, 126.722936953106, 1332789312],
-                    ['map_g1', 37.771164886328926, 128.9109412192755, 8008692],
-                    ['map_g2', 37.3281627041938, 127.97631046052452, 10499085],
-                    ['map_g3', 37.89466563833509, 127.74671810291392, 25539183],
-                    ['map_c1', 36.88613086488948, 126.61670342136986, 27150954],
-                    ['map_j1', 35.58735143148956, 126.85942185920504, 12841710],
-                    ['map_j2', 34.80137756370428, 126.41440858915229, 9574064],
-                    ['map_j3', 34.953804738096004, 127.52584638063139, 1346876084],
-                    ['map_d1', 35.8395429095138, 128.626404489539, 27319412],
-                    ['map_d2', 35.85193815298739, 129.20969583415504, 26893446],
-                    ['map_d3', 36.58135498810642, 128.73466505884917, 9856721],
-                    ['map_b1', 35.169246097308935, 129.17667658559583, 12904290],
-                    ['map_b2', 35.15559158638332, 129.06461723979263, 2094229657],
-                    ['map_b3', 35.2359386429224, 128.68933401177455, 27367741],
-                    ['map_b4', 35.2387308157627, 128.867810301474, 11872428],
-                    ['map_b5', 35.1555660671912, 129.0646604856535, 12479829],
-                    ['map_b6', 35.15560054737253, 129.0646202094601, 27088673],
-                    ['map_b7', 35.235945400087765, 128.68933415191506, 27367741]
+                    ["map_s1", 37.58215549826089, 126.88828066386085, 12256059],
+                    ["map_s2", 37.5122197905037, 126.850668115021, 7981432],
+                    ["map_s3", 37.625475239417, 126.891239514577, 1709493349],
+                    ["map_i1", 37.501738269947, 126.722936953106, 18216252],
+                    ["map_i2", 37.501738269947, 126.722936953106, 26981707],
+                    ["map_i3", 37.72218868627937, 127.0482828523194, 8224334],
+                    ["map_i4", 37.501738269947, 126.722936953106, 1332789312],
+                    ["map_g1", 37.771164886328926, 128.9109412192755, 8008692],
+                    ["map_g2", 37.3281627041938, 127.97631046052452, 10499085],
+                    ["map_g3", 37.89466563833509, 127.74671810291392, 25539183],
+                    ["map_c1", 36.88613086488948, 126.61670342136986, 27150954],
+                    ["map_j1", 35.58735143148956, 126.85942185920504, 12841710],
+                    ["map_j2", 34.80137756370428, 126.41440858915229, 9574064],
+                    ["map_j3", 34.953804738096004, 127.52584638063139, 1346876084],
+                    ["map_d1", 35.8395429095138, 128.626404489539, 27319412],
+                    ["map_d2", 35.85193815298739, 129.20969583415504, 26893446],
+                    ["map_d3", 36.58135498810642, 128.73466505884917, 9856721],
+                    ["map_b1", 35.169246097308935, 129.17667658559583, 12904290],
+                    ["map_b2", 35.15559158638332, 129.06461723979263, 2094229657],
+                    ["map_b3", 35.2359386429224, 128.68933401177455, 27367741],
+                    ["map_b4", 35.2387308157627, 128.867810301474, 11872428],
+                    ["map_b5", 35.1555660671912, 129.0646604856535, 12479829],
+                    ["map_b6", 35.15560054737253, 129.0646202094601, 27088673],
+                    ["map_b7", 35.235945400087765, 128.68933415191506, 27367741],
                 ];
 
                 locations.forEach(([id, lat, lng, placeId]) => {
-                    if (document.getElementById(id)) {
+                    const mapContainer = document.getElementById(id);
+                    if (mapContainer) {
                         createMapAndMarker(id, lat, lng, placeId);
                     }
                 });
@@ -400,9 +404,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 드롭다운 영역 밖을 클릭하면 닫기
     document.addEventListener("click", function () {
-        selectBox.classList.remove('active');
+        selectBox.classList.remove("active");
     });
-});
+})();
+
+
 // 지도를 생성하는 함수
 function createMapAndMarker(containerId, lat, lng, placeId) {
     var mapContainer = document.getElementById(containerId);
