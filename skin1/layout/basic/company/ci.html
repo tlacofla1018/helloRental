@@ -1,5 +1,5 @@
 <!--@layout(/layout/basic/layout.html)-->
-<div class="company_info_content">
+<main class="company_info_content">
     <div class="path inner_1440">
         <span>현재 위치</span>
         <ol>
@@ -8,7 +8,7 @@
         </ol>
     </div>
     
-    <div class="company_banner">
+    <article class="company_banner">
         <div class="company_banner_content">
             <div class="company_logo"><img src="/img/hellorental_logo.png" alt="헬로렌탈 로고, 회사소개 페이지입니다"></div>
             <p class="company_text">
@@ -16,38 +16,32 @@
                 고객의 생활에 녹아들 수 있는 서비스로 고객의 삶을 가치있게 연결하는 것이 LG헬로비전이 추구하는 방향성입니다
             </p>
         </div>
-    </div>
-    <div class="company_inner inner_1440">
-        <div class="titleH tab_titleH">
-            <ul class="flex_inner tab_btn">
-                <li><h2><a href="/layout/basic/company/vision.html">비전 및 철학</a></h2></li>
-                <li class="active"><h2><a href="/layout/basic/company/ci.html">CI</a></h2></li>
-                <li><h2><a href="/layout/basic/company/history.html">연혁</a></h2></li>
-                <li><h2><a href="/layout/basic/company/map.html">오시는 길</a></h2></li>
-                <li><h2><a href="/layout/basic/company/youtube.html">헬로티비</a></h2></li>
-            </ul>
-        </div>
+    </article>
+    <article class="company_inner inner_1440">
+        <ul class="nav tab_btn_box mx-auto mb-5">
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="/layout/basic/company/vision.html">비전 및 철학</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/layout/basic/company/ci.html">CI 규정</a></li>
+            <li class="nav-item"><a class="nav-link" href="/layout/basic/company/history.html">사업 연혁</a></li>
+            <li class="nav-item"><a class="nav-link" href="/layout/basic/company/map.html">오시는 길</a></li>
+            <li class="nav-item"><a class="nav-link" href="/layout/basic/company/youtube.html">헬로티비</a></li>
+        </ul>
         <div id="ci">
-            <div class="titleH">
+            <div class="title_box">
                 <h3>CI 규정</h3>
-                <span>
-                    <p>
-                        LOGO는 LG HelloVision의 공식적인 명칭을 표시하기 위해 심벌마크와 로고타이프를 조합한 형태로 반드시 공간규정에 따른 충분한 Clear Space를 확보해야 합니다
-                    </p>
-                    <strong>
-                        <span class="point">
-                            어떤 경우라도 LOGO를 임의로 변형하거나 재조합하여 사용할 수 없으며, 심벌마크 단독 사용은 허용되지 않습니다
-                        </span>
+                <p>
+                    LOGO는 LG HelloVision의 공식적인 명칭을 표시하기 위해 심벌마크와 로고타이프를 조합한 형태로 반드시 공간규정에 따른 충분한 Clear Space를 확보해야 합니다<br>
+                    <strong class="point">
+                        어떤 경우라도 LOGO를 임의로 변형하거나 재조합하여 사용할 수 없으며, 심벌마크 단독 사용은 허용되지 않습니다
                     </strong>
-                </span>
+                </p>
             </div>
             <div class="ci_content_box">
                 <div class="ci_content ci_content2">
                     <div class="ci_content_img"><img src="/img/company/img_ci_content_01.jpg" alt="CI 규정"></div>
                 </div>
                 <hr class="gray_line">
-                <div class="ci_content ci_content1 flex_inner">
-                    <div class="ci_content_title">
+                <div class="ci_content ci_content1 flex_center">
+                    <div class="title_box">
                         <h4>심벌마크의 의미</h4>
                         <p>
                             세계, 미래, 젊음, 인간, 기술의 5가지 개념과 정서를 형상화하였습니다<br>
@@ -59,7 +53,7 @@
                 </div>
                 <hr class="gray_line">
                 <div class="ci_content ci_content3">
-                    <div class="ci_content_title">
+                    <div class="title_box">
                         <h4>컬러시스템</h4>
                         <p>LG RED와 LG GRAY를 소개합니다</p>
                     </div>
@@ -71,59 +65,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- <div module="mall_company">
-</div>
-    // @css(/css/module/mall/company.css) //
-    <div class="ec-base-table" module="Layout_footer">
-        <table border="1">
-            <caption>회사소개</caption>
-            <colgroup>
-                <col style="width:180px;">
-                <col style="width:auto;">
-            </colgroup>
-            <tbody>
-                <tr>
-                    <th scope="row">상점명</th>
-                    <td>{$mall_name}</td>
-                </tr>
-                <tr>
-                    <th scope="row">대표이사</th>
-                    <td><a href="mailto:{$email}">{$president_name}</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">대표전화</th>
-                    <td><a href="tel:{$phone}">{$phone}</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">주소</th>
-                    <td>{$mall_addr1}<br />{$mall_addr2}</td>
-                </tr>
-                <tr>
-                    <th scope="row">사업자등록번호</th>
-                    <td>{$company_regno}</td>
-                </tr>
-                <tr>
-                    <th scope="row">통신판매업신고</th>
-                    <td>{$network_regno}</td>
-                </tr>
-                <tr class="{$cpo_email|display}">
-                    <th scope="row">개인정보 관리책임</th>
-                    <td><a href="mailto:{$cpo_email}">{$cpo_name}</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">호스팅제공</th>
-                    <td>카페24(주)</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div>{$info}</div>
-
-    <div class="{$map_display|display}">
-        <h3>위치</h3>
-        <p>{$map_image}</p>
-    </div>
-</div> -->
+    </article>
+</main>

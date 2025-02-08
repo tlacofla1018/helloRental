@@ -1,0 +1,113 @@
+:root {
+    /* color-black */
+    --c-black-1: #202020;
+    --c-black-2: #353535;
+    --c-black-3: #757575;
+    --c-black-4: #cfcfcf;
+    --c-black-5: #ededed;
+    --c-black-6: #fff;
+
+    /* color-point */
+    --c-point: #EC164D;
+
+    /* font-size */
+    --f-size-1: 2rem;
+    --f-size-2: 1.5rem;
+    --f-size-3: 1.125rem;
+    --f-size-4: 1rem;
+    --f-size-5: .875rem;
+    --f-size-6: .75rem;
+
+    /* font-weight */
+    --f-weight-n: 400;
+    --f-weight-m: 500;
+    --f-weight-b: 600;
+    
+    /* line-height */
+    --l-height-1: 2.5rem;
+    --l-height-2: 2rem;
+    --l-height-3: 1.5rem;
+    --l-height-4: 1.25rem;
+    --l-height-5: 1.125rem;
+    --l-height-6: 1rem;
+}
+
+/* 색상 */
+body {
+    font-size: 16px;
+    color: var(--c-black-1);
+}
+a {
+    color: inherit;
+    font-weight: inherit;
+}
+.white {
+    color: var(--c-black-6);
+}
+.point {
+    color: var(--c-point);
+}
+
+/* h 태그 */
+h2 {
+    font-size: var(--f-size-1);
+    font-weight: var(--f-weight-b);
+    line-height: var(--l-height-1);
+    letter-spacing: -0.02em;
+}
+h3 {
+    font-size: var(--f-size-2);
+    font-weight: var(--f-weight-m);
+    line-height: var(--l-height-2);
+    letter-spacing: -0.02em;
+}
+h4 {
+    font-size: var(--f-size-3);
+    font-weight: var(--f-weight-m);
+    line-height: var(--l-height-3);
+    letter-spacing: -0.02em;
+}
+
+/* title_box */
+.title_box p {
+    font-size: var(--f-size-4);
+    font-weight: var(--f-weight-n);
+    line-height: var(--l-height-4);
+    letter-spacing: -0.02em;
+}
+.title_box strong {
+    font-size: var(--f-size-4);
+    font-weight: var(--f-weight-m);
+    line-height: var(--l-height-4);
+    letter-spacing: -0.02em;
+}
+
+/* tab_btn_box */
+.tab_btn_box{
+    align-items: center;
+}
+.tab_btn_box a.active{
+    font-size: var(--f-size-2);
+    font-weight: var(--f-weight-b);
+    line-height: var(--l-height-1);
+    color: var(--c-black-1);
+}
+.tab_btn_box a{
+    font-size: var(--f-size-3);
+    font-weight: var(--f-weight-n);
+    line-height: var(--l-height-3);
+    color: var(--c-black-3);
+}
+
+/* flex */
+.flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,36 +1,10 @@
-:root {
-    /* color-black */
-    --c-black-1: #202020;
-    --c-black-2: #353535;
-    --c-black-3: #757575;
-    --c-black-4: #cfcfcf;
-    --c-black-5: #ededed;
-    --c-black-6: #fff;
-
-    /* color-point */
-    --c-point: #EC164D;
-
-    /* font-size */
-    --f-size-1: 2rem;
-    --f-size-2: 1.5rem;
-    --f-size-3: 1.125rem;
-    --f-size-4: 1rem;
-    --f-size-5: .875rem;
-    --f-size-6: .75rem;
-
-    /* font-weight */
-    --f-weight-n: 400;
-    --f-weight-m: 500;
-    --f-weight-b: 600;
-}
-
 /* 컨테이너 */
-main,
+/* main,
 section {
     display: flex;
     flex-direction: column;
     gap: 100px;
-}
+} */
 .inner {
     width: 87.5% !important;
     max-width: 1680px;
@@ -106,40 +80,16 @@ section {
 }
 
 /* 텍스트 */
-.point {
-    color: var(--c-point);
-}
 .titleH {
     width: 100%;
     margin: 0 0 60px;
     color: var(--c-black-1);
-}
-.titleH.white {
-    color: var(--c-black-6);
-}
-.titleH h2 {
-    line-height: 2.625rem;
 }
 .titleH p {
     font-size: 1rem;
     line-height: 1.5rem;
     letter-spacing: -0.02em;
     font-weight: var(--f-weight-n);
-}
-h2 {
-    font-size: var(--f-size-1);
-    font-weight: var(--f-weight-b);
-    letter-spacing: -0.02em;
-}
-h3 {
-    font-size: var(--f-size-2);
-    font-weight: var(--f-weight-b);
-    letter-spacing: -0.02em;
-}
-h4 {
-    font-size: var(--f-size-2);
-    font-weight: var(--f-weight-m);
-    letter-spacing: -0.02em;
 }
 .description > div {
     width: 100%;

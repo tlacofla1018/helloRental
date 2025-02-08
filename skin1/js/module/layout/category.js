@@ -112,140 +112,227 @@
 //     });
 // });
 
-$(function(){
+// $(function(){
 
+//     var methods = {
+//         aCategory    : [],
+//         aSubCategory : {},
+
+//         get: function()
+//         {
+//             $.ajax({
+//                 url : '/exec/front/Product/SubCategory',
+//                 dataType: 'json',
+//                 success: function(aData) {
+
+//                     if (aData == null || aData == 'undefined') return;
+//                     for (var i=0; i<aData.length; i++)
+//                     {
+//                         var sParentCateNo = aData[i].parent_cate_no;
+
+//                         if (!methods.aSubCategory[sParentCateNo]) {
+//                             methods.aSubCategory[sParentCateNo] = [];
+//                         }
+
+//                         methods.aSubCategory[sParentCateNo].push( aData[i] );
+//                     }
+
+//                     // 서브 카테고리 처음부터 노출
+//                     methods.showAll();
+//                 }
+//             });
+//         },
+
+//         getParam: function(sUrl, sKey) {
+
+//             var aUrl         = sUrl.split('?');
+//             var sQueryString = aUrl[1];
+//             var aParam       = {};
+
+//             if (sQueryString) {
+//                 var aFields = sQueryString.split("&");
+//                 var aField  = [];
+//                 for (var i=0; i<aFields.length; i++) {
+//                     aField = aFields[i].split('=');
+//                     aParam[aField[0]] = aField[1];
+//                 }
+//             }
+//             return sKey ? aParam[sKey] : aParam;
+//         },
+
+//         getParamSeo: function(sUrl) {
+//             var aUrl = sUrl.split('/');
+//             var len  = aUrl.length-2;
+
+//             return aUrl[len] ? aUrl[len] : null;
+//         },
+
+//         showAll: function() {
+//             var aHtml = [];
+//             var firstCategory = true;  
+
+//             // 'main-category-list' 출력
+//             for (var iCateNo in methods.aSubCategory) {
+//                 if (methods.aSubCategory.hasOwnProperty(iCateNo)) {
+//                     if (firstCategory) {
+//                         aHtml.push('<ul class="main-category-list">');
+                        
+//                         // 첫 번째 sub-menu의 href 값을 수정
+//                         $(methods.aSubCategory[iCateNo]).each(function(index) {
+//                             if (index == 0) { // 첫 번째 항목 (회사소개)
+//                                 aHtml.push('<li class="sub-menu"><a href="/layout/basic/company/vision.html">' + this.name + '</a></li>');
+//                             } else if (index == 1) { // 두 번째 항목 (렌탈)
+//                                 aHtml.push('<li class="sub-menu"><a href="/product/list.html?cate_no=33">' + this.name + '</a></li>');
+//                             } else if (index == 2) { // 세 번째 항목 (이벤트/혜택)
+//                                 aHtml.push('<li class="sub-menu"><a href="/product/list.html?cate_no=26">' + this.name + '</a></li>');
+//                             } else if (index == 3) { // 네 번째 항목 (매장안내)
+//                                 aHtml.push('<li class="sub-menu"><a href="/layout/basic/openStudio/open_studio.html">' + this.name + '</a></li>');
+//                             } else if (index == 4) { // 다섯 번째 항목 (B2B)
+//                                 aHtml.push('<li class="sub-menu"><a href="/layout/basic/b2b.html">' + this.name + '</a></li>');
+//                             } else if (index == 5) { // 여섯 번째 항목 (고객센터)
+//                                 aHtml.push('<li class="sub-menu"><a href="/layout/basic/consumer.html">' + this.name + '</a></li>');
+//                             } else {
+//                                 aHtml.push('<li class="sub-menu"><a href="/' + this.design_page_url + this.param + '">' + this.name + '</a></li>');
+//                             }
+//                         });
+
+//                         aHtml.push('</ul>');
+//                         firstCategory = false;
+//                     }
+//                 }
+//             }
+
+//             // 'sub-category-list'들을 모두 하나의 div.sub-list-box 안에 담기
+//             var subCategoryHtml = [];
+//             subCategoryHtml.push('<div class="sub-list-box">');
+
+//             var currentCategoryIndex = 0; // 현재 sub-category의 순서를 추적하는 변수
+
+//             for (var iCateNo in methods.aSubCategory) {
+//                 if (methods.aSubCategory.hasOwnProperty(iCateNo)) {
+//                     currentCategoryIndex++; // 각 카테고리 리스트마다 증가
+
+//                     // ul 태그 열기
+//                     subCategoryHtml.push('<ul class="sub-category-list"');
+
+//                     // 3번째와 4번째 sub-category-list만 보이도록 처리
+//                     if (currentCategoryIndex !== 3) {
+//                         subCategoryHtml.push(' style="display:none;"');
+//                     }
+
+//                     subCategoryHtml.push('>');
+
+//                     // 각 카테고리의 항목 추가
+//                     $(methods.aSubCategory[iCateNo]).each(function(index) {
+//                         subCategoryHtml.push('<li class="sub-menu"><a href="/' + this.design_page_url + this.param + '">' + this.name + '</a></li>');
+                        
+//                         // 세 번째 sub-category-list에서 첫 번째, 두 번째 항목의 href를 변경
+//                         // if (iCateNo == 25 && index == 0) {
+//                         //     subCategoryHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/brand.html">'+this.name+'</a></li>');
+//                         // } else {
+//                         //     subCategoryHtml.push('<li class="sub-menu"><a href="/'+this.design_page_url+this.param+'">'+this.name+'</a></li>');
+//                         // }
+//                     });
+
+//                     // ul 태그 닫기
+//                     subCategoryHtml.push('</ul>');
+//                 }
+//             }
+            
+//             subCategoryHtml.push('</div>'); // div.sub-list-box 닫기
+
+//             // 페이지에 바로 출력
+//             $('.category_depth').html(aHtml.join('') + subCategoryHtml.join(''));
+//         }
+//     };
+
+//     methods.get();
+
+// });
+
+$(function () {
     var methods = {
-        aCategory    : [],
-        aSubCategory : {},
+        aSubCategory: {},
 
-        get: function()
-        {
+        // 서브 카테고리 데이터 가져와서 미리 저장
+        get: function () {
             $.ajax({
-                url : '/exec/front/Product/SubCategory',
+                url: '/exec/front/Product/SubCategory',
                 dataType: 'json',
-                success: function(aData) {
+                success: function (aData) {
+                    if (!aData || aData.length === 0) return; // 데이터가 없으면 실행 중지
 
-                    if (aData == null || aData == 'undefined') return;
-                    for (var i=0; i<aData.length; i++)
-                    {
+                    for (var i = 0; i < aData.length; i++) {
                         var sParentCateNo = aData[i].parent_cate_no;
 
                         if (!methods.aSubCategory[sParentCateNo]) {
                             methods.aSubCategory[sParentCateNo] = [];
                         }
-
-                        methods.aSubCategory[sParentCateNo].push( aData[i] );
+                        methods.aSubCategory[sParentCateNo].push(aData[i]);
                     }
 
-                    // 서브 카테고리 처음부터 노출
-                    methods.showAll();
+                    methods.renderSubCategories(); // ✅ 데이터 로딩 후 실행
+                },
+                error: function (xhr, status, error) {
+                    console.error("AJAX 오류:", error);
                 }
             });
         },
 
-        getParam: function(sUrl, sKey) {
+        // 서브 카테고리를 미리 렌더링해서 각 li에 숨겨둠
+        renderSubCategories: function () {
+            $('.xans-layout-category li').each(function () {
+                var $this = $(this);
+                var iCateNo = Number(methods.getParam($this.find('a').attr('href'), 'cate_no')) ||
+                              Number(methods.getParamSeo($this.find('a').attr('href')));
 
-            var aUrl         = sUrl.split('?');
+                if (!iCateNo || !methods.aSubCategory[iCateNo]) return; // ✅ 데이터가 없으면 중단
+
+                var aHtml = ['<ul class="sub-category">'];
+                $(methods.aSubCategory[iCateNo]).each(function () {
+                    aHtml.push('<li><a href="/' + this.design_page_url + this.param + '">' + this.name + '</a></li>');
+                });
+                aHtml.push('</ul>');
+
+                if (!$this.find('.sub-category').length) { // ✅ 중복 추가 방지
+                    $this.append(aHtml.join(''));
+                }
+            });
+        },
+
+        // URL 파라미터 가져오기
+        getParam: function (sUrl, sKey) {
+            var aUrl = sUrl.split('?');
             var sQueryString = aUrl[1];
-            var aParam       = {};
+            var aParam = {};
 
             if (sQueryString) {
-                var aFields = sQueryString.split("&");
-                var aField  = [];
-                for (var i=0; i<aFields.length; i++) {
-                    aField = aFields[i].split('=');
+                var aFields = sQueryString.split('&');
+                for (var i = 0; i < aFields.length; i++) {
+                    var aField = aFields[i].split('=');
                     aParam[aField[0]] = aField[1];
                 }
             }
             return sKey ? aParam[sKey] : aParam;
         },
 
-        getParamSeo: function(sUrl) {
+        // SEO-friendly URL에서 카테고리 번호 추출
+        getParamSeo: function (sUrl) {
             var aUrl = sUrl.split('/');
-            var len  = aUrl.length-2;
-
+            var len = aUrl.length - 2;
             return aUrl[len] ? aUrl[len] : null;
-        },
-
-        showAll: function() {
-            var aHtml = [];
-            var firstCategory = true;  
-
-            // 'main-category-list' 출력
-            for (var iCateNo in methods.aSubCategory) {
-                if (methods.aSubCategory.hasOwnProperty(iCateNo)) {
-                    if (firstCategory) {
-                        aHtml.push('<ul class="main-category-list">');
-                        
-                        // 첫 번째 sub-menu의 href 값을 수정
-                        $(methods.aSubCategory[iCateNo]).each(function(index) {
-                            if (index == 0) { // 첫 번째 항목 (회사소개)
-                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/company/vision.html">' + this.name + '</a></li>');
-                            } else if (index == 1) { // 두 번째 항목 (렌탈)
-                                aHtml.push('<li class="sub-menu"><a href="/product/list.html?cate_no=33">' + this.name + '</a></li>');
-                            } else if (index == 2) { // 세 번째 항목 (이벤트/혜택)
-                                aHtml.push('<li class="sub-menu"><a href="/product/list.html?cate_no=26">' + this.name + '</a></li>');
-                            } else if (index == 3) { // 네 번째 항목 (매장안내)
-                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/openStudio/open_studio.html">' + this.name + '</a></li>');
-                            } else if (index == 4) { // 다섯 번째 항목 (B2B)
-                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/b2b.html">' + this.name + '</a></li>');
-                            } else if (index == 5) { // 여섯 번째 항목 (고객센터)
-                                aHtml.push('<li class="sub-menu"><a href="/layout/basic/consumer.html">' + this.name + '</a></li>');
-                            } else {
-                                aHtml.push('<li class="sub-menu"><a href="/' + this.design_page_url + this.param + '">' + this.name + '</a></li>');
-                            }
-                        });
-
-                        aHtml.push('</ul>');
-                        firstCategory = false;
-                    }
-                }
-            }
-
-            // 'sub-category-list'들을 모두 하나의 div.sub-list-box 안에 담기
-            var subCategoryHtml = [];
-            subCategoryHtml.push('<div class="sub-list-box">');
-
-            var currentCategoryIndex = 0; // 현재 sub-category의 순서를 추적하는 변수
-
-            for (var iCateNo in methods.aSubCategory) {
-                if (methods.aSubCategory.hasOwnProperty(iCateNo)) {
-                    currentCategoryIndex++; // 각 카테고리 리스트마다 증가
-
-                    // ul 태그 열기
-                    subCategoryHtml.push('<ul class="sub-category-list"');
-
-                    // 3번째와 4번째 sub-category-list만 보이도록 처리
-                    if (currentCategoryIndex !== 3) {
-                        subCategoryHtml.push(' style="display:none;"');
-                    }
-
-                    subCategoryHtml.push('>');
-
-                    // 각 카테고리의 항목 추가
-                    $(methods.aSubCategory[iCateNo]).each(function(index) {
-                        subCategoryHtml.push('<li class="sub-menu"><a href="/' + this.design_page_url + this.param + '">' + this.name + '</a></li>');
-                        
-                        // 세 번째 sub-category-list에서 첫 번째, 두 번째 항목의 href를 변경
-                        // if (iCateNo == 25 && index == 0) {
-                        //     subCategoryHtml.push('<li class="sub-menu"><a href="https://tlacofla1018.cafe24.com/layout/basic/brand.html">'+this.name+'</a></li>');
-                        // } else {
-                        //     subCategoryHtml.push('<li class="sub-menu"><a href="/'+this.design_page_url+this.param+'">'+this.name+'</a></li>');
-                        // }
-                    });
-
-                    // ul 태그 닫기
-                    subCategoryHtml.push('</ul>');
-                }
-            }
-            
-            subCategoryHtml.push('</div>'); // div.sub-list-box 닫기
-
-            // 페이지에 바로 출력
-            $('.category_depth').html(aHtml.join('') + subCategoryHtml.join(''));
         }
     };
 
     methods.get();
 
+    // 마우스오버 시 서브 카테고리 보이게 하기
+    $('.xans-layout-category li').hover(
+        function () {
+            $(this).addClass('on').find('.sub-category').stop(true, true).fadeIn(200);
+        },
+        function () {
+            $(this).removeClass('on').find('.sub-category').stop(true, true).fadeOut(200);
+        }
+    );
 });

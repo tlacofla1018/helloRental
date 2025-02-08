@@ -208,7 +208,7 @@ document.querySelectorAll('.list_main.list_main_block').forEach(element => {
 document.querySelectorAll('.brand_banner').forEach(element => {
     element.style.display = 'none';
 });
-document.querySelectorAll('.list_tab_titleH_box .tab_titleH').forEach(element => {
+document.querySelectorAll('.category_tab_btn .tab_btn_box').forEach(element => {
     element.style.display = 'none';
 });
 document.querySelectorAll('.content_div').forEach(element => {
@@ -271,15 +271,15 @@ if (cateNo) {
     
         // cate_no 값에 따라 배너 보이기
         const bannerMapping = {
-            "33": ".chair_tab_titleH",
-            "43": ".bed_tab_titleH",
-            "44": ".recliner_tab_titleH"
+            "33": ".chair_tab_btn_box",
+            "43": ".bed_tab_btn_box",
+            "44": ".recliner_tab_btn_box"
         };
     
         if (cateNo && bannerMapping[cateNo]) {
             const banner = document.querySelector(bannerMapping[cateNo]);
             if (banner) {
-                banner.style.display = 'block';
+                banner.style.display = 'flex';
             }
             
             // 배너 애니메이션 트리거

@@ -1,22 +1,19 @@
-<div id="header">
-    <div class="inner_1440">
-        <div class="inner-left">
-            <h1 module="Layout_LogoTop">
-                <!--@css(/css/module/layout/logotop.css)-->
-                <a href="/index.html"><img src="/img/logo/helloRentalLogo.png" alt="LG Hello Rental Logo"></a>
-                <!-- <a href="/index.html">{$mall_name}</a> -->
-            </h1>
-            <div class="category" module="Layout_category">
-                <!--@css(/css/module/layout/category.css)-->
-                <!--@js(/js/module/layout/category.js)-->
-                <div class="position">
-                    <ul class="category_depth">
-                        <li><a href="/{$design_page_url}{$param}">{$name_or_img_tag}</a></li>
-                        <li><a href="/{$design_page_url}{$param}">{$name_or_img_tag}</a></li>
-                    </ul>
-                </div>
+<div id="header" class="position-sticky top-0 start-0 z-3">
+    <div class="inner_1440 position-relative d-flex justify-content-between align-items-center p-0">
+        <h1 module="Layout_LogoTop" class="m-0">
+            <!--@css(/css/module/layout/logotop.css)-->
+            <a href="/index.html"><img src="/img/logo/helloRentalLogo.png" alt="LG Hello Rental Logo"></a>
+            <!-- <a href="/index.html">{$mall_name}</a> -->
+        </h1>
+        <div class="category m-0" module="Layout_category">
+            <!--@css(/css/module/layout/category.css)-->
+            <!--@js(/js/module/layout/category.js)-->
+            <div class="position">
+                <ul class="category_depth position-relative d-flex">
+                    <li><a href="/{$design_page_url}{$param}">{$name_or_img_tag}</a></li>
+                    <li><a href="/{$design_page_url}{$param}">{$name_or_img_tag}</a></li>
+                </ul>
             </div>
-            <div class="header_bg"></div>
         </div>
         <div class="inner-right">
             <div class="util-menu">
@@ -172,53 +169,8 @@
                 <!-- <a class="{$board_display|display}" href="/board/index.html">게시판</a> -->
             </div>
         </div>
-    </div>
-    
-    <!-- <div module="Layout_multishopList" class="list">
-        // @css(/css/module/layout/multishopList.css)
-        <button type="button" class="toggle"><span>{$current_language}</span></button>
-        <ul module="Layout_multishopListitem">
-            <li class="{$selected_class}">
-                <a href="//{$shop_domain}/">                    
-                    <span class="name">{$locale_language}</span>
-                    <span class="unit">{$currency_code}</span>
-                </a>
-            </li>
-            <li class="{$selected_class}">
-                <a href="//{$shop_domain}/">
-                    <span class="name">{$locale_language}</span>
-                    <span class="unit">{$currency_code}</span>
-                </a>
-            </li>
-        </ul>
-    </div> -->
-
-    <!-- <div module="Layout_multishopList" class="thumb">
-        // @css(/css/module/layout/multishopList.css)        
-        <div module="Layout_multishopListmultioption" class="multiOption">
-            <a href="#none">
-                <span module="Layout_multishopListmultioptionCountry" class="ship">
-                    <strong>Ship to</strong><span> : </span>
-                </span>
-                <span module="Layout_multishopListmultioptionLanguage" class="language">
-                    <strong>Language</strong><span> : {$language_name}</span>
-                </span>
-            </a>
+        <div class="header_bg">
+            <div class="inner_1440"></div>
         </div>
-    </div> -->
-    
-    <!-- <ul module="Layout_shoppingInfo">
-        // @css(/css/module/layout/shoppingInfo.css)
-        <li class="{$use_mileage|display}"><a href="/myshop/mileage/historyList.html">{$mileage_name} <strong>{$mileage}</strong></a></li>
-        <li class="{$use_basket_cnt|display}"><a href="/order/basket.html">장바구니 <strong>{$basket_cnt}<span class="{$use_basket_price|display}">({$basket_price})</span></strong></a></li>
-        <li class="{$use_interest_prd|display}"><a href="/myshop/wish_list.html">관심상품 <strong>{$interest_prd_cnt}</strong></a></li>
-        <li class="{$use_like_product_cnt|display}">{$like_prd_tag}</li>
-        <li class="{$use_coupon_cnt|display}"><a href="/myshop/coupon/coupon.html">쿠폰 <strong>{$coupon_cnt}</strong></a></li>
-        <li class="{$use_deposit|display}"><a href="/myshop/deposits/historyList.html">{$deposit_name} <strong>{$deposit}</strong></a></li>
-    </ul> -->
-
-    <!-- <div class="link">
-        <a module="Layout_bookmark" href="/link/bookmark.html" target="_blank" onclick="winPop(this.href); return false;"><span>즐겨찾기</span></a>
-        <a module="Layout_shortcut" href="/link/shortcut.html" target="_blank" onclick="winPop(this.href); return false;">바로가기</a>
-    </div> -->
+    </div>
 </div>

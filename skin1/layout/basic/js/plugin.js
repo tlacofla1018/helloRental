@@ -49,7 +49,8 @@ function autoSlideSwiperBG(selector, options = {}) {
         ...options, // 추가 옵션 병합
         on: {
             init: function () {
-                if (!['.rental_brand_swiper', '.youtube_swiper'].includes(selector)) {
+                // 특정 슬라이드는 높이 조정 제외
+                if (!['.rental_brand_swiper', '.youtube_swiper', '#b2b_content .b2b_swiper'].includes(selector)) {
                     adjustSlideHeight(selector);
                 }
 
@@ -139,6 +140,11 @@ autoSlideSwiperBG('.youtube_swiper', {
         nextEl: '.D_youtube .slide_btn.slide_next_btn',
         prevEl: '.D_youtube .slide_btn.slide_prev_btn',
     },
+});
+
+autoSlideSwiperBG('#b2b_content .b2b_swiper', {
+    slidesPerView: "auto",
+    spaceBetween: 20,
 });
 
 // [헤더] 검색창 추천상품 ----------

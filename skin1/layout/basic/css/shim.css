@@ -1249,15 +1249,11 @@ main .titleH{
     border: 0;
 }
 
-#list_content .titleH.tab_titleH,
-.company_info_content .titleH.tab_titleH {
+#list_content .titleH.tab_titleH {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
-}
-.company_info_content .titleH.tab_titleH {
-    margin: 0 auto 100px;
 }
 #list_content .tab_btn,
 .company_info_content .tab_btn,
@@ -1579,4 +1575,49 @@ main .titleH{
     padding: 20px 30px;
     background-color: rgb(255, 255, 255, .8);
     box-sizing: border-box;
+}
+#b2b_content .b2b_title_box {
+    margin-bottom: 60px;
+}
+#b2b_content .b2b_title_box p {
+    font-size: var(--f-size-3);
+    font-weight: var(--f-weight-n);
+    line-height: 24px;
+}
+#b2b_content .b2b_title {
+    font-size: var(--f-size-1);
+    font-weight: var(--f-weight-b);
+    line-height: 40px;
+}
+#b2b_content .b2b_swiper {
+    margin-bottom: 60px;
+}
+#b2b_content .b2b_swiper .swiper-wrapper {
+    width: 100%;
+}
+#b2b_content .b2b_swiper .swiper-slide {
+    width: 200px;
+    padding: 24px 40px;
+    border: solid 2px var(--c-point);
+    border-radius: 20px;
+    opacity: 1;
+}
+#b2b_content .b2b_swiper .swiper-slide p {
+    font-size: var(--f-size-2);
+    font-weight: var(--f-weight-m);
+    line-height: 28px;
+    margin-bottom: 8px;
+    color: var(--c-point);
+}
+#b2b_content .b2b_swiper .swiper-slide span {
+    font-size: var(--f-size-5);
+    line-height: 18px;
+}
+#b2b_content .bubbleWrap > div {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: var(--c-black-6);
+}
+#b2b_content .fakeTable > div {
+    display: flex;
 }

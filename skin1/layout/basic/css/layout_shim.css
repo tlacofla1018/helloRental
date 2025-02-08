@@ -1,0 +1,21 @@
+/* header */
+#header {
+    border-bottom: solid 1px var(--c-black-5);
+    background-color: var(--c-black-6);
+}
+#header .inner,
+#header .inner_1440 {
+    position: unset;
+    width: 87.5%;
+    height: 64px;
+}
+#header .inner_1440 {
+    width: 75%;
+}
+#header .sub-category {
+    display: none;
+    z-index: 4;
+}
+#header .sub-category.on {
+    display: block;
+}
