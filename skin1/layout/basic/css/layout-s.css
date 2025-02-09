@@ -5,13 +5,8 @@
 #header .inner-left {
     gap: 24px;
 }
-#header h1 {
-    width: 140px;
-}
-#header h1 a img {
-    display: block;
-    width: 100%;
-}
+
+
 #header .category_depth {
     width: 100%;
 }
@@ -109,22 +104,7 @@
     background: none;
 }
 
-#header .header_bg {
-    background-color: var(--c-black-6);
-    width: 100%;
-    top: 100%;
-    left: 0;
-    position: absolute;
-    height: 12.125rem;
-    z-index: 98;
-    transition: all .2s ease-in-out;
-    opacity: 0;
-    visibility: hidden;
-}
-#header .category:hover ~ .header_bg {
-    opacity: 1;
-    visibility: visible;
-}
+
 
 /* 유틸메뉴 */
 #header .inner .util-menu,

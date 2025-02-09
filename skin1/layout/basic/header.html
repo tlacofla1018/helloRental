@@ -1,19 +1,19 @@
-<div id="header" class="position-sticky top-0 start-0 z-3">
-    <div class="inner_1440 position-relative d-flex justify-content-between align-items-center p-0">
+<div id="header" class="navbar position-sticky top-0 start-0 z-3">
+    <div class="container-fluid navbar-expand-lg inner_1440 position-relative d-flex justify-content-between align-items-center p-0">
         <h1 module="Layout_LogoTop" class="m-0">
             <!--@css(/css/module/layout/logotop.css)-->
-            <a href="/index.html"><img src="/img/logo/helloRentalLogo.png" alt="LG Hello Rental Logo"></a>
-            <!-- <a href="/index.html">{$mall_name}</a> -->
+            <a class="navbar-brand" href="/index.html"><img class="d-inline-block align-text-top" src="/img/logo/helloRentalLogo.png" alt="LG Hello Rental Logo"></a>
         </h1>
-        <div class="category m-0" module="Layout_category">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarSupportedContent" class="collapse navbar-collapse category m-0" module="Layout_category">
             <!--@css(/css/module/layout/category.css)-->
             <!--@js(/js/module/layout/category.js)-->
-            <div class="position">
-                <ul class="category_depth position-relative d-flex">
-                    <li><a href="/{$design_page_url}{$param}">{$name_or_img_tag}</a></li>
-                    <li><a href="/{$design_page_url}{$param}">{$name_or_img_tag}</a></li>
-                </ul>
-            </div>
+            <ul class="category_depth navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="/{$design_page_url}{$param}">{$name_or_img_tag}</a></li>
+                <li class="nav-item"><a class="nav-link" href="/{$design_page_url}{$param}">{$name_or_img_tag}</a></li>
+            </ul>
         </div>
         <div class="inner-right">
             <div class="util-menu">
@@ -169,8 +169,8 @@
                 <!-- <a class="{$board_display|display}" href="/board/index.html">게시판</a> -->
             </div>
         </div>
-        <div class="header_bg">
-            <div class="inner_1440"></div>
-        </div>
+    </div>
+    <div class="header_bg position-absolute z-3">
+        <div class="inner_1440"></div>
     </div>
 </div>

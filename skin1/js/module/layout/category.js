@@ -326,13 +326,99 @@ $(function () {
 
     methods.get();
 
-    // 마우스오버 시 서브 카테고리 보이게 하기
-    $('.xans-layout-category li').hover(
-        function () {
-            $(this).addClass('on').find('.sub-category').stop(true, true).fadeIn(200);
-        },
-        function () {
-            $(this).removeClass('on').find('.sub-category').stop(true, true).fadeOut(200);
+    $(function () {
+        // 카테고리 영역에 호버하면 헤더 배경 보이기
+        $('.xans-layout-category').hover(
+            function () {
+                $('.header_bg').addClass('on').css('display', 'flex');
+            },
+            function () {
+                if (!$('.header_bg').is(':hover') && !$('.xans-layout-category li:hover').length) {
+                    $('.header_bg').removeClass('on').css('display', 'none');
+                }
+            }
+        );
+
+
+        // 서브 카테고리가 있는 li에 호버 시 서브 카테고리 보이기
+        $('.xans-layout-category li').hover(
+            function () {
+                var $subCategory = $(this).find('.sub-category');
+
+                // 기존의 on 제거 후 현재 호버된 요소만 on 추가
+                $('.xans-layout-category li .sub-category').css('display', 'none');
+                $('.xans-layout-category li').removeClass('on');
+
+                if ($subCategory.length) {
+                    $(this).addClass('on'); // 현재 호버된 li만 on 추가
+                    $subCategory.css('display', 'flex');
+                    $('.header_bg').addClass('on').css('display', 'flex'); // header_bg 유지
+                }
+            },
+            function () {
+                var $subCategory = $(this).find('.sub-category');
+
+                // 일정 시간 후 마우스가 다른 요소 위에 있는지 확인 후 닫기
+                setTimeout(function () {
+                    if (!$('.xans-layout-category li:hover').length && 
+                        !$('.sub-category:hover').length && 
+                        !$('.header_bg:hover').length) {
+                        $subCategory.css('display', 'none');
+                        $('.header_bg').removeClass('on').css('display', 'none'); // 모든 영역 벗어나면 숨김
+                        $('.xans-layout-category li').removeClass('on'); // on 클래스 제거
+                    }
+                }, 100);
+            }
+        );
+
+        // 서브 카테고리가 있는 li에 호버 시 서브 카테고리 보이기
+        $('.xans-layout-category li').hover(
+            function () {
+                var $subCategory = $(this).find('.sub-category');
+
+                // 기존의 on 제거 후 현재 호버된 요소만 on 추가
+                $('.xans-layout-category li .sub-category').css('display', 'none');
+                $('.xans-layout-category li').removeClass('on');
+
+                if ($subCategory.length) {
+                    $(this).addClass('on'); // 현재 호버된 li만 on 추가
+                    $subCategory.css('display', 'flex');
+                    $('.header_bg').addClass('on').css('display', 'flex'); // header_bg 유지
+                }
+            },
+            function () {
+                // 마우스가 다른 곳으로 이동하면 닫기
+                hideSubCategory();
+            }
+        );
+
+        // 서브 카테고리에서도 유지되도록 설정
+        $('.sub-category, .header_bg').hover(
+            function () {
+                $('.header_bg').addClass('on').css('display', 'flex');
+            },
+            function () {
+                // 서브 카테고리에서 나갔을 때 닫기
+                hideSubCategory();
+            }
+        );
+
+        // 서브 카테고리를 닫는 함수
+        function hideSubCategory() {
+            if (!$('.xans-layout-category li:hover').length && 
+                !$('.sub-category:hover').length && 
+                !$('.header_bg:hover').length) {
+                $('.sub-category').css('display', 'none');
+                $('.header_bg').removeClass('on').css('display', 'none');
+                $('.xans-layout-category li').removeClass('on'); // on 클래스 제거
+            }
         }
-    );
+    
+        // header_bg를 벗어나면 숨기기
+        $('.header_bg').mouseleave(function () {
+            if (!$('.xans-layout-category li:hover').length) {
+                $('.header_bg').removeClass('on').css('display', 'none');
+            }
+        });
+    });
 });
