@@ -1,4 +1,4 @@
-<div id="header" class="navbar position-sticky top-0 start-0 z-3">
+<div id="header" class="navbar position-sticky top-0 start-0">
     <div class="container-fluid navbar-expand-lg inner_1440 position-relative d-flex justify-content-between align-items-center p-0">
         <h1 module="Layout_LogoTop" class="m-0">
             <!--@css(/css/module/layout/logotop.css)-->
@@ -15,10 +15,10 @@
                 <li class="nav-item"><a class="nav-link" href="/{$design_page_url}{$param}">{$name_or_img_tag}</a></li>
             </ul>
         </div>
-        <div class="inner-right">
-            <div class="util-menu">
-                <div class="search-btn">
-                    <ol class="search-rank-slider">
+        <div class="util d-flex align-items-center">
+            <div class="util_menu d-flex align-items-center">
+                <div class="search_btn d-flex justify-content-between align-items-center">
+                    <ol class="search_rank_slider">
                         <li><b>1.</b>브람스</li>
                         <li><b>2.</b>코지마</li>
                         <li><b>3.</b>바디프렌즈</li>
@@ -30,10 +30,10 @@
                         <li><b>9.</b>최저가보장</li>
                         <li><b>10.</b>코웨이</li>
                     </ol>
-                    <button><img src="/img/icon/searchIcon.svg" alt="검색"></button>
+                    <button><img class="d-block" src="/img/icon/searchIcon.svg" alt="검색"></button>
                 </div>
-                <div class="search-popup">
-                    <div class="search-box">
+                <div class="search_popup">
+                    <div class="search_box">
                         <div class="search-bar">
                             <div module="Layout_SearchHeader">
                                 <!--@css(/css/module/layout/searchHeader.css)-->
@@ -136,9 +136,9 @@
                 </div>
             </div>
     
-            <div module="Layout_statelogoff">
+            <div module="Layout_statelogoff" class="log_on_off d-flex position-relative">
                 <!--@css(/css/module/layout/statelogoff.css)-->
-                <a href="/order/basket.html"><img src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
+                <a href="/order/basket.html" class="d-block p-0 position-relative"><img src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count position-absolute p-0 m-0 d-flex align-items-center justify-content-center {$basket_count_display|display} {$basket_count_display_class}"><span class="p-0 {$basket_count_class}">{$basket_count}</span></span></a>
                 <!-- <a href="/myshop/order/list.html">주문조회</a> -->
                 <button class="login-menu-btn"><img src="/img/icon/mypageIcon.svg" alt="로그인 메뉴 버튼"></button>
                 <div class="login-menu">
@@ -152,9 +152,9 @@
                 <!-- <a class="{$board_display|display}" href="/board/index.html">게시판</a> -->
             </div>
         
-            <div module="Layout_stateLogon">
+            <div module="Layout_stateLogon" class="log_on_off d-flex position-relative">
                 <!--@css(/css/module/layout/statelogon.css)-->
-                <a href="/order/basket.html"><img src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
+                <a href="/order/basket.html" class="d-block p-0 position-relative"><img src="/img/icon/basketIcon.svg" alt="장바구니"><span class="count position-absolute p-0 m-0 d-flex align-items-center justify-content-center {$basket_count_display|display} {$basket_count_display_class}"><span class="p-0 {$basket_count_class}">{$basket_count}</span></span></a>
                 <button class="logoff-menu-btn"><img src="/img/icon/mypageIcon.svg" alt="로그아웃 메뉴 버튼"></button>
                 <div class="logoff-menu">
                     <span class="myinfo"><strong>{$name}</strong>님 환영합니다.</span>
@@ -170,7 +170,45 @@
             </div>
         </div>
     </div>
-    <div class="header_bg position-absolute z-3">
-        <div class="inner_1440"></div>
+    <div class="header_bg position-absolute">
+        <div class="inner_1440">
+            <div module="product_listmain_11" class="ec-base-product">
+                <!--
+                    $count = 2
+                        ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+                        ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+                    $basket_result = /product/add_basket.html
+                    $basket_option = /product/basket_option.html
+                -->
+                <ul class="prdList grid2 d-flex justify-content-end">
+                    <li id="anchorBoxId_{$product_no}" class="position-relative">
+                        <div class="thumbnail">
+                            <div class="prdImg">
+                                <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                            </div>
+                        </div>
+                        <div class="description position-absolute top-0 start-0">
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <p class="brand_name">{$prd_brand}</p>
+                                <strong class="name ellipsis"><a href="/product/detail.html{$param}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="anchorBoxId_{$product_no}" class="position-relative">
+                        <div class="thumbnail">
+                            <div class="prdImg">
+                                <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_big}" id="{$image_medium_id}" alt="{$seo_alt_tag}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                            </div>
+                        </div>
+                        <div class="description position-absolute top-0 start-0">
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <p class="brand_name">{$prd_brand}</p>
+                                <strong class="name ellipsis"><a href="/product/detail.html{$param}" class="{$product_name_display|display}">{$product_name}</a></strong>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>

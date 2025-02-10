@@ -1,11 +1,12 @@
 /* header */
 #header {
+    z-index: 90;
     padding: 0;
     border-bottom: solid 1px var(--c-black-5);
     background-color: var(--c-black-6);
 }
-#header .inner,
-#header .inner_1440 {
+#header > .inner,
+#header > .inner_1440 {
     position: unset;
     width: 87.5%;
     height: 64px;
@@ -17,7 +18,10 @@
     position: relative;
     width: 140px;
 }
-#header h1 a img {
+#header .navbar-brand {
+    font-size: 0;
+}
+#header .navbar-brand img {
     display: block;
     width: 100%;
 }
@@ -29,22 +33,42 @@
         transform: translate(-50%, -50%);
     }
 }
-#header .category_depth > li {
+#header .nav-item {
     position: unset;
+}
+#header .nav-item .nav-link {
+    position: relative;
+    transition: none;
+}
+#header .nav-item:hover .nav-link::after,
+#header .nav-item.on .nav-link::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 8px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--c-point);
+}
+#header .nav-item:hover .nav-link,
+#header .nav-item.on .nav-link {
+    color: var(--c-point);
 }
 #header .nav-link {
     padding: 0 16px;
+    font-size: var(--f-size-5);
     line-height: 64px;
     color: var(--c-black-1);
 }
 #header .sub-category {
     top: 185px;
     left: 0;
-    z-index: 4;
+    z-index: 91;
     display: none;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 24%;
     height: 200px;
     transform: translateY(-50%);
     border: 0;
@@ -52,23 +76,149 @@
 }
 #header .nav-item.on .sub-category {
     display: flex;
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 #header .sub-category li {
-    width: 33.3%;
+    width: 120px;
     border: 0;
 }
+#header .nav-item:nth-child(5) .sub-category li:first-child {
+    display: none;
+}
+#header .sub-category li a {
+    padding: 0 10px;
+    font-size: var(--f-size-5);
+    line-height: 40px;
+}
+#header .sub-category li:hover a {
+    color: var(--c-point);
+    background-color: transparent;
+}
+#header .sub-category li a::before {
+    content: none;
+}
 #header .header_bg {
+    z-index: 90;
+    display: none;
     width: 100%;
     top: 65px;
     left: 0;
     height: 240px;
     background-color: var(--c-black-6);
     border-bottom: solid 1px var(--c-black-5);
-    transition: all .2s ease-in-out;
+}
+#header .header_bg .ec-base-product {
+    margin: 20px 0;
+}
+#header .header_bg .prdList {
+    gap: 10px;
+}
+#header .header_bg .prdList li {
+    width: unset;
+    height: 200px;
+    margin: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+#header .header_bg .thumbnail {
+    width: unset;
+    height: 100%;
+    margin: 0;
+}
+#header .header_bg .prdImg {
+    height: 100%;
+}
+#header .header_bg .description {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, .4);
     opacity: 0;
     visibility: hidden;
+    transition: all .4s ease-in-out;
 }
-#header .header_bg.on {
+#header .header_bg .prdList li:hover .description {
     opacity: 1;
     visibility: visible;
+}
+#header .header_bg .description > div {
+    width: 100%;
+    height: 100%;
+}
+#header .brand_name {
+    margin: 0;
+    text-align: center;
+    color: var(--c-black-5);
+}
+#header .name,
+#header .name a {
+    text-align: center;
+    white-space: wrap;
+}
+#header .util {
+    gap: 8px;
+}
+#header .util_menu {
+    gap: 10px;
+}
+#header .search_btn {
+    width: 150px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    border: solid 1px var(--c-black-5);
+    background-color: var(--c-black-5);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+#header .search_btn:hover {
+    border: solid 1px var(--c-black-3);
+}
+#header .search_rank_slider{
+    width: 100px;
+    padding-left: 4px;
+}
+#header .search_rank_slider li {
+    font-size: var(--f-size-6);
+}
+#header .search_rank_slider b{
+    font-weight: var(--f-weight-b);
+    padding-right: 4px;
+}
+#header .search_btn button{
+    width: 20px;
+    border: 0;
+    background-color: transparent;
+}
+#header .search_btn img{
+    width: 100%;
+}
+#header .xans-layout-searchheader {
+    float: none;
+    margin: 0;
+}
+#header .log_on_off {
+    gap: 8px;
+    height: unset;
+    line-height: unset;
+}
+#header .log_on_off > a {
+    background: none;
+}
+#header .count {
+    top: -4px;
+    left: unset;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    font-weight: var(--f-weight-n);
+    border-radius: 50%;
+    background: 0;
+    background-color: var(--c-point);
+    color: var(--c-black-6);
+}
+#header .count span {
+    height: auto;
+    background: 0;
+    font-size: 10px;
+    line-height: 10px;
 }

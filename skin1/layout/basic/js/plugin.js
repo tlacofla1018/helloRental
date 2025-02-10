@@ -1,7 +1,7 @@
 // Slick
 $(document).ready(function () {
     // [헤더] 검색순위 슬릭 ----------
-    $('.search-rank-slider').slick({
+    $('.search_rank_slider').slick({
         infinite: true,       // 무한 스크롤
         slidesToShow: 1,      // 한 번에 보여줄 슬라이드 개수
         slidesToScroll: 1,    // 한 번에 스크롤할 슬라이드 개수

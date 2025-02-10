@@ -4,7 +4,7 @@
     --c-black-2: #353535;
     --c-black-3: #757575;
     --c-black-4: #cfcfcf;
-    --c-black-5: #ededed;
+    --c-black-5: #f7f7f7;
     --c-black-6: #fff;
 
     /* color-point */
@@ -46,6 +46,15 @@ a {
 }
 .point {
     color: var(--c-point);
+}
+
+/* 말줄임 */
+.ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 표시할 최대 줄 수 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* h 태그 */

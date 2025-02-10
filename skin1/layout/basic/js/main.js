@@ -1,11 +1,11 @@
 // jQuery
 $(function () {
     // [헤더] 검색창 팝업 ----------
-    $('.search-btn').on('click', function () {
-        $('.search-popup').addClass('show');
+    $('.search_btn').on('click', function () {
+        $('.search_popup').addClass('show');
     });
     $('.search-bar .close-btn').on('click', function () {
-        $('.search-popup').removeClass('show');
+        $('.search_popup').removeClass('show');
     });
 
     // [헤더] 로그인/로그아웃 메뉴 ----------
